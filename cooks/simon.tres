@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CookData" format=3 uid="uid://dnmrawhs2simj"]
+
+[ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/cook_data.gd" id="1_8woyn"]
+
+[resource]
+script = ExtResource("1_8woyn")
+cook = 1
+statement = "I started cooking after Rose finished and used open ingredients. I tasted all components of my dishes as I prepared them."
+metadata/_custom_type_script = "uid://bga07nfiordvr"

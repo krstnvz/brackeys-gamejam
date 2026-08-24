@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DishData" format=3 uid="uid://uwp5wlphx4uq"]
+
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dish_data.gd" id="1_1log2"]
+
+[resource]
+script = ExtResource("1_1log2")
+name = "Sweet Porridge"
+ingredients = Array[int]([4, 0, 5, 1, 2])
+poisoned = true
+metadata/_custom_type_script = "uid://xbgs8haytcbq"

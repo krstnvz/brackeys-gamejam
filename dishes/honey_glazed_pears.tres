@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DishData" format=3 uid="uid://yhpjs4kca8c2"]
+
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dish_data.gd" id="1_kcg7v"]
+
+[resource]
+script = ExtResource("1_kcg7v")
+name = "Honey Glazed Pears"
+ingredients = Array[int]([17, 15, 16, 3, 0])
+metadata/_custom_type_script = "uid://xbgs8haytcbq"

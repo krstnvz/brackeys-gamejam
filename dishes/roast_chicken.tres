@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DishData" format=3 uid="uid://b5j3dxsi5ixmf"]
+
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dish_data.gd" id="1_twulo"]
+
+[resource]
+script = ExtResource("1_twulo")
+name = "Roast Chicken"
+cook = 1
+ingredients = Array[int]([10, 11, 12, 13, 14, 3, 1])
+metadata/_custom_type_script = "uid://xbgs8haytcbq"
