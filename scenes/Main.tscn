@@ -9,8 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://rob1bfdbg0mr" path="res://scenes/Cook.tscn" id="6_c01mt"]
 [ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://cooks/simon.tres" id="7_jlsqs"]
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://cooks/peter.tres" id="8_q8u5g"]
-[ext_resource type="Script" uid="uid://c552qem3mt5rr" path="res://scripts/book_overlay.gd" id="10_lhr70"]
-[ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/tip_off_overlay.gd" id="11_wp0k4"]
+[ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="11_wp0k4"]
 
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_q8u5g")
@@ -88,11 +87,121 @@ offset_right = 218.0
 offset_bottom = 31.0
 text = "Book of Poisons"
 
-[node name="BookOverlay" type="CanvasLayer" parent="." unique_id=167102177]
-visible = false
-script = ExtResource("10_lhr70")
+[node name="TipOffButton" type="Button" parent="." unique_id=338117159]
+offset_left = 17.0
+offset_right = 77.0
+offset_bottom = 31.0
+text = "Tip Off"
 
-[node name="ColorRect" type="ColorRect" parent="BookOverlay" unique_id=1564265029]
+[node name="Node" type="Node" parent="." unique_id=1645188447]
+
+[node name="IngredientsOverlay" type="CanvasLayer" parent="Node" unique_id=2074792183]
+visible = false
+script = ExtResource("11_wp0k4")
+
+[node name="ColorRect" type="ColorRect" parent="Node/IngredientsOverlay" unique_id=486545134]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -68.0
+offset_right = 271.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/IngredientsOverlay" unique_id=374442046]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.5
+offset_top = -46.0
+offset_right = 252.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b]Informat tip off:[/b]
+- yesterday, one ingredient was poisoned with Blistering Water
+- multiple dishes are contaminated
+- exactly one person is in on it and lying"
+fit_content = true
+
+[node name="CancelButton" type="Button" parent="Node/IngredientsOverlay" unique_id=1317162803]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 244.0
+offset_top = -62.0
+offset_right = 263.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+
+[node name="TipOffOverlay" type="CanvasLayer" parent="Node" unique_id=754780104]
+visible = false
+script = ExtResource("11_wp0k4")
+
+[node name="ColorRect" type="ColorRect" parent="Node/TipOffOverlay" unique_id=322173053]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -68.0
+offset_right = 271.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/TipOffOverlay" unique_id=1033028980]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.5
+offset_top = -46.0
+offset_right = 252.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b]Informat tip off:[/b]
+- yesterday, one ingredient was poisoned with Blistering Water
+- multiple dishes are contaminated
+- exactly one person is in on it and lying"
+fit_content = true
+
+[node name="CancelButton" type="Button" parent="Node/TipOffOverlay" unique_id=111208958]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 244.0
+offset_top = -62.0
+offset_right = 263.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+
+[node name="BookOverlay" type="CanvasLayer" parent="Node" unique_id=167102177]
+visible = false
+script = ExtResource("11_wp0k4")
+
+[node name="ColorRect" type="ColorRect" parent="Node/BookOverlay" unique_id=1564265029]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -106,7 +215,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BookOverlay" unique_id=993247710]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/BookOverlay" unique_id=993247710]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -128,7 +237,7 @@ text = "[b]Blistering Water[/b]
 	- must be mixed into a liquid"
 fit_content = true
 
-[node name="CancelButton" type="Button" parent="BookOverlay" unique_id=294520980]
+[node name="CancelButton" type="Button" parent="Node/BookOverlay" unique_id=294520980]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -142,65 +251,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "X"
 
-[node name="TipOffButton" type="Button" parent="." unique_id=338117159]
-offset_left = 17.0
-offset_right = 77.0
-offset_bottom = 31.0
-text = "Tip Off"
-
-[node name="TipOffOverlay" type="CanvasLayer" parent="." unique_id=754780104]
-visible = false
-script = ExtResource("11_wp0k4")
-
-[node name="ColorRect" type="ColorRect" parent="TipOffOverlay" unique_id=322173053]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -68.0
-offset_right = 271.0
-offset_bottom = 68.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TipOffOverlay" unique_id=1033028980]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -252.5
-offset_top = -46.0
-offset_right = 252.5
-offset_bottom = 46.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "[b]Informat tip off:[/b]
-- yesterday, one ingredient was poisoned with Blistering Water
-- multiple dishes are contaminated
-- exactly one person is in on it and lying"
-fit_content = true
-
-[node name="CancelButton" type="Button" parent="TipOffOverlay" unique_id=111208958]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 244.0
-offset_top = -62.0
-offset_right = 263.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "X"
-
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
-[connection signal="button_up" from="BookButton" to="BookOverlay" method="_on_book_button_button_up"]
-[connection signal="button_up" from="BookOverlay/CancelButton" to="BookOverlay" method="_on_cancel_button_button_up"]
-[connection signal="button_up" from="TipOffButton" to="TipOffOverlay" method="_on_tip_off_button_button_up"]
-[connection signal="button_up" from="TipOffOverlay/CancelButton" to="TipOffOverlay" method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="BookButton" to="Node/BookOverlay" method="_on_tip_off_button_button_up"]
+[connection signal="button_up" from="TipOffButton" to="Node/TipOffOverlay" method="_on_tip_off_button_button_up"]
+[connection signal="button_up" from="Node/TipOffOverlay/CancelButton" to="Node/TipOffOverlay" method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="Node/BookOverlay/CancelButton" to="Node/BookOverlay" method="_on_cancel_button_button_up"]
