@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ck42ph3l8v3dy"]
+
+[ext_resource type="Script" uid="uid://dkdvy6kaw8jrs" path="res://scripts/main_menu.gd" id="1_sbiqi"]
+
+[node name="MainMenu" type="Node" unique_id=564853700]
+script = ExtResource("1_sbiqi")
+
+[node name="Button" type="Button" parent="." unique_id=1858174954]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = -70.5
+offset_right = 128.5
+offset_bottom = 70.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start Game"
+
+[node name="Label" type="Label" parent="." unique_id=1727803360]
+offset_left = 431.0
+offset_top = 335.0
+offset_right = 634.0
+offset_bottom = 353.0
+theme_override_font_sizes/font_size = 12
+text = "Game made by Dyego and Kristýna"
+
+[node name="LinkButton" type="LinkButton" parent="." unique_id=1358834027]
+offset_left = 62.0
+offset_top = 172.0
+offset_right = 121.0
+offset_bottom = 198.0
+text = "Google"
+underline = 1
+uri = "https:://www.google.com"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

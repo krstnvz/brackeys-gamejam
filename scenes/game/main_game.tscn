@@ -1,77 +1,77 @@
 [gd_scene format=3 uid="uid://b1drsx2rxbw5b"]
 
-[ext_resource type="Script" uid="uid://bp0dknngb756j" path="res://scripts/game_manager.gd" id="1_6jj8p"]
-[ext_resource type="PackedScene" uid="uid://bv2owiajweq0r" path="res://scenes/components/Dish.tscn" id="2_15qf3"]
-[ext_resource type="Resource" uid="uid://b61cj1umiow24" path="res://dishes/glazed_salmon.tres" id="3_nte4i"]
-[ext_resource type="Resource" uid="uid://b5j3dxsi5ixmf" path="res://dishes/roast_chicken.tres" id="4_omhcu"]
-[ext_resource type="Resource" uid="uid://yhpjs4kca8c2" path="res://dishes/honey_glazed_pears.tres" id="5_3mldk"]
-[ext_resource type="Resource" uid="uid://56cna5mxbnma" path="res://dishes/cheesecake.tres" id="6_owt0v"]
-[ext_resource type="PackedScene" uid="uid://rob1bfdbg0mr" path="res://scenes/components/Cook.tscn" id="7_dg2w6"]
-[ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://cooks/simon.tres" id="8_0ytgy"]
-[ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://cooks/peter.tres" id="9_o6hgx"]
-[ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="10_xxfpd"]
-[ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredients/ingredient_list.gd" id="11_6miqs"]
-[ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/components/IngredientButton.tscn" id="12_5s3xm"]
-[ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="13_mmygw"]
-[ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://cooks/rose.tres" id="14_exe2n"]
+[ext_resource type="Script" uid="uid://bp0dknngb756j" path="res://scripts/game_manager.gd" id="1_cn0rj"]
+[ext_resource type="PackedScene" uid="uid://bv2owiajweq0r" path="res://scenes/components/Dish.tscn" id="2_xgagw"]
+[ext_resource type="Resource" uid="uid://b61cj1umiow24" path="res://dishes/glazed_salmon.tres" id="3_eixuh"]
+[ext_resource type="Resource" uid="uid://b5j3dxsi5ixmf" path="res://dishes/roast_chicken.tres" id="4_v72ow"]
+[ext_resource type="Resource" uid="uid://yhpjs4kca8c2" path="res://dishes/honey_glazed_pears.tres" id="5_ccb4r"]
+[ext_resource type="Resource" uid="uid://56cna5mxbnma" path="res://dishes/cheesecake.tres" id="6_stils"]
+[ext_resource type="PackedScene" uid="uid://rob1bfdbg0mr" path="res://scenes/components/Cook.tscn" id="7_mssxc"]
+[ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://cooks/simon.tres" id="8_dp4e7"]
+[ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://cooks/peter.tres" id="9_wyrr4"]
+[ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="10_jka6k"]
+[ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredients/ingredient_list.gd" id="11_refti"]
+[ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/components/IngredientButton.tscn" id="12_f03l8"]
+[ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="13_20abi"]
+[ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://cooks/rose.tres" id="14_h2va7"]
 
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
-script = ExtResource("1_6jj8p")
+script = ExtResource("1_cn0rj")
 dishes = [NodePath("DishButton1"), NodePath("DishButton2"), NodePath("DishButton3"), NodePath("DishButton4"), NodePath("DishButton5")]
 
-[node name="DishButton1" parent="." unique_id=415389592 instance=ExtResource("2_15qf3")]
+[node name="DishButton1" parent="." unique_id=415389592 instance=ExtResource("2_xgagw")]
 offset_left = 177.0
 offset_top = 158.0
 offset_right = 220.0
 offset_bottom = 198.0
 
-[node name="DishButton2" parent="." unique_id=1160370312 instance=ExtResource("2_15qf3")]
+[node name="DishButton2" parent="." unique_id=1160370312 instance=ExtResource("2_xgagw")]
 offset_left = 363.0
 offset_top = 158.0
 offset_right = 406.0
 offset_bottom = 198.0
-dish = ExtResource("3_nte4i")
+dish = ExtResource("3_eixuh")
 
-[node name="DishButton3" parent="." unique_id=1980203305 instance=ExtResource("2_15qf3")]
+[node name="DishButton3" parent="." unique_id=1980203305 instance=ExtResource("2_xgagw")]
 offset_left = 70.0
 offset_top = 253.0
 offset_right = 113.0
 offset_bottom = 293.0
-dish = ExtResource("4_omhcu")
+dish = ExtResource("4_v72ow")
 
-[node name="DishButton4" parent="." unique_id=731125659 instance=ExtResource("2_15qf3")]
+[node name="DishButton4" parent="." unique_id=731125659 instance=ExtResource("2_xgagw")]
 offset_left = 261.0
 offset_top = 253.0
 offset_right = 304.0
 offset_bottom = 293.0
-dish = ExtResource("5_3mldk")
+dish = ExtResource("5_ccb4r")
 
-[node name="DishButton5" parent="." unique_id=1334535440 instance=ExtResource("2_15qf3")]
+[node name="DishButton5" parent="." unique_id=1334535440 instance=ExtResource("2_xgagw")]
 offset_left = 508.0
 offset_top = 253.0
 offset_right = 551.0
 offset_bottom = 293.0
-dish = ExtResource("6_owt0v")
+dish = ExtResource("6_stils")
 
-[node name="CookButton1" parent="." unique_id=932202432 instance=ExtResource("7_dg2w6")]
+[node name="CookButton1" parent="." unique_id=932202432 instance=ExtResource("7_mssxc")]
 offset_left = 78.0
 offset_top = 55.0
 offset_right = 125.0
 offset_bottom = 86.0
 
-[node name="CookButton2" parent="." unique_id=848693386 instance=ExtResource("7_dg2w6")]
+[node name="CookButton2" parent="." unique_id=848693386 instance=ExtResource("7_mssxc")]
 offset_left = 289.0
 offset_top = 55.0
 offset_right = 336.0
 offset_bottom = 86.0
-cook_data = ExtResource("8_0ytgy")
+cook_data = ExtResource("8_dp4e7")
 
-[node name="CookButton3" parent="." unique_id=1838810257 instance=ExtResource("7_dg2w6")]
+[node name="CookButton3" parent="." unique_id=1838810257 instance=ExtResource("7_mssxc")]
 offset_left = 508.0
 offset_top = 55.0
 offset_right = 555.0
 offset_bottom = 86.0
-cook_data = ExtResource("9_o6hgx")
+cook_data = ExtResource("9_wyrr4")
 
 [node name="SubmitButton" type="Button" parent="." unique_id=1139052228]
 anchors_preset = 3
@@ -107,7 +107,7 @@ text = "Ingredients"
 
 [node name="IngredientsOverlay" type="CanvasLayer" parent="Overlays" unique_id=2074792183]
 visible = false
-script = ExtResource("10_xxfpd")
+script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/IngredientsOverlay" unique_id=486545134]
 anchors_preset = 8
@@ -145,12 +145,12 @@ offset_bottom = 350.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlays/IngredientsOverlay/ScrollContainer" unique_id=1810388603]
 layout_mode = 2
-script = ExtResource("11_6miqs")
-ingredient_button = ExtResource("12_5s3xm")
+script = ExtResource("11_refti")
+ingredient_button = ExtResource("12_f03l8")
 
 [node name="TipOffOverlay" type="CanvasLayer" parent="Overlays" unique_id=754780104]
 visible = false
-script = ExtResource("10_xxfpd")
+script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/TipOffOverlay" unique_id=322173053]
 anchors_preset = 8
@@ -201,7 +201,7 @@ text = "X"
 
 [node name="BookOverlay" type="CanvasLayer" parent="Overlays" unique_id=167102177]
 visible = false
-script = ExtResource("10_xxfpd")
+script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/BookOverlay" unique_id=1564265029]
 anchors_preset = 8
@@ -255,7 +255,7 @@ text = "X"
 
 [node name="Cook1Overlay" type="CanvasLayer" parent="Overlays" unique_id=892935395]
 visible = false
-script = ExtResource("10_xxfpd")
+script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/Cook1Overlay" unique_id=705706584]
 offset_left = 19.0
@@ -269,12 +269,12 @@ offset_left = 24.0
 offset_top = 97.0
 offset_right = 184.0
 offset_bottom = 203.0
-script = ExtResource("13_mmygw")
-cook_data = ExtResource("14_exe2n")
+script = ExtResource("13_20abi")
+cook_data = ExtResource("14_h2va7")
 
 [node name="Cook2Overlay" type="CanvasLayer" parent="Overlays" unique_id=2046572807]
 visible = false
-script = ExtResource("10_xxfpd")
+script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/Cook2Overlay" unique_id=1816286435]
 offset_left = 230.0
@@ -288,12 +288,12 @@ offset_left = 235.0
 offset_top = 96.0
 offset_right = 395.0
 offset_bottom = 201.0
-script = ExtResource("13_mmygw")
-cook_data = ExtResource("8_0ytgy")
+script = ExtResource("13_20abi")
+cook_data = ExtResource("8_dp4e7")
 
 [node name="Cook3Overlay" type="CanvasLayer" parent="Overlays" unique_id=578976360]
 visible = false
-script = ExtResource("10_xxfpd")
+script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/Cook3Overlay" unique_id=422168759]
 offset_left = 447.0
@@ -307,8 +307,16 @@ offset_left = 453.0
 offset_top = 96.0
 offset_right = 613.0
 offset_bottom = 201.0
-script = ExtResource("13_mmygw")
-cook_data = ExtResource("9_o6hgx")
+script = ExtResource("13_20abi")
+cook_data = ExtResource("9_wyrr4")
+
+[node name="Button" type="Button" parent="." unique_id=1698673446]
+offset_left = 2.0
+offset_top = 334.0
+offset_right = 51.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 10
+text = "Menu"
 
 [connection signal="refresh_ingredients" from="DishButton1" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="DishButton2" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
@@ -325,3 +333,4 @@ cook_data = ExtResource("9_o6hgx")
 [connection signal="button_up" from="Overlays/IngredientsOverlay/CancelButton" to="Overlays/IngredientsOverlay" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="Overlays/TipOffOverlay/CancelButton" to="Overlays/TipOffOverlay" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="Overlays/BookOverlay/CancelButton" to="Overlays/BookOverlay" method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

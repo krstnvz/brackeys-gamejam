@@ -9,3 +9,6 @@ func _on_submit_button_button_up() -> void:
 			return
 	
 	print("CORRECT SOLUTION, YOU LIVE! :)")
+
+func _on_button_button_up() -> void:
+	Navigation.go_to_menu()
