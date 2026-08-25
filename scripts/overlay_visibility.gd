@@ -7,5 +7,5 @@ func _ready() -> void:
 func _on_cancel_button_button_up() -> void:
 	visible = false
 
-func _on_tip_off_button_button_up() -> void:
+func _on_visibility_button_up() -> void:
 	visible = false if visible else true

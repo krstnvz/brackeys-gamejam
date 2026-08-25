@@ -11,7 +11,7 @@ func _on_button_up() -> void:
 	print("made by: " + CookData.Cooks.keys()[dish.cook])
 	print("contains: ")
 	for ingredient in dish.ingredients:
-		print(DishData.Ingredients.keys()[ingredient])
+		print(IngredientsData.Ingredient.keys()[ingredient])
 		
 func is_dish_safe() -> bool:
 	return !dish.poisoned
