@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rob1bfdbg0mr"]
 
-[ext_resource type="Script" uid="uid://cp1u3td3cmytw" path="res://scripts/cook.gd" id="1_n2yfk"]
+[ext_resource type="Script" uid="uid://cp1u3td3cmytw" path="res://scripts/cooks/cook.gd" id="1_n2yfk"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://cooks/rose.tres" id="2_jvs2t"]
 
 [node name="CookButton" type="Button" unique_id=932202432]
