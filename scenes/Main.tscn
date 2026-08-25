@@ -250,6 +250,11 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "X"
 
+[connection signal="refresh_ingredients" from="DishButton1" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="DishButton2" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="DishButton3" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="DishButton4" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="DishButton5" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
 [connection signal="button_up" from="BookButton" to="Overlays/BookOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="TipOffButton" to="Overlays/TipOffOverlay" method="_on_visibility_button_up"]

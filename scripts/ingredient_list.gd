@@ -7,12 +7,20 @@ func _ready() -> void:
 	for ingredient in GameGlobals.ingredientsData.allIngredients:
 		var button = ingredient_button.instantiate()
 		button.add_ingredient(ingredient)
-		button.item_toggled.connect(_on_ingredient_toggled)
 		add_child(button)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func _on_ingredient_toggled():
-	pass
+func _on_dish_button_refresh_ingredients() -> void:
+	for child in get_children():
+		child.queue_free()
+	
+	for ingredient in GameGlobals.ingredientsData.allIngredients:
+		var button = ingredient_button.instantiate()
+		button.add_ingredient(ingredient)
+		add_child(button)
+	
+	
+	

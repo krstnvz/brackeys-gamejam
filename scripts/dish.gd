@@ -1,6 +1,8 @@
 class_name Dish
 extends Button
 
+signal refresh_ingredients
+
 @export var dish: DishData = null
 
 func _ready() -> void:
@@ -18,3 +20,8 @@ func is_dish_safe() -> bool:
 	
 func get_safe_toggle_state() -> bool:
 	return $CheckButton.button_pressed
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	GameGlobals.updateIngredients(dish, toggled_on)
+	refresh_ingredients.emit()
+	
