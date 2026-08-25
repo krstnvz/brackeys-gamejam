@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://rob1bfdbg0mr" path="res://scenes/Cook.tscn" id="6_c01mt"]
 [ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://cooks/simon.tres" id="7_jlsqs"]
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://cooks/peter.tres" id="8_q8u5g"]
+[ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredient_list.gd" id="11_bjd11"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="11_wp0k4"]
+[ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/IngredientButton.tscn" id="12_bjd11"]
 
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_q8u5g")
@@ -93,13 +95,61 @@ offset_right = 77.0
 offset_bottom = 31.0
 text = "Tip Off"
 
-[node name="Node" type="Node" parent="." unique_id=1645188447]
+[node name="IngredientsButton" type="Button" parent="." unique_id=77375484]
+offset_left = 539.0
+offset_right = 640.0
+offset_bottom = 37.0
+text = "Ingredients"
 
-[node name="IngredientsOverlay" type="CanvasLayer" parent="Node" unique_id=2074792183]
+[node name="Overlays" type="Node" parent="." unique_id=1645188447]
+
+[node name="IngredientsOverlay" type="CanvasLayer" parent="Overlays" unique_id=2074792183]
+script = ExtResource("11_wp0k4")
+
+[node name="ColorRect" type="ColorRect" parent="Overlays/IngredientsOverlay" unique_id=486545134]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.0
+offset_top = -144.0
+offset_right = 319.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="CancelButton" type="Button" parent="Overlays/IngredientsOverlay" unique_id=1317162803]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 292.0
+offset_top = -138.0
+offset_right = 311.0
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Overlays/IngredientsOverlay" unique_id=677144390]
+offset_left = 445.0
+offset_top = 80.0
+offset_right = 633.0
+offset_bottom = 350.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlays/IngredientsOverlay/ScrollContainer" unique_id=1810388603]
+layout_mode = 2
+script = ExtResource("11_bjd11")
+ingredient_button = ExtResource("12_bjd11")
+
+[node name="TipOffOverlay" type="CanvasLayer" parent="Overlays" unique_id=754780104]
 visible = false
 script = ExtResource("11_wp0k4")
 
-[node name="ColorRect" type="ColorRect" parent="Node/IngredientsOverlay" unique_id=486545134]
+[node name="ColorRect" type="ColorRect" parent="Overlays/TipOffOverlay" unique_id=322173053]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -113,7 +163,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Node/IngredientsOverlay" unique_id=374442046]
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/TipOffOverlay" unique_id=1033028980]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -132,7 +182,7 @@ text = "[b]Informat tip off:[/b]
 - exactly one person is in on it and lying"
 fit_content = true
 
-[node name="CancelButton" type="Button" parent="Node/IngredientsOverlay" unique_id=1317162803]
+[node name="CancelButton" type="Button" parent="Overlays/TipOffOverlay" unique_id=111208958]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -146,62 +196,11 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "X"
 
-[node name="TipOffOverlay" type="CanvasLayer" parent="Node" unique_id=754780104]
+[node name="BookOverlay" type="CanvasLayer" parent="Overlays" unique_id=167102177]
 visible = false
 script = ExtResource("11_wp0k4")
 
-[node name="ColorRect" type="ColorRect" parent="Node/TipOffOverlay" unique_id=322173053]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -68.0
-offset_right = 271.0
-offset_bottom = 68.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Node/TipOffOverlay" unique_id=1033028980]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -252.5
-offset_top = -46.0
-offset_right = 252.5
-offset_bottom = 46.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "[b]Informat tip off:[/b]
-- yesterday, one ingredient was poisoned with Blistering Water
-- multiple dishes are contaminated
-- exactly one person is in on it and lying"
-fit_content = true
-
-[node name="CancelButton" type="Button" parent="Node/TipOffOverlay" unique_id=111208958]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 244.0
-offset_top = -62.0
-offset_right = 263.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "X"
-
-[node name="BookOverlay" type="CanvasLayer" parent="Node" unique_id=167102177]
-visible = false
-script = ExtResource("11_wp0k4")
-
-[node name="ColorRect" type="ColorRect" parent="Node/BookOverlay" unique_id=1564265029]
+[node name="ColorRect" type="ColorRect" parent="Overlays/BookOverlay" unique_id=1564265029]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -215,7 +214,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Node/BookOverlay" unique_id=993247710]
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/BookOverlay" unique_id=993247710]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -237,7 +236,7 @@ text = "[b]Blistering Water[/b]
 	- must be mixed into a liquid"
 fit_content = true
 
-[node name="CancelButton" type="Button" parent="Node/BookOverlay" unique_id=294520980]
+[node name="CancelButton" type="Button" parent="Overlays/BookOverlay" unique_id=294520980]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -252,7 +251,9 @@ grow_vertical = 2
 text = "X"
 
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
-[connection signal="button_up" from="BookButton" to="Node/BookOverlay" method="_on_tip_off_button_button_up"]
-[connection signal="button_up" from="TipOffButton" to="Node/TipOffOverlay" method="_on_tip_off_button_button_up"]
-[connection signal="button_up" from="Node/TipOffOverlay/CancelButton" to="Node/TipOffOverlay" method="_on_cancel_button_button_up"]
-[connection signal="button_up" from="Node/BookOverlay/CancelButton" to="Node/BookOverlay" method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="BookButton" to="Overlays/BookOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="TipOffButton" to="Overlays/TipOffOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="IngredientsButton" to="Overlays/IngredientsOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Overlays/IngredientsOverlay/CancelButton" to="Overlays/IngredientsOverlay" method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="Overlays/TipOffOverlay/CancelButton" to="Overlays/TipOffOverlay" method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="Overlays/BookOverlay/CancelButton" to="Overlays/BookOverlay" method="_on_cancel_button_button_up"]
