@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://62xkmihlpayo"]
+
+[ext_resource type="Script" uid="uid://chod3qf8g80ti" path="res://scripts/ingredient_button.gd" id="1_ta6o6"]
+
+[node name="CheckButton" type="CheckButton" unique_id=2063293023]
+offset_right = 44.0
+offset_bottom = 24.0
+text = "name"
+script = ExtResource("1_ta6o6")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]
