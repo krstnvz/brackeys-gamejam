@@ -2,13 +2,9 @@ extends VBoxContainer
 
 @export var ingredient_button: PackedScene = null
 
-var ingredientsData = IngredientsData.new()
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	ingredientsData.createAllIngredientsModel()
-	
-	for ingredient in ingredientsData.allIngredients:
+	for ingredient in GameGlobals.ingredientsData.allIngredients:
 		var button = ingredient_button.instantiate()
 		button.add_ingredient(ingredient)
 		button.item_toggled.connect(_on_ingredient_toggled)
