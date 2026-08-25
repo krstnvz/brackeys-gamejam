@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredient_list.gd" id="11_bjd11"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="11_wp0k4"]
 [ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/IngredientButton.tscn" id="12_bjd11"]
+[ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cook_statement.gd" id="13_qmy6f"]
+[ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://cooks/rose.tres" id="14_mwfav"]
 
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_q8u5g")
@@ -104,6 +106,7 @@ text = "Ingredients"
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 
 [node name="IngredientsOverlay" type="CanvasLayer" parent="Overlays" unique_id=2074792183]
+visible = false
 script = ExtResource("11_wp0k4")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/IngredientsOverlay" unique_id=486545134]
@@ -250,11 +253,71 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "X"
 
+[node name="Cook1Overlay" type="CanvasLayer" parent="Overlays" unique_id=892935395]
+visible = false
+script = ExtResource("11_wp0k4")
+
+[node name="ColorRect" type="ColorRect" parent="Overlays/Cook1Overlay" unique_id=705706584]
+offset_left = 19.0
+offset_top = 92.0
+offset_right = 189.0
+offset_bottom = 209.0
+color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/Cook1Overlay" unique_id=1186643933]
+offset_left = 24.0
+offset_top = 97.0
+offset_right = 184.0
+offset_bottom = 203.0
+script = ExtResource("13_qmy6f")
+cook_data = ExtResource("14_mwfav")
+
+[node name="Cook2Overlay" type="CanvasLayer" parent="Overlays" unique_id=2046572807]
+visible = false
+script = ExtResource("11_wp0k4")
+
+[node name="ColorRect" type="ColorRect" parent="Overlays/Cook2Overlay" unique_id=1816286435]
+offset_left = 230.0
+offset_top = 91.0
+offset_right = 400.0
+offset_bottom = 208.0
+color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/Cook2Overlay" unique_id=941605190]
+offset_left = 235.0
+offset_top = 96.0
+offset_right = 395.0
+offset_bottom = 201.0
+script = ExtResource("13_qmy6f")
+cook_data = ExtResource("7_jlsqs")
+
+[node name="Cook3Overlay" type="CanvasLayer" parent="Overlays" unique_id=578976360]
+visible = false
+script = ExtResource("11_wp0k4")
+
+[node name="ColorRect" type="ColorRect" parent="Overlays/Cook3Overlay" unique_id=422168759]
+offset_left = 447.0
+offset_top = 90.0
+offset_right = 617.0
+offset_bottom = 208.0
+color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/Cook3Overlay" unique_id=2135914515]
+offset_left = 453.0
+offset_top = 96.0
+offset_right = 613.0
+offset_bottom = 201.0
+script = ExtResource("13_qmy6f")
+cook_data = ExtResource("8_q8u5g")
+
 [connection signal="refresh_ingredients" from="DishButton1" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="DishButton2" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="DishButton3" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="DishButton4" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="DishButton5" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="button_up" from="CookButton1" to="Overlays/Cook1Overlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="CookButton2" to="Overlays/Cook2Overlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="CookButton3" to="Overlays/Cook3Overlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
 [connection signal="button_up" from="BookButton" to="Overlays/BookOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="TipOffButton" to="Overlays/TipOffOverlay" method="_on_visibility_button_up"]
