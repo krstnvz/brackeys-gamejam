@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cudl6a11aejk4"]
+
+[ext_resource type="Script" uid="uid://t3kuwr8oo041" path="res://scenes/game/fade.gd" id="1_a2ja6"]
+
+[node name="Fade" type="CanvasLayer" unique_id=149257461]
+script = ExtResource("1_a2ja6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=816459259]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24115604, 0.24115604, 0.24115604, 1)

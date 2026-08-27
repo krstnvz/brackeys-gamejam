@@ -253,7 +253,7 @@ offset_bottom = 82.75
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[b]Blistering Water[/b]
+text = "Blistering Water
 	- fast acting
 	- causes painful boils and high fever
 	- severe poisoning results in death
@@ -277,6 +277,7 @@ grow_vertical = 2
 text = "X"
 
 [node name="RoseStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=892935395]
+visible = false
 script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/RoseStatementOverlay" unique_id=705706584]
@@ -295,6 +296,7 @@ script = ExtResource("13_20abi")
 cook_data = ExtResource("14_h2va7")
 
 [node name="SimonStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=2046572807]
+visible = false
 script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/SimonStatementOverlay" unique_id=1816286435]
@@ -313,6 +315,7 @@ script = ExtResource("13_20abi")
 cook_data = ExtResource("8_dp4e7")
 
 [node name="PeterStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=578976360]
+visible = false
 script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/PeterStatementOverlay" unique_id=422168759]

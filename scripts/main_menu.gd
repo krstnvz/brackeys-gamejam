@@ -9,4 +9,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_button_button_up() -> void:
+	#await $Fade.fade(1.0).finished
 	Navigation.start_game()
+	pass

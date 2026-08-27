@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ck42ph3l8v3dy"]
 
 [ext_resource type="Script" uid="uid://dkdvy6kaw8jrs" path="res://scripts/main_menu.gd" id="1_sbiqi"]
+[ext_resource type="PackedScene" uid="uid://cudl6a11aejk4" path="res://scenes/game/fade.tscn" id="2_ngy02"]
 
 [node name="MainMenu" type="Node" unique_id=564853700]
 script = ExtResource("1_sbiqi")
@@ -37,5 +38,7 @@ offset_bottom = 198.0
 text = "Google"
 underline = 1
 uri = "https:://www.google.com"
+
+[node name="Fade" parent="." unique_id=149257461 instance=ExtResource("2_ngy02")]
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
