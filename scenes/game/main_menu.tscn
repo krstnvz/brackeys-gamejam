@@ -6,6 +6,13 @@
 [node name="MainMenu" type="Node" unique_id=564853700]
 script = ExtResource("1_sbiqi")
 
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1876242044]
+offset_left = 500.0
+offset_top = 9.0
+offset_right = 629.0
+offset_bottom = 37.0
+text = "fullscreen"
+
 [node name="Button" type="Button" parent="." unique_id=1858174954]
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,5 +47,7 @@ underline = 1
 uri = "https:://www.google.com"
 
 [node name="Fade" parent="." unique_id=149257461 instance=ExtResource("2_ngy02")]
+visible = false
 
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

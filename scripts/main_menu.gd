@@ -12,3 +12,9 @@ func _on_button_button_up() -> void:
 	#await $Fade.fade(1.0).finished
 	Navigation.start_game()
 	pass
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
