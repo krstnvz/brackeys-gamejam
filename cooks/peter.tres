@@ -1,9 +1,22 @@
 [gd_resource type="Resource" script_class="CookData" format=3 uid="uid://cgweu5mb0amv6"]
 
 [ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/cooks/cook_data.gd" id="1_4hc0y"]
+[ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/peter.png" id="1_syy0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rvul"]
+resource_local_to_scene = true
+atlas = ExtResource("1_syy0o")
+region = Rect2(31, 0, 31, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2ff8"]
+resource_local_to_scene = true
+atlas = ExtResource("1_syy0o")
+region = Rect2(0, 0, 31, 37)
 
 [resource]
 script = ExtResource("1_4hc0y")
 cook = 2
 statement = "Last night, I opened the last remaining package of eggs to prepare the cheesecake. There have been no new deliveries since."
+normal = SubResource("AtlasTexture_e2ff8")
+hightlight = SubResource("AtlasTexture_3rvul")
 metadata/_custom_type_script = "uid://bga07nfiordvr"

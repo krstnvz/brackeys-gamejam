@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://cp1u3td3cmytw" path="res://scripts/cooks/cook.gd" id="1_n2yfk"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://cooks/rose.tres" id="2_jvs2t"]
 
-[node name="CookButton" type="Button" unique_id=932202432]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Cook"
+[node name="CookButton" type="TextureButton" unique_id=1168269928]
+texture_filter = 1
+offset_right = 31.0
+offset_bottom = 28.0
+scale = Vector2(2, 2)
 script = ExtResource("1_n2yfk")
 cook_data = ExtResource("2_jvs2t")
 
