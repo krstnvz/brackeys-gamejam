@@ -100,15 +100,10 @@ texture_normal = SubResource("AtlasTexture_ccb4r")
 cook_data = ExtResource("9_wyrr4")
 
 [node name="SubmitButton" type="Button" parent="." unique_id=1139052228]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -68.0
-offset_top = -31.0
-grow_horizontal = 0
-grow_vertical = 0
+offset_left = 572.0
+offset_top = 329.0
+offset_right = 640.0
+offset_bottom = 360.0
 text = "SUBMIT"
 
 [node name="BookButton" type="Button" parent="." unique_id=386406741]
@@ -136,17 +131,10 @@ visible = false
 script = ExtResource("10_jka6k")
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/IngredientsOverlay" unique_id=486545134]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 116.0
-offset_top = -144.0
-offset_right = 319.0
-offset_bottom = 178.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 437.0
+offset_top = 33.0
+offset_right = 640.0
+offset_bottom = 355.0
 color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
 [node name="CancelButton" type="Button" parent="Overlays/IngredientsOverlay" unique_id=1317162803]
@@ -155,19 +143,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 292.0
-offset_top = -138.0
-offset_right = 311.0
-offset_bottom = -107.0
+offset_left = 293.0
+offset_top = -141.0
+offset_right = 312.0
+offset_bottom = -110.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "X"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Overlays/IngredientsOverlay" unique_id=677144390]
 offset_left = 445.0
-offset_top = 80.0
+offset_top = 75.0
 offset_right = 633.0
-offset_bottom = 350.0
+offset_bottom = 345.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlays/IngredientsOverlay/ScrollContainer" unique_id=1810388603]
 layout_mode = 2
