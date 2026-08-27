@@ -30,8 +30,11 @@ dishes = [NodePath("Dishes/DishButton1"), NodePath("Dishes/DishButton2"), NodePa
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1740705326]
 texture_filter = 1
-offset_right = 640.0
-offset_bottom = 360.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_eixuh")
 metadata/_edit_lock_ = true
 
@@ -340,6 +343,43 @@ offset_right = 51.0
 offset_bottom = 358.0
 theme_override_font_sizes/font_size = 10
 text = "Menu"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1903280526]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1518122253]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page1" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=236565776]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page2" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1206943279]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page3" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1390564020]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page4" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=2098252340]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page5" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=2049317344]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page6" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1304674766]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="refresh_ingredients" from="Dishes/DishButton1" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton2" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
