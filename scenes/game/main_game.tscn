@@ -26,7 +26,7 @@ region = Rect2(0, 0, 31, 37)
 
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_cn0rj")
-dishes = [NodePath("DishButton1"), NodePath("DishButton2"), NodePath("DishButton3"), NodePath("DishButton4"), NodePath("DishButton5")]
+dishes = [NodePath("Dishes/DishButton1"), NodePath("Dishes/DishButton2"), NodePath("Dishes/DishButton3"), NodePath("Dishes/DishButton4"), NodePath("Dishes/DishButton5")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1740705326]
 texture_filter = 1
@@ -34,41 +34,45 @@ offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("2_eixuh")
 
-[node name="DishButton1" parent="." unique_id=415389592 instance=ExtResource("2_xgagw")]
+[node name="Dishes" type="Node" parent="." unique_id=1007331144]
+
+[node name="DishButton1" parent="Dishes" unique_id=415389592 instance=ExtResource("2_xgagw")]
 offset_left = 255.0
 offset_top = 286.0
 offset_right = 298.0
 offset_bottom = 326.0
 
-[node name="DishButton2" parent="." unique_id=1160370312 instance=ExtResource("2_xgagw")]
+[node name="DishButton2" parent="Dishes" unique_id=1160370312 instance=ExtResource("2_xgagw")]
 offset_left = 337.0
 offset_top = 285.0
 offset_right = 380.0
 offset_bottom = 325.0
 dish = ExtResource("3_eixuh")
 
-[node name="DishButton3" parent="." unique_id=1980203305 instance=ExtResource("2_xgagw")]
+[node name="DishButton3" parent="Dishes" unique_id=1980203305 instance=ExtResource("2_xgagw")]
 offset_left = 97.0
 offset_top = 286.0
 offset_right = 140.0
 offset_bottom = 326.0
 dish = ExtResource("4_v72ow")
 
-[node name="DishButton4" parent="." unique_id=731125659 instance=ExtResource("2_xgagw")]
+[node name="DishButton4" parent="Dishes" unique_id=731125659 instance=ExtResource("2_xgagw")]
 offset_left = 176.0
 offset_top = 288.0
 offset_right = 219.0
 offset_bottom = 328.0
 dish = ExtResource("5_ccb4r")
 
-[node name="DishButton5" parent="." unique_id=1334535440 instance=ExtResource("2_xgagw")]
+[node name="DishButton5" parent="Dishes" unique_id=1334535440 instance=ExtResource("2_xgagw")]
 offset_left = 417.0
 offset_top = 287.0
 offset_right = 460.0
 offset_bottom = 327.0
 dish = ExtResource("6_stils")
 
-[node name="Simon" parent="." unique_id=848693386 instance=ExtResource("7_mssxc")]
+[node name="Cooks" type="Node" parent="." unique_id=1674559037]
+
+[node name="Simon" parent="Cooks" unique_id=848693386 instance=ExtResource("7_mssxc")]
 offset_left = 236.0
 offset_top = 176.0
 offset_right = 271.0
@@ -76,14 +80,14 @@ offset_bottom = 218.0
 texture_normal = ExtResource("10_ccb4r")
 cook_data = ExtResource("8_dp4e7")
 
-[node name="Rose" parent="." unique_id=932202432 instance=ExtResource("7_mssxc")]
+[node name="Rose" parent="Cooks" unique_id=932202432 instance=ExtResource("7_mssxc")]
 offset_left = 192.0
 offset_top = 196.0
 offset_right = 211.0
 offset_bottom = 228.0
 texture_normal = ExtResource("9_v72ow")
 
-[node name="Peter" parent="." unique_id=1838810257 instance=ExtResource("7_mssxc")]
+[node name="Peter" parent="Cooks" unique_id=1838810257 instance=ExtResource("7_mssxc")]
 offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
@@ -336,14 +340,14 @@ offset_bottom = 358.0
 theme_override_font_sizes/font_size = 10
 text = "Menu"
 
-[connection signal="refresh_ingredients" from="DishButton1" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="refresh_ingredients" from="DishButton2" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="refresh_ingredients" from="DishButton3" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="refresh_ingredients" from="DishButton4" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="refresh_ingredients" from="DishButton5" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="button_up" from="Simon" to="Overlays/Cook2Overlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="Rose" to="Overlays/Cook1Overlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="Peter" to="Overlays/Cook3Overlay" method="_on_visibility_button_up"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton1" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton2" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton3" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton4" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton5" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
+[connection signal="button_up" from="Cooks/Simon" to="Overlays/Cook2Overlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Rose" to="Overlays/Cook1Overlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Peter" to="Overlays/Cook3Overlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
 [connection signal="button_up" from="BookButton" to="Overlays/BookOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="TipOffButton" to="Overlays/TipOffOverlay" method="_on_visibility_button_up"]
