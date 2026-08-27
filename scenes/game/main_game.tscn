@@ -33,6 +33,7 @@ texture_filter = 1
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("2_eixuh")
+metadata/_edit_lock_ = true
 
 [node name="Dishes" type="Node" parent="." unique_id=1007331144]
 
@@ -275,60 +276,57 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "X"
 
-[node name="Cook1Overlay" type="CanvasLayer" parent="Overlays" unique_id=892935395]
-visible = false
+[node name="RoseStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=892935395]
 script = ExtResource("10_jka6k")
 
-[node name="ColorRect" type="ColorRect" parent="Overlays/Cook1Overlay" unique_id=705706584]
-offset_left = 19.0
-offset_top = 92.0
-offset_right = 189.0
-offset_bottom = 209.0
+[node name="ColorRect" type="ColorRect" parent="Overlays/RoseStatementOverlay" unique_id=705706584]
+offset_left = 165.0
+offset_top = 57.0
+offset_right = 335.0
+offset_bottom = 174.0
 color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/Cook1Overlay" unique_id=1186643933]
-offset_left = 24.0
-offset_top = 97.0
-offset_right = 184.0
-offset_bottom = 203.0
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/RoseStatementOverlay" unique_id=1186643933]
+offset_left = 170.0
+offset_top = 62.0
+offset_right = 330.0
+offset_bottom = 168.0
 script = ExtResource("13_20abi")
 cook_data = ExtResource("14_h2va7")
 
-[node name="Cook2Overlay" type="CanvasLayer" parent="Overlays" unique_id=2046572807]
-visible = false
+[node name="SimonStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=2046572807]
 script = ExtResource("10_jka6k")
 
-[node name="ColorRect" type="ColorRect" parent="Overlays/Cook2Overlay" unique_id=1816286435]
-offset_left = 230.0
-offset_top = 91.0
-offset_right = 400.0
-offset_bottom = 208.0
+[node name="ColorRect" type="ColorRect" parent="Overlays/SimonStatementOverlay" unique_id=1816286435]
+offset_left = 334.0
+offset_top = 97.0
+offset_right = 504.0
+offset_bottom = 214.0
 color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/Cook2Overlay" unique_id=941605190]
-offset_left = 235.0
-offset_top = 96.0
-offset_right = 395.0
-offset_bottom = 201.0
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/SimonStatementOverlay" unique_id=941605190]
+offset_left = 339.0
+offset_top = 102.0
+offset_right = 499.0
+offset_bottom = 207.0
 script = ExtResource("13_20abi")
 cook_data = ExtResource("8_dp4e7")
 
-[node name="Cook3Overlay" type="CanvasLayer" parent="Overlays" unique_id=578976360]
-visible = false
+[node name="PeterStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=578976360]
 script = ExtResource("10_jka6k")
 
-[node name="ColorRect" type="ColorRect" parent="Overlays/Cook3Overlay" unique_id=422168759]
-offset_left = 447.0
-offset_top = 90.0
-offset_right = 617.0
-offset_bottom = 208.0
+[node name="ColorRect" type="ColorRect" parent="Overlays/PeterStatementOverlay" unique_id=422168759]
+offset_left = 5.0
+offset_top = 95.0
+offset_right = 175.0
+offset_bottom = 213.0
 color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/Cook3Overlay" unique_id=2135914515]
-offset_left = 453.0
-offset_top = 96.0
-offset_right = 613.0
-offset_bottom = 201.0
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/PeterStatementOverlay" unique_id=2135914515]
+offset_left = 11.0
+offset_top = 101.0
+offset_right = 171.0
+offset_bottom = 206.0
 script = ExtResource("13_20abi")
 cook_data = ExtResource("9_wyrr4")
 
@@ -345,9 +343,9 @@ text = "Menu"
 [connection signal="refresh_ingredients" from="Dishes/DishButton3" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton4" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton5" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="button_up" from="Cooks/Simon" to="Overlays/Cook2Overlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="Cooks/Rose" to="Overlays/Cook1Overlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="Cooks/Peter" to="Overlays/Cook3Overlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Simon" to="Overlays/SimonStatementOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Rose" to="Overlays/RoseStatementOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Peter" to="Overlays/PeterStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
 [connection signal="button_up" from="BookButton" to="Overlays/BookOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="TipOffButton" to="Overlays/TipOffOverlay" method="_on_visibility_button_up"]
