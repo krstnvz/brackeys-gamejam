@@ -17,9 +17,18 @@
 [ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/components/IngredientButton.tscn" id="12_f03l8"]
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/peter.png" id="12_stils"]
 [ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="13_20abi"]
+[ext_resource type="Texture2D" uid="uid://cflu6i1ewl361" path="res://sprites/UI/buttons/fancy_button_normal.tres" id="14_3xlgy"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/rose.tres" id="14_h2va7"]
+[ext_resource type="Texture2D" uid="uid://db28wicnveula" path="res://sprites/UI/tabs/poisons_tab_atlas.tres" id="14_mssxc"]
+[ext_resource type="Texture2D" uid="uid://ce1pgtdoroedg" path="res://sprites/UI/tabs/tip_off_tab_atlas.tres" id="14_stils"]
+[ext_resource type="Texture2D" uid="uid://bhelpju66iq06" path="res://sprites/UI/buttons/fancy_button_pressed.tres" id="15_2ddi8"]
+[ext_resource type="Texture2D" uid="uid://ckdy18ldb4la4" path="res://sprites/UI/tabs/poisons_tab_selected_atlas.tres" id="15_jka6k"]
+[ext_resource type="Texture2D" uid="uid://ds0s0xmph5nbr" path="res://sprites/UI/buttons/fancy_button_hover.tres" id="16_8p107"]
+[ext_resource type="Texture2D" uid="uid://m6lbiacf1efa" path="res://sprites/UI/tabs/dish_tab_atlas.tres" id="16_dp4e7"]
+[ext_resource type="Texture2D" uid="uid://cgnrx0bx648aq" path="res://sprites/UI/tabs/tip_off_tab_selected_atlas.tres" id="16_wyrr4"]
+[ext_resource type="Texture2D" uid="uid://dpjbpa7hysqgm" path="res://sprites/UI/tabs/dish_tab_pressed_atlas.tres" id="19_refti"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ccb4r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2va7"]
 resource_local_to_scene = true
 atlas = ExtResource("12_stils")
 region = Rect2(0, 0, 31, 37)
@@ -41,37 +50,37 @@ metadata/_edit_lock_ = true
 [node name="Dishes" type="Node" parent="." unique_id=1007331144]
 
 [node name="DishButton1" parent="Dishes" unique_id=415389592 instance=ExtResource("2_xgagw")]
-offset_left = 255.0
-offset_top = 286.0
-offset_right = 298.0
-offset_bottom = 326.0
+offset_left = 206.0
+offset_top = 262.0
+offset_right = 249.0
+offset_bottom = 302.0
 
 [node name="DishButton2" parent="Dishes" unique_id=1160370312 instance=ExtResource("2_xgagw")]
-offset_left = 337.0
-offset_top = 285.0
-offset_right = 380.0
-offset_bottom = 325.0
+offset_left = 277.0
+offset_top = 262.0
+offset_right = 320.0
+offset_bottom = 302.0
 dish = ExtResource("3_eixuh")
 
 [node name="DishButton3" parent="Dishes" unique_id=1980203305 instance=ExtResource("2_xgagw")]
-offset_left = 97.0
-offset_top = 286.0
-offset_right = 140.0
-offset_bottom = 326.0
+offset_left = 58.0
+offset_top = 261.0
+offset_right = 101.0
+offset_bottom = 301.0
 dish = ExtResource("4_v72ow")
 
 [node name="DishButton4" parent="Dishes" unique_id=731125659 instance=ExtResource("2_xgagw")]
-offset_left = 176.0
-offset_top = 288.0
-offset_right = 219.0
-offset_bottom = 328.0
+offset_left = 130.0
+offset_top = 262.0
+offset_right = 173.0
+offset_bottom = 302.0
 dish = ExtResource("5_ccb4r")
 
 [node name="DishButton5" parent="Dishes" unique_id=1334535440 instance=ExtResource("2_xgagw")]
-offset_left = 417.0
-offset_top = 287.0
-offset_right = 460.0
-offset_bottom = 327.0
+offset_left = 350.0
+offset_top = 262.0
+offset_right = 393.0
+offset_bottom = 302.0
 dish = ExtResource("6_stils")
 
 [node name="Cooks" type="Node" parent="." unique_id=1674559037]
@@ -96,33 +105,67 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_ccb4r")
+texture_normal = SubResource("AtlasTexture_h2va7")
 cook_data = ExtResource("9_wyrr4")
 
-[node name="SubmitButton" type="Button" parent="." unique_id=1139052228]
-offset_left = 572.0
-offset_top = 329.0
-offset_right = 640.0
-offset_bottom = 360.0
-text = "SUBMIT"
+[node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
+texture_filter = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -189.0
+offset_top = -69.0
+offset_right = -103.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("14_3xlgy")
+texture_pressed = ExtResource("15_2ddi8")
+texture_hover = ExtResource("16_8p107")
 
-[node name="BookButton" type="Button" parent="." unique_id=386406741]
-offset_left = 87.0
-offset_right = 218.0
-offset_bottom = 31.0
-text = "Book of Poisons"
+[node name="BookButton" type="TextureButton" parent="." unique_id=182501037]
+texture_filter = 1
+offset_left = 606.0
+offset_top = 76.0
+offset_right = 623.0
+offset_bottom = 110.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = ExtResource("14_mssxc")
+texture_pressed = ExtResource("15_jka6k")
+texture_hover = ExtResource("15_jka6k")
 
-[node name="TipOffButton" type="Button" parent="." unique_id=338117159]
-offset_left = 17.0
-offset_right = 77.0
-offset_bottom = 31.0
-text = "Tip Off"
+[node name="TipOffButton" type="TextureButton" parent="." unique_id=2060027554]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 2.0
+offset_right = -17.0
+offset_bottom = 38.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+size_flags_horizontal = 8
+toggle_mode = true
+texture_normal = ExtResource("14_stils")
+texture_pressed = ExtResource("16_wyrr4")
+texture_hover = ExtResource("16_wyrr4")
 
-[node name="IngredientsButton" type="Button" parent="." unique_id=77375484]
-offset_left = 539.0
-offset_right = 640.0
-offset_bottom = 37.0
-text = "Ingredients"
+[node name="IngredientsButton" type="TextureButton" parent="." unique_id=1830757112]
+texture_filter = 1
+offset_left = 606.0
+offset_top = 146.0
+offset_right = 623.0
+offset_bottom = 171.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = ExtResource("16_dp4e7")
+texture_pressed = ExtResource("19_refti")
+texture_hover = ExtResource("19_refti")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 

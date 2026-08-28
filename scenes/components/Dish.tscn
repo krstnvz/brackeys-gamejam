@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://blwabtrrbq1hb" path="res://scripts/dishes/dish.gd" id="1_fhlt1"]
 [ext_resource type="Resource" uid="uid://uwp5wlphx4uq" path="res://data objects/dishes/sweet_porridge.tres" id="2_x5gce"]
+[ext_resource type="Texture2D" uid="uid://buoqyvggxa0em" path="res://sprites/UI/toggle_off.tres" id="3_pkfoj"]
+[ext_resource type="Texture2D" uid="uid://bdbwr4sdx6lpo" path="res://sprites/UI/toggle_on.tres" id="4_f0vex"]
 
 [node name="DishButton" type="Button" unique_id=415389592]
 offset_left = -22.0
@@ -12,22 +14,24 @@ text = "Dish"
 script = ExtResource("1_fhlt1")
 dish = ExtResource("2_x5gce")
 
-[node name="CheckButton" type="CheckButton" parent="." unique_id=1440540069]
+[node name="CheckButton" type="TextureButton" parent="." unique_id=700562607]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.0
-offset_top = 21.0
-offset_right = 22.0
-offset_bottom = 45.0
+offset_left = -13.5
+offset_top = 22.0
+offset_right = 0.5
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/button_checked_color = Color(0.78431374, 0.9607843, 0.06666667, 1)
-theme_override_colors/button_unchecked_color = Color(0.8097459, 0, 0.25701568, 1)
-text = "safe?"
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = ExtResource("3_pkfoj")
+texture_pressed = ExtResource("4_f0vex")
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
