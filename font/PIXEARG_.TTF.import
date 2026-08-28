@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b7f6el4h5bch6"
-path="res://.godot/imported/PixelifySans-VariableFont_wght.ttf-15c9cc92062e0d113086bfb6efa360d0.fontdata"
+uid="uid://8bhkll3l5g2x"
+path="res://.godot/imported/PIXEARG_.TTF-cc8b300f4f6664f3111764eef8115c8e.fontdata"
 
 [deps]
 
-source_file="res://font/PixelifySans-VariableFont_wght.ttf"
-dest_files=["res://.godot/imported/PixelifySans-VariableFont_wght.ttf-15c9cc92062e0d113086bfb6efa360d0.fontdata"]
+source_file="res://font/PIXEARG_.TTF"
+dest_files=["res://.godot/imported/PIXEARG_.TTF-cc8b300f4f6664f3111764eef8115c8e.fontdata"]
 
 [params]
 
@@ -35,10 +35,7 @@ preload=[{
 "glyphs": [],
 "name": "New Configuration",
 &"size": Vector2i(8, 0),
-&"variation_embolden": 0.0,
-&"variation_opentype": {
-2003265652: 400
-}
+&"variation_embolden": 0.0
 }]
 language_support={}
 script_support={}
