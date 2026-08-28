@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" format=3 uid="uid://bdbwr4sdx6lpo"]
-
-[ext_resource type="Texture2D" uid="uid://blbu554ro8wrk" path="res://sprites/UI/toggle.png" id="1_f8vs8"]
-
-[resource]
-atlas = ExtResource("1_f8vs8")
-region = Rect2(0, 5, 14, 5)
