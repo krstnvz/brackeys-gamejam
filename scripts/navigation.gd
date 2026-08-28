@@ -1,7 +1,7 @@
 extends Node
 
 var menu_scene: PackedScene = preload("res://scenes/game/main_menu.tscn")
-var game_scene: PackedScene = preload("res://scenes/game/main_game.tscn")
+var game_scene: PackedScene = preload("res://scenes/game/level_1.tscn")
 
 var current_scene: Node = null
 var root: Node
