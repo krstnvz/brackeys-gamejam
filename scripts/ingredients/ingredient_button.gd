@@ -1,4 +1,4 @@
-extends CheckButton
+extends Label
 
 signal item_toggled
 
@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 
 func add_ingredient(item):
 	model = item
-	self.text = IngredientsData.Ingredient.keys()[model.ingredient]
-	self.button_pressed = model.is_checked
+	self.text = item.get_name()
+	$TextureButton.button_pressed = model.is_checked
 	
 func _on_toggled(toggled_on: bool) -> void:
 	model.is_checked = toggled_on

@@ -60,3 +60,68 @@ func crossIngredient(ingredient):
 class IngredientModel:
 	var ingredient: Ingredient
 	var is_checked: bool = false
+	
+	func get_name() -> String:
+		match ingredient:
+			Ingredient.SUGAR:
+				return "Sugar"
+			Ingredient.EGG:
+				return "Egg"
+			Ingredient.MILK:
+				return "Milk"
+			Ingredient.BUTTER:
+				return "Butter"
+			Ingredient.SAFFRON:
+				return "Saffron"
+			Ingredient.OATS:
+				return "Oats"
+			Ingredient.SALMON:
+				return "Salmon"
+			Ingredient.LEMON:
+				return "Lemon"
+			Ingredient.DILL:
+				return "Dill"
+			Ingredient.SALT:
+				return "Salt"
+			Ingredient.CHICKEN:
+				return "Chicken"
+			Ingredient.CARROT:
+				return "Carrot"
+			Ingredient.PARSNIP:
+				return "Parsnip"
+			Ingredient.ONION:
+				return "Onion"
+			Ingredient.ROSEMARY:
+				return "Rosemary"
+			Ingredient.PEAR:
+				return "Pear"
+			Ingredient.CINNAMON:
+				return "Cinnamon"
+			Ingredient.HONEY:
+				return "Honey"
+			Ingredient.RASPBERRY:
+				return "Raspberry"
+			Ingredient.STRAWBERRY:
+				return "Strawberry"
+			Ingredient.CREAM_CHEESE:
+				return "Cream Cheese"
+			Ingredient.GOAT_CHEESE:
+				return "Goat Cheese"
+			Ingredient.OLIVE_OIL:
+				return "Olive Oil"
+			Ingredient.SPINACH:
+				return "Spinach"
+			Ingredient.WALNUT:
+				return "Walnut"
+			Ingredient.VINEGAR:
+				return "Vinegar"
+			Ingredient.GARLIC:
+				return "Garlic"
+			Ingredient.CREAM:
+				return "Cream"
+			Ingredient.YOGURT:
+				return "Yogurt"
+			Ingredient.BLUEBERRY:
+				return "Blueberry"
+			_:
+				return "NONE"

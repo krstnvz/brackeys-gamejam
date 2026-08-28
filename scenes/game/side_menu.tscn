@@ -3,16 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bquhnodu5r17i" path="res://sprites/UI/page.png" id="1_sfjtl"]
 [ext_resource type="Texture2D" uid="uid://dgvnal4xcchrh" path="res://sprites/UI/tabs/tabs.png" id="2_7smlm"]
 [ext_resource type="Script" uid="uid://bul2aj0i40rbw" path="res://scripts/side_menu.gd" id="2_tprfx"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tprfx"]
-atlas = ExtResource("2_7smlm")
-region = Rect2(17, 0, 17, 30)
-margin = Rect2(5, 0, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6b44u"]
-atlas = ExtResource("2_7smlm")
-region = Rect2(17, 0, 17, 30)
-margin = Rect2(3, 0, 0, 0)
+[ext_resource type="Theme" uid="uid://dpiy3ra2b8o0n" path="res://scroll_bar_theme.tres" id="4_5tn8c"]
+[ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredients/ingredient_list.gd" id="4_8bece"]
+[ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/components/IngredientButton.tscn" id="5_5tn8c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bece"]
 atlas = ExtResource("2_7smlm")
@@ -22,16 +15,6 @@ margin = Rect2(5, 0, 0, 0)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tn8c"]
 atlas = ExtResource("2_7smlm")
 region = Rect2(0, 0, 17, 36)
-margin = Rect2(3, 0, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sfjtl"]
-atlas = ExtResource("2_7smlm")
-region = Rect2(34, 0, 17, 22)
-margin = Rect2(5, 0, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5h4h"]
-atlas = ExtResource("2_7smlm")
-region = Rect2(34, 0, 17, 22)
 margin = Rect2(3, 0, 0, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ag36e"]
@@ -44,6 +27,26 @@ atlas = ExtResource("2_7smlm")
 region = Rect2(51, 0, 17, 44)
 margin = Rect2(3, 0, 0, 0)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tprfx"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(17, 0, 17, 30)
+margin = Rect2(5, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b44u"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(17, 0, 17, 30)
+margin = Rect2(3, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfjtl"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(34, 0, 17, 22)
+margin = Rect2(5, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5h4h"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(34, 0, 17, 22)
+margin = Rect2(3, 0, 0, 0)
+
 [node name="SideMenu" type="TextureRect" unique_id=2017203291]
 texture_filter = 1
 offset_left = 34.0
@@ -52,18 +55,6 @@ offset_bottom = 137.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_sfjtl")
 script = ExtResource("2_tprfx")
-
-[node name="BookButton" type="TextureButton" parent="." unique_id=156124191]
-texture_filter = 1
-layout_mode = 1
-offset_left = -17.5
-offset_top = 77.5
-offset_right = -0.5
-offset_bottom = 107.5
-toggle_mode = true
-texture_normal = SubResource("AtlasTexture_tprfx")
-texture_pressed = SubResource("AtlasTexture_6b44u")
-texture_hover = SubResource("AtlasTexture_6b44u")
 
 [node name="TipOffButton" type="TextureButton" parent="." unique_id=485438522]
 texture_filter = 1
@@ -77,6 +68,28 @@ texture_normal = SubResource("AtlasTexture_8bece")
 texture_pressed = SubResource("AtlasTexture_5tn8c")
 texture_hover = SubResource("AtlasTexture_5tn8c")
 
+[node name="IngredientButton" type="TextureButton" parent="." unique_id=1850166629]
+texture_filter = 1
+layout_mode = 0
+offset_left = -17.0
+offset_top = 32.5
+offset_bottom = 76.5
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ag36e")
+texture_pressed = SubResource("AtlasTexture_6ssl5")
+texture_hover = SubResource("AtlasTexture_6ssl5")
+
+[node name="BookButton" type="TextureButton" parent="." unique_id=156124191]
+texture_filter = 1
+layout_mode = 1
+offset_left = -17.0
+offset_top = 77.5
+offset_bottom = 107.5
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_tprfx")
+texture_pressed = SubResource("AtlasTexture_6b44u")
+texture_hover = SubResource("AtlasTexture_6b44u")
+
 [node name="DishButton" type="TextureButton" parent="." unique_id=900945569]
 texture_filter = 1
 layout_mode = 1
@@ -88,23 +101,30 @@ texture_normal = SubResource("AtlasTexture_sfjtl")
 texture_pressed = SubResource("AtlasTexture_j5h4h")
 texture_hover = SubResource("AtlasTexture_j5h4h")
 
-[node name="IngredientButton" type="TextureButton" parent="." unique_id=1850166629]
-texture_filter = 1
-layout_mode = 0
-offset_left = -17.5
-offset_top = 32.5
-offset_right = -0.5
-offset_bottom = 76.5
-toggle_mode = true
-texture_normal = SubResource("AtlasTexture_ag36e")
-texture_pressed = SubResource("AtlasTexture_6ssl5")
-texture_hover = SubResource("AtlasTexture_6ssl5")
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1233063819]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.08400001
+anchor_right = 0.09
+anchor_bottom = 0.08400001
+offset_top = -0.0080013275
+offset_right = 82.0
+offset_bottom = 113.492
+theme = ExtResource("4_5tn8c")
+horizontal_scroll_mode = 0
 
-[connection signal="button_up" from="BookButton" to="." method="_on_book_button_button_up"]
-[connection signal="toggled" from="BookButton" to="." method="_on_book_button_toggled"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=236219862]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_8bece")
+ingredient_button = ExtResource("5_5tn8c")
+
 [connection signal="button_up" from="TipOffButton" to="." method="_on_tip_off_button_button_up"]
 [connection signal="toggled" from="TipOffButton" to="." method="_on_tip_off_button_toggled"]
-[connection signal="button_up" from="DishButton" to="." method="_on_dish_button_button_up"]
-[connection signal="toggled" from="DishButton" to="." method="_on_dish_button_toggled"]
 [connection signal="button_up" from="IngredientButton" to="." method="_on_ingredient_button_button_up"]
 [connection signal="toggled" from="IngredientButton" to="." method="_on_ingredient_button_toggled"]
+[connection signal="button_up" from="BookButton" to="." method="_on_book_button_button_up"]
+[connection signal="toggled" from="BookButton" to="." method="_on_book_button_toggled"]
+[connection signal="button_up" from="DishButton" to="." method="_on_dish_button_button_up"]
+[connection signal="toggled" from="DishButton" to="." method="_on_dish_button_toggled"]

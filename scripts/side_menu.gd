@@ -1,7 +1,9 @@
 extends TextureRect
 
+@onready var ingredients_container: ScrollContainer = $ScrollContainer
+
 enum Tab {
-	BOOK, TIP_OFF, DISH, INGREDIENT, NONE
+	TIP_OFF, INGREDIENT, BOOK, DISH, NONE
 }
 
 var is_menu_open: bool = false
@@ -11,10 +13,10 @@ var buttons: Array[TextureButton] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	buttons = [
-		$BookButton,
 		$TipOffButton,
+		$IngredientButton,
+		$BookButton,
 		$DishButton,
-		$IngredientButton
 	]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,29 +57,31 @@ func trigger_tab(tab: Tab):
 		
 	selected_tab = tab
 	update_buttons_toggle_state(selected_tab)
-
-func _on_book_button_button_up() -> void:
-	trigger_tab(Tab.BOOK)
-
+	
 func _on_tip_off_button_button_up() -> void:
 	trigger_tab(Tab.TIP_OFF)
-
-func _on_dish_button_button_up() -> void:
-	trigger_tab(Tab.DISH)
+	ingredients_container.visible = false
 
 func _on_ingredient_button_button_up() -> void:
 	trigger_tab(Tab.INGREDIENT)
+	ingredients_container.visible = true
 
-# Not Used
+func _on_book_button_button_up() -> void:
+	trigger_tab(Tab.BOOK)
+	ingredients_container.visible = false
 
-func _on_book_button_toggled(toggled_on: bool) -> void:
-	pass
-	
+func _on_dish_button_button_up() -> void:
+	trigger_tab(Tab.DISH)
+	ingredients_container.visible = false
+
 func _on_tip_off_button_toggled(toggled_on: bool) -> void:
 	pass
 
-func _on_dish_button_toggled(toggled_on: bool) -> void:
+func _on_ingredient_button_toggled(toggled_on: bool) -> void:
+	pass
+	
+func _on_book_button_toggled(toggled_on: bool) -> void:
 	pass
 
-func _on_ingredient_button_toggled(toggled_on: bool) -> void:
+func _on_dish_button_toggled(toggled_on: bool) -> void:
 	pass

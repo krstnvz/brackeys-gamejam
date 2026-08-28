@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://dpiy3ra2b8o0n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l407p"]
+bg_color = Color(0.9490196, 0.72156864, 0.53333336, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7s2qj"]
+content_margin_left = 2.0
+content_margin_top = 0.0
+content_margin_right = 2.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 0.93333334, 0.84000003, 1)
+
+[resource]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_l407p")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_l407p")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_l407p")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_7s2qj")
