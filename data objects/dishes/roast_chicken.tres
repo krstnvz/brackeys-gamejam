@@ -1,10 +1,21 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://b5j3dxsi5ixmf"]
 
+[ext_resource type="Texture2D" uid="uid://b3gosdlvb27pc" path="res://sprites/dishes/chicken.png" id="1_15ubm"]
 [ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_twulo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5pp0"]
+atlas = ExtResource("1_15ubm")
+region = Rect2(25, 0, 25, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmx2b"]
+atlas = ExtResource("1_15ubm")
+region = Rect2(0, 0, 25, 16)
 
 [resource]
 script = ExtResource("1_twulo")
 name = "Roast Chicken"
 cook = 1
 ingredients = Array[int]([10, 11, 12, 13, 14, 3, 1])
+normal = SubResource("AtlasTexture_lmx2b")
+hightlight = SubResource("AtlasTexture_m5pp0")
 metadata/_custom_type_script = "uid://xbgs8haytcbq"

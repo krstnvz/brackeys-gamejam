@@ -1,6 +1,15 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://56cna5mxbnma"]
 
 [ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_3goxc"]
+[ext_resource type="Texture2D" uid="uid://dqa4vr1l0h4e6" path="res://sprites/dishes/cheesecake.png" id="1_d058o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r4dt"]
+atlas = ExtResource("1_d058o")
+region = Rect2(29, 0, 29, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85asg"]
+atlas = ExtResource("1_d058o")
+region = Rect2(0, 0, 29, 22)
 
 [resource]
 script = ExtResource("1_3goxc")
@@ -8,4 +17,6 @@ name = "Cheesecake"
 cook = 2
 ingredients = Array[int]([18, 19, 20, 1, 2, 0])
 poisoned = true
+normal = SubResource("AtlasTexture_85asg")
+hightlight = SubResource("AtlasTexture_4r4dt")
 metadata/_custom_type_script = "uid://xbgs8haytcbq"

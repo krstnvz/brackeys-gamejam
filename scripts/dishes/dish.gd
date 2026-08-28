@@ -1,12 +1,13 @@
 class_name Dish
-extends Button
+extends TextureButton
 
 signal refresh_ingredients
 
 @export var dish: DishData = null
 
 func _ready() -> void:
-	text = dish.name
+	texture_normal = dish.normal
+	texture_hover = dish.hightlight
 
 func _on_button_up() -> void:
 	print("\n" + dish.name)

@@ -8,7 +8,7 @@ func _ready() -> void:
 	self.texture_hover = cook_data.hightlight
 	
 	# Get the image from the texture normal
-	var image = texture_normal.get_image()
+	var image = texture_hover.get_image()
 	# Create the BitMap
 	var bitmap = BitMap.new()
 	# Fill it from the image alpha

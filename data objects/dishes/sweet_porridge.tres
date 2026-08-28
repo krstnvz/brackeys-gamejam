@@ -1,10 +1,21 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://uwp5wlphx4uq"]
 
 [ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_1log2"]
+[ext_resource type="Texture2D" uid="uid://b17x0dmhkgajg" path="res://sprites/dishes/porridge.png" id="1_re8bo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycv3l"]
+atlas = ExtResource("1_re8bo")
+region = Rect2(20, 0, 20, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i124i"]
+atlas = ExtResource("1_re8bo")
+region = Rect2(0, 0, 20, 17)
 
 [resource]
 script = ExtResource("1_1log2")
 name = "Sweet Porridge"
 ingredients = Array[int]([4, 0, 5, 1, 2])
 poisoned = true
+normal = SubResource("AtlasTexture_i124i")
+hightlight = SubResource("AtlasTexture_ycv3l")
 metadata/_custom_type_script = "uid://xbgs8haytcbq"
