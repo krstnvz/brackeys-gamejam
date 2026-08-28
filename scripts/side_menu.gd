@@ -35,6 +35,7 @@ func open_menu():
 	run_animation(target_position, 0.25)
 
 func close_menu():
+	selected_tab = Tab.NONE
 	is_menu_open = false
 	var target_position = self.position.x + (self.size.x * self.scale.x)
 	run_animation(target_position, 0.2)
@@ -54,9 +55,10 @@ func update_buttons_toggle_state(selected_tab: Tab):
 func trigger_tab(tab: Tab):
 	if selected_tab == Tab.NONE || selected_tab == tab:
 		toggle_menu()
-		
-	selected_tab = tab
-	update_buttons_toggle_state(selected_tab)
+	
+	if is_menu_open == true:
+		selected_tab = tab
+		update_buttons_toggle_state(selected_tab)
 	
 func _on_tip_off_button_button_up() -> void:
 	trigger_tab(Tab.TIP_OFF)
