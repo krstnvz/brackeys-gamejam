@@ -35,3 +35,5 @@ grow_vertical = 2
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_ndfg6")
 texture_pressed = SubResource("AtlasTexture_j5jj3")
+
+[connection signal="toggled" from="TextureButton" to="." method="_on_toggled"]

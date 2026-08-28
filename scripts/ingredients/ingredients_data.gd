@@ -105,6 +105,10 @@ class IngredientModel:
 
 var allIngredients: Array[IngredientModel] = []
 
+func get_sorted_ingredients() -> Array[IngredientModel]:
+	allIngredients.sort_custom(func(a,b): return a.get_name() < b.get_name())
+	return allIngredients
+
 func createAllIngredientsModel():
 	for ingredient in Ingredient.MAX_INGREDIENT:
 		var model = IngredientModel.new()

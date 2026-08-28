@@ -120,6 +120,7 @@ size_flags_horizontal = 3
 script = ExtResource("4_8bece")
 ingredient_button = ExtResource("5_5tn8c")
 
+[connection signal="refresh_ingredients_list" from="." to="ScrollContainer/VBoxContainer" method="_on_refresh_ingredients"]
 [connection signal="button_up" from="TipOffButton" to="." method="_on_tip_off_button_button_up"]
 [connection signal="toggled" from="TipOffButton" to="." method="_on_tip_off_button_toggled"]
 [connection signal="button_up" from="IngredientButton" to="." method="_on_ingredient_button_button_up"]
