@@ -1,14 +1,11 @@
 [gd_resource type="Resource" script_class="CookData" format=3 uid="uid://cmd7y583cyq1w"]
 
 [ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/cooks/cook_data.gd" id="1_mj3sb"]
-[ext_resource type="Texture2D" uid="uid://dcrblg5xh3rrd" path="res://sprites/cooks/rose.png" id="1_wwv8s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rcen"]
-atlas = ExtResource("1_wwv8s")
 region = Rect2(19, 0, 19, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yh7dn"]
-atlas = ExtResource("1_wwv8s")
 region = Rect2(0, 0, 19, 32)
 
 [resource]

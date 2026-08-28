@@ -5,4 +5,3 @@
 [resource]
 atlas = ExtResource("1_prain")
 region = Rect2(34, 0, 17, 25)
-margin = Rect2(5, 0, 0, 0)

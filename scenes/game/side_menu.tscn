@@ -1,12 +1,47 @@
 [gd_scene format=3 uid="uid://btaiju14nygip"]
 
-[ext_resource type="Texture2D" uid="uid://db28wicnveula" path="res://sprites/UI/tabs/poisons_tab_atlas.tres" id="1_5tn8c"]
 [ext_resource type="Texture2D" uid="uid://bquhnodu5r17i" path="res://sprites/UI/page.png" id="1_sfjtl"]
-[ext_resource type="Texture2D" uid="uid://ckdy18ldb4la4" path="res://sprites/UI/tabs/poisons_tab_selected_atlas.tres" id="2_sfjtl"]
-[ext_resource type="Texture2D" uid="uid://ce1pgtdoroedg" path="res://sprites/UI/tabs/tip_off_tab_atlas.tres" id="3_j5h4h"]
-[ext_resource type="Texture2D" uid="uid://cgnrx0bx648aq" path="res://sprites/UI/tabs/tip_off_tab_selected_atlas.tres" id="4_ag36e"]
-[ext_resource type="Texture2D" uid="uid://m6lbiacf1efa" path="res://sprites/UI/tabs/dish_tab_atlas.tres" id="5_6ssl5"]
-[ext_resource type="Texture2D" uid="uid://dpjbpa7hysqgm" path="res://sprites/UI/tabs/dish_tab_pressed_atlas.tres" id="6_j21qn"]
+[ext_resource type="Texture2D" uid="uid://dgvnal4xcchrh" path="res://sprites/UI/tabs/tabs.png" id="2_7smlm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tprfx"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(17, 0, 17, 30)
+margin = Rect2(5, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b44u"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(17, 0, 17, 30)
+margin = Rect2(3, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bece"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(0, 0, 17, 31)
+margin = Rect2(5, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tn8c"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(0, 0, 17, 36)
+margin = Rect2(3, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfjtl"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(34, 0, 17, 22)
+margin = Rect2(5, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5h4h"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(34, 0, 17, 22)
+margin = Rect2(3, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag36e"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(51, 0, 17, 44)
+margin = Rect2(5, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ssl5"]
+atlas = ExtResource("2_7smlm")
+region = Rect2(51, 0, 17, 44)
+margin = Rect2(3, 0, 0, 0)
 
 [node name="SideMenu" type="TextureRect" unique_id=2017203291]
 texture_filter = 1
@@ -19,32 +54,46 @@ texture = ExtResource("1_sfjtl")
 [node name="BookButton" type="TextureButton" parent="." unique_id=156124191]
 texture_filter = 1
 layout_mode = 1
-offset_left = -17.0
-offset_top = 38.0
-offset_bottom = 72.0
+offset_left = -17.5
+offset_top = 77.5
+offset_right = -0.5
+offset_bottom = 107.5
 toggle_mode = true
-texture_normal = ExtResource("1_5tn8c")
-texture_pressed = ExtResource("2_sfjtl")
-texture_hover = ExtResource("2_sfjtl")
+texture_normal = SubResource("AtlasTexture_tprfx")
+texture_pressed = SubResource("AtlasTexture_6b44u")
+texture_hover = SubResource("AtlasTexture_6b44u")
 
 [node name="TipOffButton" type="TextureButton" parent="." unique_id=485438522]
 texture_filter = 1
 layout_mode = 1
 offset_left = -17.0
-offset_bottom = 36.0
+offset_top = 1.0
+offset_bottom = 32.0
 size_flags_horizontal = 8
 toggle_mode = true
-texture_normal = ExtResource("3_j5h4h")
-texture_pressed = ExtResource("4_ag36e")
-texture_hover = ExtResource("4_ag36e")
+texture_normal = SubResource("AtlasTexture_8bece")
+texture_pressed = SubResource("AtlasTexture_5tn8c")
+texture_hover = SubResource("AtlasTexture_5tn8c")
 
 [node name="DishButton" type="TextureButton" parent="." unique_id=900945569]
 texture_filter = 1
 layout_mode = 1
 offset_left = -17.0
-offset_top = 74.0
-offset_bottom = 99.0
+offset_top = 108.5
+offset_bottom = 130.5
 toggle_mode = true
-texture_normal = ExtResource("5_6ssl5")
-texture_pressed = ExtResource("6_j21qn")
-texture_hover = ExtResource("6_j21qn")
+texture_normal = SubResource("AtlasTexture_sfjtl")
+texture_pressed = SubResource("AtlasTexture_j5h4h")
+texture_hover = SubResource("AtlasTexture_j5h4h")
+
+[node name="IngredientButton" type="TextureButton" parent="." unique_id=1850166629]
+texture_filter = 1
+layout_mode = 0
+offset_left = -17.5
+offset_top = 32.5
+offset_right = -0.5
+offset_bottom = 76.5
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ag36e")
+texture_pressed = SubResource("AtlasTexture_6ssl5")
+texture_hover = SubResource("AtlasTexture_6ssl5")
