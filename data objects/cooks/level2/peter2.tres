@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CookData" format=3 uid="uid://btebbeh6kducy"]
+
+[ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="1_j7fsm"]
+[ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/cooks/cook_data.gd" id="1_qwbmn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7fsm"]
+resource_local_to_scene = true
+atlas = ExtResource("1_j7fsm")
+region = Rect2(31, 0, 31, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0neim"]
+resource_local_to_scene = true
+atlas = ExtResource("1_j7fsm")
+region = Rect2(0, 0, 31, 37)
+
+[resource]
+script = ExtResource("1_qwbmn")
+cook = 2
+statement = "I started roasting the chicken before both Rose and Simon got to the kitchen, around 12 pm."
+normal = SubResource("AtlasTexture_0neim")
+hightlight = SubResource("AtlasTexture_j7fsm")
+metadata/_custom_type_script = "uid://bga07nfiordvr"

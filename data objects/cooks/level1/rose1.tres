@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CookData" format=3 uid="uid://cmd7y583cyq1w"]
+
+[ext_resource type="Texture2D" uid="uid://dcrblg5xh3rrd" path="res://sprites/cooks/rose.png" id="1_hv2i8"]
+[ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/cooks/cook_data.gd" id="2_scp34"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv2i8"]
+atlas = ExtResource("1_hv2i8")
+region = Rect2(19, 0, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scp34"]
+atlas = ExtResource("1_hv2i8")
+region = Rect2(0, 0, 19, 32)
+
+[resource]
+script = ExtResource("2_scp34")
+statement = "I prepared both my dishes this morning. I made sure to use only ingredients I opened myself."
+normal = SubResource("AtlasTexture_scp34")
+hightlight = SubResource("AtlasTexture_hv2i8")
+metadata/_custom_type_script = "uid://bga07nfiordvr"

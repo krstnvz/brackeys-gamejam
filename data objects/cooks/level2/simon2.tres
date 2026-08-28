@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CookData" format=3 uid="uid://brh6gayay8ujb"]
+
+[ext_resource type="Texture2D" uid="uid://i118rkoynqja" path="res://sprites/cooks/simon.png" id="1_a1koh"]
+[ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/cooks/cook_data.gd" id="1_vbdjo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g5iw"]
+atlas = ExtResource("1_a1koh")
+region = Rect2(35, 0, 35, 42)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jn2hx"]
+load_path = "res://.godot/imported/simon.png-2e1578ea0af8638799ddcaf80e4b4f86.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khpqy"]
+atlas = SubResource("CompressedTexture2D_jn2hx")
+region = Rect2(0, 0, 35, 42)
+
+[resource]
+script = ExtResource("1_vbdjo")
+cook = 1
+statement = "I started cooking after Rose finished and used open ingredients. I tasted all components of my dishes as I prepared them."
+normal = SubResource("AtlasTexture_khpqy")
+hightlight = SubResource("AtlasTexture_1g5iw")
+metadata/_custom_type_script = "uid://bga07nfiordvr"

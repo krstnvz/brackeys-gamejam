@@ -13,17 +13,17 @@
 [ext_resource type="Resource" uid="uid://56cna5mxbnma" path="res://data objects/dishes/cheesecake.tres" id="11_b8x0u"]
 [ext_resource type="PackedScene" uid="uid://rob1bfdbg0mr" path="res://scenes/components/Cook.tscn" id="12_n2cmi"]
 [ext_resource type="Texture2D" uid="uid://dd30ny51tit0s" path="res://sprites/cooks/simon_atlas.tres" id="13_1vy0b"]
-[ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://data objects/cooks/simon.tres" id="14_mdy4u"]
+[ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://data objects/cooks/level1/simon1.tres" id="14_mdy4u"]
 [ext_resource type="Texture2D" uid="uid://b4su2hogptwkk" path="res://sprites/cooks/rose_atlas.tres" id="15_1dcgg"]
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="16_nx801"]
-[ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/peter.tres" id="17_0upy3"]
+[ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/level1/peter1.tres" id="17_0upy3"]
 [ext_resource type="PackedScene" uid="uid://btaiju14nygip" path="res://scenes/game/side_menu.tscn" id="18_u0pkn"]
 [ext_resource type="Texture2D" uid="uid://vb52msgfi0k7" path="res://sprites/UI/buttons/fancy_button.png" id="20_15xv0"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_bjnfs"]
 [ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredients/ingredient_list.gd" id="28_1em48"]
 [ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/components/IngredientButton.tscn" id="29_l23sr"]
 [ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="30_wd80t"]
-[ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/rose.tres" id="31_q82fx"]
+[ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="31_q82fx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8i3vp"]
 resource_local_to_scene = true
@@ -128,6 +128,7 @@ anchor_right = 1.0
 offset_left = 0.0
 offset_right = 100.0
 grow_horizontal = 0
+script = null
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
 texture_filter = 1

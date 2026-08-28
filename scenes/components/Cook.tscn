@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rob1bfdbg0mr"]
 
 [ext_resource type="Script" uid="uid://cp1u3td3cmytw" path="res://scripts/cooks/cook.gd" id="1_n2yfk"]
-[ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/rose.tres" id="2_jvs2t"]
+[ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="2_jvs2t"]
 
 [node name="CookButton" type="TextureButton" unique_id=1168269928]
 texture_filter = 1
