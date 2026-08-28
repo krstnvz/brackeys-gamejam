@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="30_wd80t"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/rose.tres" id="31_q82fx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ygoml"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i3vp"]
 resource_local_to_scene = true
 atlas = ExtResource("16_nx801")
 region = Rect2(0, 0, 31, 37)
@@ -118,14 +118,16 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_ygoml")
+texture_normal = SubResource("AtlasTexture_8i3vp")
 cook_data = ExtResource("17_0upy3")
 
 [node name="SideMenu" parent="." unique_id=1656243602 instance=ExtResource("18_u0pkn")]
-offset_left = 639.0
-offset_top = -3.0
-offset_right = 739.0
-offset_bottom = 134.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 0.0
+offset_right = 100.0
+grow_horizontal = 0
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
 texture_filter = 1

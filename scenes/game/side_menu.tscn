@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bquhnodu5r17i" path="res://sprites/UI/page.png" id="1_sfjtl"]
 [ext_resource type="Texture2D" uid="uid://dgvnal4xcchrh" path="res://sprites/UI/tabs/tabs.png" id="2_7smlm"]
+[ext_resource type="Script" uid="uid://bul2aj0i40rbw" path="res://scripts/side_menu.gd" id="2_tprfx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tprfx"]
 atlas = ExtResource("2_7smlm")
@@ -50,6 +51,7 @@ offset_right = 134.0
 offset_bottom = 137.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_sfjtl")
+script = ExtResource("2_tprfx")
 
 [node name="BookButton" type="TextureButton" parent="." unique_id=156124191]
 texture_filter = 1
