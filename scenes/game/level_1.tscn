@@ -17,25 +17,30 @@
 [ext_resource type="Texture2D" uid="uid://b4su2hogptwkk" path="res://sprites/cooks/rose_atlas.tres" id="15_1dcgg"]
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="16_nx801"]
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/peter.tres" id="17_0upy3"]
-[ext_resource type="Texture2D" uid="uid://cflu6i1ewl361" path="res://sprites/UI/buttons/fancy_button_normal.tres" id="18_v233l"]
-[ext_resource type="Texture2D" uid="uid://bhelpju66iq06" path="res://sprites/UI/buttons/fancy_button_pressed.tres" id="19_lgneg"]
-[ext_resource type="Texture2D" uid="uid://ds0s0xmph5nbr" path="res://sprites/UI/buttons/fancy_button_hover.tres" id="20_b0o2m"]
-[ext_resource type="Texture2D" uid="uid://db28wicnveula" path="res://sprites/UI/tabs/poisons_tab_atlas.tres" id="21_83srn"]
-[ext_resource type="Texture2D" uid="uid://ckdy18ldb4la4" path="res://sprites/UI/tabs/poisons_tab_selected_atlas.tres" id="22_j4jt2"]
-[ext_resource type="Texture2D" uid="uid://ce1pgtdoroedg" path="res://sprites/UI/tabs/tip_off_tab_atlas.tres" id="23_xu371"]
-[ext_resource type="Texture2D" uid="uid://cgnrx0bx648aq" path="res://sprites/UI/tabs/tip_off_tab_selected_atlas.tres" id="24_22ht3"]
-[ext_resource type="Texture2D" uid="uid://m6lbiacf1efa" path="res://sprites/UI/tabs/dish_tab_atlas.tres" id="25_6jdf1"]
-[ext_resource type="Texture2D" uid="uid://dpjbpa7hysqgm" path="res://sprites/UI/tabs/dish_tab_pressed_atlas.tres" id="26_a80oh"]
+[ext_resource type="PackedScene" uid="uid://btaiju14nygip" path="res://scenes/game/side_menu.tscn" id="18_u0pkn"]
+[ext_resource type="Texture2D" uid="uid://vb52msgfi0k7" path="res://sprites/UI/buttons/fancy_button.png" id="20_15xv0"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_bjnfs"]
 [ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredients/ingredient_list.gd" id="28_1em48"]
 [ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/components/IngredientButton.tscn" id="29_l23sr"]
 [ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="30_wd80t"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/rose.tres" id="31_q82fx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q7sfi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygoml"]
 resource_local_to_scene = true
 atlas = ExtResource("16_nx801")
 region = Rect2(0, 0, 31, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xw7v"]
+atlas = ExtResource("20_15xv0")
+region = Rect2(0, 0, 86, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15xv0"]
+atlas = ExtResource("20_15xv0")
+region = Rect2(0, 38, 86, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0pkn"]
+atlas = ExtResource("20_15xv0")
+region = Rect2(0, 19, 86, 19)
 
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_djq2t")
@@ -113,8 +118,14 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_q7sfi")
+texture_normal = SubResource("AtlasTexture_ygoml")
 cook_data = ExtResource("17_0upy3")
+
+[node name="SideMenu" parent="." unique_id=1656243602 instance=ExtResource("18_u0pkn")]
+offset_left = 639.0
+offset_top = -3.0
+offset_right = 739.0
+offset_bottom = 134.0
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
 texture_filter = 1
@@ -130,50 +141,9 @@ offset_bottom = -50.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(2, 2)
-texture_normal = ExtResource("18_v233l")
-texture_pressed = ExtResource("19_lgneg")
-texture_hover = ExtResource("20_b0o2m")
-
-[node name="BookButton" type="TextureButton" parent="." unique_id=182501037]
-texture_filter = 1
-offset_left = 606.0
-offset_top = 76.0
-offset_right = 623.0
-offset_bottom = 110.0
-scale = Vector2(2, 2)
-toggle_mode = true
-texture_normal = ExtResource("21_83srn")
-texture_pressed = ExtResource("22_j4jt2")
-texture_hover = ExtResource("22_j4jt2")
-
-[node name="TipOffButton" type="TextureButton" parent="." unique_id=2060027554]
-texture_filter = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -34.0
-offset_top = 2.0
-offset_right = -17.0
-offset_bottom = 38.0
-grow_horizontal = 0
-scale = Vector2(2, 2)
-size_flags_horizontal = 8
-toggle_mode = true
-texture_normal = ExtResource("23_xu371")
-texture_pressed = ExtResource("24_22ht3")
-texture_hover = ExtResource("24_22ht3")
-
-[node name="IngredientsButton" type="TextureButton" parent="." unique_id=1830757112]
-texture_filter = 1
-offset_left = 606.0
-offset_top = 146.0
-offset_right = 623.0
-offset_bottom = 171.0
-scale = Vector2(2, 2)
-toggle_mode = true
-texture_normal = ExtResource("25_6jdf1")
-texture_pressed = ExtResource("26_a80oh")
-texture_hover = ExtResource("26_a80oh")
+texture_normal = SubResource("AtlasTexture_4xw7v")
+texture_pressed = SubResource("AtlasTexture_15xv0")
+texture_hover = SubResource("AtlasTexture_u0pkn")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 
@@ -429,9 +399,6 @@ offset_bottom = 40.0
 [connection signal="button_up" from="Cooks/Rose" to="Overlays/RoseStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Cooks/Peter" to="Overlays/PeterStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
-[connection signal="button_up" from="BookButton" to="Overlays/BookOverlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="TipOffButton" to="Overlays/TipOffOverlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="IngredientsButton" to="Overlays/IngredientsOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Overlays/IngredientsOverlay/CancelButton" to="Overlays/IngredientsOverlay" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="Overlays/TipOffOverlay/CancelButton" to="Overlays/TipOffOverlay" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="Overlays/BookOverlay/CancelButton" to="Overlays/BookOverlay" method="_on_cancel_button_button_up"]
