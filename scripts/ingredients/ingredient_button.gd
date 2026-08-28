@@ -19,4 +19,3 @@ func add_ingredient(item):
 	
 func _on_toggled(toggled_on: bool) -> void:
 	model.is_checked = toggled_on
-	item_toggled.emit()

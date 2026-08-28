@@ -358,6 +358,11 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_i1pni")
 texture_pressed = SubResource("AtlasTexture_djq2t")
 
+[connection signal="refresh_ingredients" from="Dishes/DishButton1" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton2" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton3" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton4" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton5" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
 [connection signal="button_up" from="Cooks/Simon" to="Overlays/SimonStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Cooks/Rose" to="Overlays/RoseStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Cooks/Peter" to="Overlays/PeterStatementOverlay" method="_on_visibility_button_up"]

@@ -1,5 +1,7 @@
 extends TextureRect
 
+signal refresh_ingredients_list
+
 @onready var ingredients_container: ScrollContainer = $ScrollContainer
 
 enum Tab {
@@ -87,3 +89,6 @@ func _on_book_button_toggled(toggled_on: bool) -> void:
 
 func _on_dish_button_toggled(toggled_on: bool) -> void:
 	pass
+
+func _on_request_dish_refresh_ingredients() -> void:
+	refresh_ingredients_list.emit()
