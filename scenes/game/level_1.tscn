@@ -121,14 +121,15 @@ offset_bottom = 223.0
 texture_normal = SubResource("AtlasTexture_8i3vp")
 cook_data = ExtResource("17_0upy3")
 
-[node name="SideMenu" parent="." unique_id=1656243602 instance=ExtResource("18_u0pkn")]
+[node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("18_u0pkn")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = 0.0
 offset_right = 100.0
 grow_horizontal = 0
-script = null
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
 texture_filter = 1
@@ -355,43 +356,6 @@ offset_right = 51.0
 offset_bottom = 358.0
 theme_override_font_sizes/font_size = 10
 text = "Menu"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1903280526]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1518122253]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Page1" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=236565776]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Page2" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1206943279]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Page3" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1390564020]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Page4" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=2098252340]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Page5" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=2049317344]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Page6" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1304674766]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [connection signal="refresh_ingredients" from="Dishes/DishButton1" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton2" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]

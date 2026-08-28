@@ -99,3 +99,12 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_ag36e")
 texture_pressed = SubResource("AtlasTexture_6ssl5")
 texture_hover = SubResource("AtlasTexture_6ssl5")
+
+[connection signal="button_up" from="BookButton" to="." method="_on_book_button_button_up"]
+[connection signal="toggled" from="BookButton" to="." method="_on_book_button_toggled"]
+[connection signal="button_up" from="TipOffButton" to="." method="_on_tip_off_button_button_up"]
+[connection signal="toggled" from="TipOffButton" to="." method="_on_tip_off_button_toggled"]
+[connection signal="button_up" from="DishButton" to="." method="_on_dish_button_button_up"]
+[connection signal="toggled" from="DishButton" to="." method="_on_dish_button_toggled"]
+[connection signal="button_up" from="IngredientButton" to="." method="_on_ingredient_button_button_up"]
+[connection signal="toggled" from="IngredientButton" to="." method="_on_ingredient_button_toggled"]
