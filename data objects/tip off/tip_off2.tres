@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TipOffData" format=3 uid="uid://cdpq4lm5fb0mp"]
+
+[ext_resource type="Script" uid="uid://c3413jhmlgo3d" path="res://scripts/data scripts/tipoff_data.gd" id="1_crsxe"]
+
+[resource]
+script = ExtResource("1_crsxe")
+lines = Array[String](["This morning, one ingredient was poisoned with a sweet toxin", "Exactly two of the prepared dishes are not safe to eat", " Exactly one cook is in lying to you"])
+metadata/_custom_type_script = "uid://c3413jhmlgo3d"

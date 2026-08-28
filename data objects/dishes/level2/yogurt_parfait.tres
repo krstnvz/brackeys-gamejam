@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DishData" format=3 uid="uid://ya5boiyr0tn7"]
+
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_g8yqi"]
+
+[resource]
+script = ExtResource("1_g8yqi")
+name = "Yogurt Parfait"
+cook = 1
+ingredients = Array[int]([28, 19, 29, 17, 22, 7])
+poisoned = true
+metadata/_custom_type_script = "uid://xbgs8haytcbq"

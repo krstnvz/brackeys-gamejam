@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dgytvxyinq6b7" path="res://sprites/dishes/porridge_atlas.tres" id="1_f0vex"]
 [ext_resource type="Script" uid="uid://blwabtrrbq1hb" path="res://scripts/dishes/dish.gd" id="1_fhlt1"]
-[ext_resource type="Resource" uid="uid://uwp5wlphx4uq" path="res://data objects/dishes/sweet_porridge.tres" id="2_x5gce"]
+[ext_resource type="Resource" uid="uid://uwp5wlphx4uq" path="res://data objects/dishes/level1/sweet_porridge.tres" id="2_x5gce"]
 [ext_resource type="Texture2D" uid="uid://blbu554ro8wrk" path="res://sprites/UI/toggle.png" id="4_pkfoj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0vex"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DishData" format=3 uid="uid://tm6jt1okhjvc"]
+
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_o6ssj"]
+
+[resource]
+script = ExtResource("1_o6ssj")
+name = "Fresh Goat Cheese Salad"
+cook = 1
+ingredients = Array[int]([21, 23, 17, 24, 25])
+poisoned = true
+metadata/_custom_type_script = "uid://xbgs8haytcbq"

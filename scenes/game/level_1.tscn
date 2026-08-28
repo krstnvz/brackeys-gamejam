@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://4380ny5wug66" path="res://sprites/background.png" id="2_wvvb4"]
 [ext_resource type="PackedScene" uid="uid://bv2owiajweq0r" path="res://scenes/components/Dish.tscn" id="3_2cwer"]
 [ext_resource type="Texture2D" uid="uid://c5c6x2x2tbmnj" path="res://sprites/dishes/salmon_atlas.tres" id="4_bhauw"]
-[ext_resource type="Resource" uid="uid://b61cj1umiow24" path="res://data objects/dishes/glazed_salmon.tres" id="5_uiq3k"]
+[ext_resource type="Resource" uid="uid://b61cj1umiow24" path="res://data objects/dishes/level1/glazed_salmon.tres" id="5_uiq3k"]
 [ext_resource type="Texture2D" uid="uid://bew7r1rtv2lhm" path="res://sprites/dishes/chicken_atlas.tres" id="6_ue4pn"]
-[ext_resource type="Resource" uid="uid://b5j3dxsi5ixmf" path="res://data objects/dishes/roast_chicken.tres" id="7_em224"]
+[ext_resource type="Resource" uid="uid://b5j3dxsi5ixmf" path="res://data objects/dishes/level1/roast_chicken.tres" id="7_em224"]
 [ext_resource type="Texture2D" uid="uid://qgwkx5w6t5hx" path="res://sprites/dishes/pears_atlas.tres" id="8_qukjw"]
-[ext_resource type="Resource" uid="uid://yhpjs4kca8c2" path="res://data objects/dishes/honey_glazed_pears.tres" id="9_s3j1q"]
+[ext_resource type="Resource" uid="uid://yhpjs4kca8c2" path="res://data objects/dishes/level1/honey_glazed_pears.tres" id="9_s3j1q"]
 [ext_resource type="Texture2D" uid="uid://y6572cqo4ry1" path="res://sprites/dishes/cheesecake_atlas.tres" id="10_rcjo7"]
-[ext_resource type="Resource" uid="uid://56cna5mxbnma" path="res://data objects/dishes/cheesecake.tres" id="11_b8x0u"]
+[ext_resource type="Resource" uid="uid://56cna5mxbnma" path="res://data objects/dishes/level1/cheesecake.tres" id="11_b8x0u"]
 [ext_resource type="PackedScene" uid="uid://rob1bfdbg0mr" path="res://scenes/components/Cook.tscn" id="12_n2cmi"]
 [ext_resource type="Texture2D" uid="uid://dd30ny51tit0s" path="res://sprites/cooks/simon_atlas.tres" id="13_1vy0b"]
 [ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://data objects/cooks/level1/simon1.tres" id="14_mdy4u"]
@@ -218,9 +218,9 @@ grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 text = "[b]Informat tip off:[/b]
-- yesterday, one ingredient was poisoned with Blistering Water
-- multiple dishes are contaminated
-- exactly one person is in on it and lying"
+- Yesterday, one ingredient was poisoned with Blistering Water
+- Multiple dishes are contaminated
+- Exactly one cook is in lying to you"
 fit_content = true
 
 [node name="CancelButton" type="Button" parent="Overlays/TipOffOverlay" unique_id=111208958]

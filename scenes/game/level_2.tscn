@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://4380ny5wug66" path="res://sprites/background.png" id="2_dit22"]
 [ext_resource type="PackedScene" uid="uid://bv2owiajweq0r" path="res://scenes/components/Dish.tscn" id="3_u0faa"]
 [ext_resource type="Texture2D" uid="uid://c5c6x2x2tbmnj" path="res://sprites/dishes/salmon_atlas.tres" id="4_a2lpy"]
-[ext_resource type="Resource" uid="uid://b61cj1umiow24" path="res://data objects/dishes/glazed_salmon.tres" id="5_th0l7"]
+[ext_resource type="Resource" uid="uid://b61cj1umiow24" path="res://data objects/dishes/level1/glazed_salmon.tres" id="5_th0l7"]
 [ext_resource type="Texture2D" uid="uid://bew7r1rtv2lhm" path="res://sprites/dishes/chicken_atlas.tres" id="6_cbcpk"]
-[ext_resource type="Resource" uid="uid://b5j3dxsi5ixmf" path="res://data objects/dishes/roast_chicken.tres" id="7_eprbd"]
+[ext_resource type="Resource" uid="uid://b5j3dxsi5ixmf" path="res://data objects/dishes/level1/roast_chicken.tres" id="7_eprbd"]
 [ext_resource type="Texture2D" uid="uid://qgwkx5w6t5hx" path="res://sprites/dishes/pears_atlas.tres" id="8_ajmqn"]
-[ext_resource type="Resource" uid="uid://yhpjs4kca8c2" path="res://data objects/dishes/honey_glazed_pears.tres" id="9_ltbqx"]
+[ext_resource type="Resource" uid="uid://yhpjs4kca8c2" path="res://data objects/dishes/level1/honey_glazed_pears.tres" id="9_ltbqx"]
 [ext_resource type="Texture2D" uid="uid://y6572cqo4ry1" path="res://sprites/dishes/cheesecake_atlas.tres" id="10_bmpr3"]
-[ext_resource type="Resource" uid="uid://56cna5mxbnma" path="res://data objects/dishes/cheesecake.tres" id="11_xilph"]
+[ext_resource type="Resource" uid="uid://56cna5mxbnma" path="res://data objects/dishes/level1/cheesecake.tres" id="11_xilph"]
 [ext_resource type="PackedScene" uid="uid://rob1bfdbg0mr" path="res://scenes/components/Cook.tscn" id="12_l3xhh"]
 [ext_resource type="Texture2D" uid="uid://dd30ny51tit0s" path="res://sprites/cooks/simon_atlas.tres" id="13_gs74x"]
 [ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://data objects/cooks/level1/simon1.tres" id="14_yrt1q"]
@@ -18,19 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="16_o476j"]
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/level1/peter1.tres" id="17_ggxxd"]
 [ext_resource type="Texture2D" uid="uid://cflu6i1ewl361" path="res://sprites/UI/buttons/fancy_button_atlas.tres" id="18_qvta0"]
-[ext_resource type="Texture2D" uid="uid://db28wicnveula" path="res://sprites/UI/tabs/poisons_tab_atlas.tres" id="21_xi6om"]
-[ext_resource type="Texture2D" path="res://sprites/UI/tabs/poisons_tab_selected_atlas.tres" id="22_cjxxt"]
-[ext_resource type="Texture2D" uid="uid://ce1pgtdoroedg" path="res://sprites/UI/tabs/tip_off_tab_atlas.tres" id="23_w3dg2"]
-[ext_resource type="Texture2D" path="res://sprites/UI/tabs/tip_off_tab_selected_atlas.tres" id="24_2o60c"]
-[ext_resource type="Texture2D" uid="uid://m6lbiacf1efa" path="res://sprites/UI/tabs/dish_tab_atlas.tres" id="25_pswrg"]
-[ext_resource type="Texture2D" path="res://sprites/UI/tabs/dish_tab_pressed_atlas.tres" id="26_xd4rb"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_mdf58"]
 [ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredients/ingredient_list.gd" id="28_b7xm5"]
 [ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/components/IngredientButton.tscn" id="29_poth8"]
 [ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="30_1at1u"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="31_dihvj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0wwk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0nsw"]
 resource_local_to_scene = true
 atlas = ExtResource("16_o476j")
 region = Rect2(0, 0, 31, 37)
@@ -111,7 +105,7 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_n0wwk")
+texture_normal = SubResource("AtlasTexture_n0nsw")
 cook_data = ExtResource("17_ggxxd")
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
@@ -131,47 +125,6 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("18_qvta0")
 texture_pressed = ExtResource("18_qvta0")
 texture_hover = ExtResource("18_qvta0")
-
-[node name="BookButton" type="TextureButton" parent="." unique_id=182501037]
-texture_filter = 1
-offset_left = 606.0
-offset_top = 76.0
-offset_right = 623.0
-offset_bottom = 110.0
-scale = Vector2(2, 2)
-toggle_mode = true
-texture_normal = ExtResource("21_xi6om")
-texture_pressed = ExtResource("22_cjxxt")
-texture_hover = ExtResource("22_cjxxt")
-
-[node name="TipOffButton" type="TextureButton" parent="." unique_id=2060027554]
-texture_filter = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -34.0
-offset_top = 2.0
-offset_right = -17.0
-offset_bottom = 38.0
-grow_horizontal = 0
-scale = Vector2(2, 2)
-size_flags_horizontal = 8
-toggle_mode = true
-texture_normal = ExtResource("23_w3dg2")
-texture_pressed = ExtResource("24_2o60c")
-texture_hover = ExtResource("24_2o60c")
-
-[node name="IngredientsButton" type="TextureButton" parent="." unique_id=1830757112]
-texture_filter = 1
-offset_left = 606.0
-offset_top = 146.0
-offset_right = 623.0
-offset_bottom = 171.0
-scale = Vector2(2, 2)
-toggle_mode = true
-texture_normal = ExtResource("25_pswrg")
-texture_pressed = ExtResource("26_xd4rb")
-texture_hover = ExtResource("26_xd4rb")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 
@@ -427,9 +380,6 @@ offset_bottom = 40.0
 [connection signal="button_up" from="Cooks/Rose" to="Overlays/RoseStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Cooks/Peter" to="Overlays/PeterStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
-[connection signal="button_up" from="BookButton" to="Overlays/BookOverlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="TipOffButton" to="Overlays/TipOffOverlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="IngredientsButton" to="Overlays/IngredientsOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Overlays/IngredientsOverlay/CancelButton" to="Overlays/IngredientsOverlay" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="Overlays/TipOffOverlay/CancelButton" to="Overlays/TipOffOverlay" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="Overlays/BookOverlay/CancelButton" to="Overlays/BookOverlay" method="_on_cancel_button_button_up"]

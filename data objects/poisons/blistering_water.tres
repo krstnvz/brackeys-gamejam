@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PoisonData" format=3 uid="uid://whqvuoij2yf"]
+
+[ext_resource type="Script" uid="uid://b8pei5iqk0bm8" path="res://scripts/data scripts/poison_data.gd" id="1_ogyrk"]
+
+[resource]
+script = ExtResource("1_ogyrk")
+name = "Blistering Water"
+lines = Array[String](["Fast acting", "Causes painful boils and a high fever", "Bitter taste", "Sap of an exotic plant", "Must use liquid as a carrier"])
+metadata/_custom_type_script = "uid://b8pei5iqk0bm8"

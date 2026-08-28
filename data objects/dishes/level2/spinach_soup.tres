@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DishData" format=3 uid="uid://88rr4r50krtx"]
+
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_gkyd8"]
+
+[resource]
+script = ExtResource("1_gkyd8")
+name = "Creamy Spinach Soup"
+ingredients = Array[int]([23, 22, 27, 26, 9])
+metadata/_custom_type_script = "uid://xbgs8haytcbq"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PoisonData" format=3 uid="uid://cwovj5433k21k"]
+
+[ext_resource type="Script" uid="uid://b8pei5iqk0bm8" path="res://scripts/data scripts/poison_data.gd" id="1_8m3hq"]
+
+[resource]
+script = ExtResource("1_8m3hq")
+name = "Rage Snow"
+lines = Array[String](["Fast acting", "Causes escalating aggression leading up to a heart attack", "Neutralized by heat", "Sweet taste", "White powder"])
+metadata/_custom_type_script = "uid://b8pei5iqk0bm8"

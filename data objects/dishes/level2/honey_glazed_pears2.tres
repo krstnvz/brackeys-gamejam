@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DishData" format=3 uid="uid://nqm7scpq7dlx"]
+
+[ext_resource type="Texture2D" uid="uid://bc0w3mag6u2xm" path="res://sprites/dishes/pears.png" id="1_04jv3"]
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="2_i5n32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrrcj"]
+atlas = ExtResource("1_04jv3")
+region = Rect2(22, 0, 22, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db3h0"]
+atlas = ExtResource("1_04jv3")
+region = Rect2(0, 0, 22, 17)
+
+[resource]
+script = ExtResource("2_i5n32")
+name = "Honey Glazed Pears"
+ingredients = Array[int]([17, 15, 16, 21, 0])
+normal = SubResource("AtlasTexture_db3h0")
+hightlight = SubResource("AtlasTexture_rrrcj")
+metadata/_custom_type_script = "uid://xbgs8haytcbq"

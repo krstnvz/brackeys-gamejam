@@ -13,7 +13,7 @@ region = Rect2(0, 0, 19, 32)
 
 [resource]
 script = ExtResource("1_fermu")
-statement = "I prepared both my dishes this morning. I made sure to use only ingredients I opened myself."
+statement = "I used the stove to prepare both of my dishes after Peter and Simon left the kitchen."
 normal = SubResource("AtlasTexture_wj528")
 hightlight = SubResource("AtlasTexture_jku7j")
 metadata/_custom_type_script = "uid://bga07nfiordvr"

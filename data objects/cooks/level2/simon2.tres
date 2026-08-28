@@ -17,7 +17,7 @@ region = Rect2(0, 0, 35, 42)
 [resource]
 script = ExtResource("1_vbdjo")
 cook = 1
-statement = "I started cooking after Rose finished and used open ingredients. I tasted all components of my dishes as I prepared them."
+statement = "I prepared my dishes first thing in the morning. Then I helped Rose with hers."
 normal = SubResource("AtlasTexture_khpqy")
 hightlight = SubResource("AtlasTexture_1g5iw")
 metadata/_custom_type_script = "uid://bga07nfiordvr"
