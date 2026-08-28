@@ -19,12 +19,12 @@
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/level1/peter1.tres" id="17_0upy3"]
 [ext_resource type="PackedScene" uid="uid://btaiju14nygip" path="res://scenes/game/side_menu.tscn" id="18_u0pkn"]
 [ext_resource type="Texture2D" uid="uid://vb52msgfi0k7" path="res://sprites/UI/buttons/fancy_button.png" id="20_15xv0"]
+[ext_resource type="Texture2D" uid="uid://cbu8tnp5f13l8" path="res://sprites/UI/buttons/menu_button.png" id="23_lgbjo"]
+[ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="24_4xw7v"]
+[ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="25_15xv0"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_bjnfs"]
 [ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="30_wd80t"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="31_q82fx"]
-
-[sub_resource type="Resource" id="Resource_4xw7v"]
-metadata/__load_path__ = "res://data objects/dishes/sweet_porridge.tres"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8i3vp"]
 resource_local_to_scene = true
@@ -43,9 +43,25 @@ region = Rect2(0, 38, 86, 19)
 atlas = ExtResource("20_15xv0")
 region = Rect2(0, 19, 86, 19)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygoml"]
+atlas = ExtResource("24_4xw7v")
+region = Rect2(0, 0, 11, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcb6a"]
+atlas = ExtResource("24_4xw7v")
+region = Rect2(0, 12, 11, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1pni"]
+atlas = ExtResource("25_15xv0")
+region = Rect2(0, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djq2t"]
+atlas = ExtResource("25_15xv0")
+region = Rect2(0, 0, 12, 12)
+
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_djq2t")
-dishes = [null, null, null, null, null]
+dishes = [NodePath("Dishes/DishButton1"), NodePath("Dishes/DishButton2"), NodePath("Dishes/DishButton3"), NodePath("Dishes/DishButton4"), NodePath("Dishes/DishButton5")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1740705326]
 texture_filter = 1
@@ -64,7 +80,6 @@ offset_left = 67.0
 offset_top = 258.0
 offset_right = 87.0
 offset_bottom = 275.0
-dish = SubResource("Resource_4xw7v")
 
 [node name="DishButton2" parent="Dishes" unique_id=1160370312 instance=ExtResource("3_2cwer")]
 offset_left = 132.0
@@ -315,13 +330,33 @@ offset_bottom = 206.0
 script = ExtResource("30_wd80t")
 cook_data = ExtResource("17_0upy3")
 
-[node name="Button" type="Button" parent="." unique_id=1698673446]
+[node name="MenuButton" type="TextureButton" parent="." unique_id=261728266]
 offset_left = 2.0
-offset_top = 334.0
-offset_right = 51.0
-offset_bottom = 358.0
-theme_override_font_sizes/font_size = 10
-text = "Menu"
+offset_top = 2.0
+offset_right = 27.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("23_lgbjo")
+
+[node name="FullscreenButton" type="TextureButton" parent="." unique_id=816564902]
+offset_left = 54.0
+offset_top = 2.0
+offset_right = 65.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ygoml")
+texture_pressed = SubResource("AtlasTexture_fcb6a")
+
+[node name="MuteButton" type="TextureButton" parent="." unique_id=892062031]
+offset_left = 78.0
+offset_top = 2.0
+offset_right = 90.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_i1pni")
+texture_pressed = SubResource("AtlasTexture_djq2t")
 
 [connection signal="button_up" from="Cooks/Simon" to="Overlays/SimonStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Cooks/Rose" to="Overlays/RoseStatementOverlay" method="_on_visibility_button_up"]
@@ -329,4 +364,5 @@ text = "Menu"
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
 [connection signal="button_up" from="Overlays/TipOffOverlay/CancelButton" to="Overlays/TipOffOverlay" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="Overlays/BookOverlay/CancelButton" to="Overlays/BookOverlay" method="_on_cancel_button_button_up"]
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="MenuButton" to="." method="_on_button_button_up"]
+[connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]

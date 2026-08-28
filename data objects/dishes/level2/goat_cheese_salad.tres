@@ -1,6 +1,15 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://tm6jt1okhjvc"]
 
 [ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_o6ssj"]
+[ext_resource type="Texture2D" uid="uid://cnbosmajiggqs" path="res://sprites/dishes/goat_cheese_salad.png" id="1_vcs6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fco0k"]
+atlas = ExtResource("1_vcs6c")
+region = Rect2(21, 0, 21, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y2ih"]
+atlas = ExtResource("1_vcs6c")
+region = Rect2(0, 0, 21, 17)
 
 [resource]
 script = ExtResource("1_o6ssj")
@@ -8,4 +17,6 @@ name = "Fresh Goat Cheese Salad"
 cook = 1
 ingredients = Array[int]([21, 23, 17, 24, 25])
 poisoned = true
+normal = SubResource("AtlasTexture_8y2ih")
+hightlight = SubResource("AtlasTexture_fco0k")
 metadata/_custom_type_script = "uid://xbgs8haytcbq"

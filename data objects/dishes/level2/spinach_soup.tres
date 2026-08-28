@@ -1,9 +1,20 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://88rr4r50krtx"]
 
 [ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_gkyd8"]
+[ext_resource type="Texture2D" uid="uid://bbrkh7huriihf" path="res://sprites/dishes/spinach_soup.png" id="1_wt2wr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lygyn"]
+atlas = ExtResource("1_wt2wr")
+region = Rect2(20, 0, 20, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqnfk"]
+atlas = ExtResource("1_wt2wr")
+region = Rect2(0, 0, 20, 17)
 
 [resource]
 script = ExtResource("1_gkyd8")
 name = "Creamy Spinach Soup"
 ingredients = Array[int]([23, 22, 27, 26, 9])
+normal = SubResource("AtlasTexture_iqnfk")
+hightlight = SubResource("AtlasTexture_lygyn")
 metadata/_custom_type_script = "uid://xbgs8haytcbq"
