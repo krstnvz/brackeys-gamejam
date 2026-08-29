@@ -64,7 +64,6 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		
-
 func _on_replay_button_button_up() -> void:
 	Navigation.restart_level()
 

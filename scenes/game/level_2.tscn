@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bw48vuwu0mxub" path="res://sprites/UI/buttons/help_button.png" id="30_cbcpk"]
 [ext_resource type="Texture2D" uid="uid://riy3mrromdt4" path="res://sprites/UI/buttons/replay_button.png" id="30_xilph"]
 [ext_resource type="Texture2D" uid="uid://dvrtcwqn0vhm2" path="res://sprites/UI/buttons/next_level_button.png" id="31_l3xhh"]
+[ext_resource type="PackedScene" uid="uid://oc65hk33ep5x" path="res://scenes/components/tutorial.tscn" id="37_eprbd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eprbd"]
 resource_local_to_scene = true
@@ -323,49 +324,8 @@ size_flags_horizontal = 8
 texture_normal = ExtResource("31_l3xhh")
 
 [node name="Tutorial" type="CanvasLayer" parent="Overlays" unique_id=1513741469]
-visible = false
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
 
-[node name="ColorRect" type="ColorRect" parent="Overlays/Tutorial" unique_id=1968730534]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.22352941)
-
-[node name="TextureRect" type="TextureRect" parent="Overlays/Tutorial" unique_id=531024424]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -257.0
-offset_top = -151.0
-offset_right = -62.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("29_bmpr3")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/Tutorial" unique_id=1023832593]
-offset_left = 77.5
-offset_top = 45.0
-offset_right = 243.5
-offset_bottom = 131.0
-theme_override_colors/default_color = Color(0.5882353, 0.15294118, 0.15294118, 1)
-theme_override_font_sizes/normal_font_size = 8
-
-[node name="CloseButton" type="TextureButton" parent="Overlays/Tutorial" unique_id=1013245425]
-offset_left = 240.5
-offset_top = 20.5
-offset_right = 252.5
-offset_bottom = 32.5
-scale = Vector2(2, 2)
-toggle_mode = true
-texture_normal = SubResource("AtlasTexture_i1pni")
-texture_pressed = SubResource("AtlasTexture_djq2t")
+[node name="ColorRect" parent="Overlays/Tutorial" unique_id=2103742559 instance=ExtResource("37_eprbd")]
 
 [connection signal="refresh_ingredients" from="Dishes/DishButton1" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
 [connection signal="show_dish_information" from="Dishes/DishButton1" to="SideMenu" method="_on_show_dish_information"]
@@ -390,4 +350,3 @@ texture_pressed = SubResource("AtlasTexture_djq2t")
 [connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]
 [connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/ReplayButton" to="." method="_on_replay_button_button_up"]
 [connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_button_up"]
-[connection signal="button_up" from="Overlays/Tutorial/CloseButton" to="." method="_on_tutorial_button_button_up"]

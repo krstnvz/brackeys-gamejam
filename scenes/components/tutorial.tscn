@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://oc65hk33ep5x"]
+
+[ext_resource type="Texture2D" uid="uid://cesc7rnfi7tjh" path="res://sprites/UI/level_finished_overlay.png" id="1_5bk5s"]
+[ext_resource type="Script" uid="uid://cwrcsh5tkeyyy" path="res://scenes/components/tutorial.gd" id="1_ohv6c"]
+[ext_resource type="Theme" uid="uid://dpiy3ra2b8o0n" path="res://scroll_bar_theme.tres" id="2_tebew"]
+[ext_resource type="Texture2D" uid="uid://4duveh0gckhq" path="res://sprites/UI/buttons/exit_button.png" id="3_a4phn"]
+
+[node name="ColorRect" type="ColorRect" unique_id=2103742559]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.22352941)
+script = ExtResource("1_ohv6c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1012323388]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -126.5
+offset_right = -10.0
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("1_5bk5s")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=277174405]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 84.5
+offset_right = 484.0
+offset_bottom = 256.5
+theme = ExtResource("2_tebew")
+theme_override_colors/default_color = Color(0.5882353, 0.15294118, 0.15294118, 1)
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "How to play:
+
+The king is going to have a feast and you are his food taster.
+
+You will be presented with 5 dishes. Each cook will describe how they prepare their food.
+
+Pay attention to what they tell you because one of them is lying!
+
+[ul]Click on a cook to display their statement about the cooking process.[/ul]
+[ul]Click on a dish to show the ingredients it was made from.[/ul]
+[ul]Click on the [color=#994949]Tip Off[/color] tab on the right-side menu, which tells you important information about the poisoned ingredient.[/ul]
+[ul]Click on the Ingredients tab to see all the ingredients and you may mark some of them safe.[/ul]
+[ul]Click on the Poison tab to see the types of poison that might be in one of the dishes.[/ul]
+
+Once you are sure a dish is safe, mark it with the button below it.
+
+If all of the safe dishes are marked correctly when you submit them, you stay alive. Otherwise, you face death!"
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=269440574]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 68.0
+offset_right = 467.0
+offset_bottom = 80.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = ExtResource("3_a4phn")
+
+[connection signal="button_up" from="CloseButton" to="." method="_on_close_button_button_up"]
