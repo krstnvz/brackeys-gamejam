@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b7cn5p535h4qm" path="res://sprites/title.png" id="4_3r4tm"]
 [ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="6_bto60"]
 [ext_resource type="Texture2D" uid="uid://bw48vuwu0mxub" path="res://sprites/UI/buttons/help_button.png" id="7_bto60"]
+[ext_resource type="PackedScene" uid="uid://oc65hk33ep5x" path="res://scenes/components/tutorial.tscn" id="8_16onh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpthd"]
 atlas = ExtResource("2_gfgjs")
@@ -107,5 +108,11 @@ offset_bottom = 14.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("7_bto60")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=555437525]
+visible = false
+
+[node name="ColorRect" parent="CanvasLayer" unique_id=2103742559 instance=ExtResource("8_16onh")]
+
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_check_button_toggled"]
 [connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="HelpButton" to="." method="_on_help_button_button_up"]

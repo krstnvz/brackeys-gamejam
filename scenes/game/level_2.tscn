@@ -324,6 +324,7 @@ size_flags_horizontal = 8
 texture_normal = ExtResource("31_l3xhh")
 
 [node name="Tutorial" type="CanvasLayer" parent="Overlays" unique_id=1513741469]
+visible = false
 
 [node name="ColorRect" parent="Overlays/Tutorial" unique_id=2103742559 instance=ExtResource("37_eprbd")]
 
