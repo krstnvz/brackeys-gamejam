@@ -23,6 +23,6 @@ func get_safe_toggle_state() -> bool:
 	return $CheckButton.button_pressed
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
-	GameGlobals.updateIngredients(dish, toggled_on)
+	#GameGlobals.updateIngredients(dish, toggled_on)
 	refresh_ingredients.emit()
 	

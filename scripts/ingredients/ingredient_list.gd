@@ -20,7 +20,7 @@ func _on_refresh_ingredients() -> void:
 	for child in get_children():
 		child.queue_free()
 	
-	for ingredient in GameGlobals.ingredientsData.get_sorted_ingredients():
+	for ingredient in GameGlobals.ingredients_data.get_sorted_ingredients():
 		var button = ingredient_button.instantiate()
 		button.add_ingredient(ingredient)
 		add_child(button)
