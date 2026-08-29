@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cupis3jrb8ulo"]
+
+[ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="1_8yays"]
+[ext_resource type="Texture2D" uid="uid://dikhmtiunkttu" path="res://sprites/UI/dialog_box.png" id="2_t81im"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sajip"]
+
+[node name="StatementContainer" type="PanelContainer" unique_id=1855158422]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -618.0
+offset_top = -226.0
+offset_right = -481.0
+offset_bottom = -177.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sajip")
+script = ExtResource("1_8yays")
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=865985866]
+layout_mode = 2
+texture = ExtResource("2_t81im")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 12
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1475037328]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1320967773]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.5882353, 0.15294118, 0.15294118, 1)
+theme_override_font_sizes/normal_font_size = 8
+fit_content = true
+scroll_active = false
