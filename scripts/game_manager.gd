@@ -6,6 +6,8 @@ extends Node
 
 @export var dishes: Array[Dish] = []
 
+@onready var tutorial: CanvasLayer = $Overlays/Tutorial
+
 @onready var game_over: CanvasLayer = $Overlays/GameOver
 @onready var status_texture: TextureRect = $Overlays/GameOver/VBoxContainer/StatusTexture
 @onready var status_label: RichTextLabel = $Overlays/GameOver/VBoxContainer/StatusLabel
@@ -59,3 +61,6 @@ func _on_replay_button_button_up() -> void:
 
 func _on_next_level_button_button_up() -> void:
 	Navigation.start_level_2()
+
+func _on_tutorial_button_button_up() -> void:
+	tutorial.visible = !tutorial.visible
