@@ -6,7 +6,7 @@ signal refresh_ingredients_list
 
 @onready var tip_off_container: Node = $TipOffContainer
 @onready var tip_off_rich_text_label: RichTextLabel = $TipOffContainer/TipOffRichTextLabel
-@onready var ingredients_container: ScrollContainer = $ScrollContainer
+@onready var ingredients_container: ScrollContainer = $IngredientContainer
 @onready var menu_page: TextureRect = $PageTexture
 
 enum Tab {
