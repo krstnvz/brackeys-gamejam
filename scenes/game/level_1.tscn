@@ -23,11 +23,16 @@
 [ext_resource type="PackedScene" uid="uid://cupis3jrb8ulo" path="res://scenes/components/statement_container.tscn" id="21_u0pkn"]
 [ext_resource type="Texture2D" uid="uid://cbu8tnp5f13l8" path="res://sprites/UI/buttons/menu_button.png" id="23_lgbjo"]
 [ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="24_4xw7v"]
+[ext_resource type="Texture2D" uid="uid://cesc7rnfi7tjh" path="res://sprites/UI/level_finished_overlay.png" id="24_8i3vp"]
 [ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="25_15xv0"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_bjnfs"]
+[ext_resource type="Texture2D" uid="uid://dvrtcwqn0vhm2" path="res://sprites/UI/buttons/next_level_button.png" id="28_djq2t"]
+[ext_resource type="Texture2D" uid="uid://riy3mrromdt4" path="res://sprites/UI/buttons/replay_button.png" id="29_wvvb4"]
+[ext_resource type="Texture2D" uid="uid://2fkfcd8jlqog" path="res://sprites/UI/labels/you_died_label.png" id="30_2cwer"]
+[ext_resource type="Texture2D" uid="uid://sl7wvyfd8pga" path="res://sprites/UI/labels/success_label.png" id="31_bhauw"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="31_q82fx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8i3vp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvvb4"]
 resource_local_to_scene = true
 atlas = ExtResource("16_nx801")
 region = Rect2(0, 0, 31, 37)
@@ -62,6 +67,8 @@ region = Rect2(0, 0, 12, 12)
 
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_djq2t")
+texture_success = ExtResource("31_bhauw")
+texture_died = ExtResource("30_2cwer")
 dishes = [NodePath("Dishes/DishButton1"), NodePath("Dishes/DishButton2"), NodePath("Dishes/DishButton3"), NodePath("Dishes/DishButton4"), NodePath("Dishes/DishButton5")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1740705326]
@@ -136,7 +143,7 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_8i3vp")
+texture_normal = SubResource("AtlasTexture_wvvb4")
 cook_data = ExtResource("17_0upy3")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("18_u0pkn")]
@@ -159,6 +166,34 @@ scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_4xw7v")
 texture_pressed = SubResource("AtlasTexture_15xv0")
 texture_hover = SubResource("AtlasTexture_u0pkn")
+
+[node name="MenuButton" type="TextureButton" parent="." unique_id=261728266]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 27.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("23_lgbjo")
+
+[node name="FullscreenButton" type="TextureButton" parent="." unique_id=816564902]
+offset_left = 54.0
+offset_top = 2.0
+offset_right = 65.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ygoml")
+texture_pressed = SubResource("AtlasTexture_fcb6a")
+
+[node name="MuteButton" type="TextureButton" parent="." unique_id=892062031]
+offset_left = 78.0
+offset_top = 2.0
+offset_right = 90.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_i1pni")
+texture_pressed = SubResource("AtlasTexture_djq2t")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 
@@ -194,33 +229,76 @@ offset_right = -381.0
 offset_bottom = -185.0
 cook_data = ExtResource("14_mdy4u")
 
-[node name="MenuButton" type="TextureButton" parent="." unique_id=261728266]
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 27.0
-offset_bottom = 14.0
+[node name="GameOver" type="CanvasLayer" parent="Overlays" unique_id=1882035141]
+visible = false
 scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Overlays/GameOver" unique_id=754140033]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.22352941)
+
+[node name="TextureRect" type="TextureRect" parent="Overlays/GameOver" unique_id=1171577309]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -151.0
+offset_right = -62.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_8i3vp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlays/GameOver" unique_id=140310985]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -142.0
+offset_right = -74.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusTexture" type="TextureRect" parent="Overlays/GameOver/VBoxContainer" unique_id=1496686919]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("31_bhauw")
+stretch_mode = 2
+
+[node name="StatusLabel" type="RichTextLabel" parent="Overlays/GameOver/VBoxContainer" unique_id=42478638]
+layout_mode = 2
+size_flags_vertical = 3
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlays/GameOver/VBoxContainer" unique_id=369729750]
+layout_mode = 2
+
+[node name="MenuButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=2018988515]
+layout_mode = 2
+size_flags_horizontal = 2
 texture_normal = ExtResource("23_lgbjo")
 
-[node name="FullscreenButton" type="TextureButton" parent="." unique_id=816564902]
-offset_left = 54.0
-offset_top = 2.0
-offset_right = 65.0
-offset_bottom = 14.0
-scale = Vector2(2, 2)
-toggle_mode = true
-texture_normal = SubResource("AtlasTexture_ygoml")
-texture_pressed = SubResource("AtlasTexture_fcb6a")
+[node name="ReplayButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=1091739391]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("29_wvvb4")
 
-[node name="MuteButton" type="TextureButton" parent="." unique_id=892062031]
-offset_left = 78.0
-offset_top = 2.0
-offset_right = 90.0
-offset_bottom = 14.0
-scale = Vector2(2, 2)
-toggle_mode = true
-texture_normal = SubResource("AtlasTexture_i1pni")
-texture_pressed = SubResource("AtlasTexture_djq2t")
+[node name="NextLevelButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=1724029998]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("28_djq2t")
 
 [connection signal="refresh_ingredients" from="Dishes/DishButton1" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
 [connection signal="show_dish_information" from="Dishes/DishButton1" to="SideMenu" method="_on_show_dish_information"]
@@ -236,5 +314,8 @@ texture_pressed = SubResource("AtlasTexture_djq2t")
 [connection signal="button_up" from="Cooks/Rose" to="Overlays/CooksStatement/RoseStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Cooks/Peter" to="Overlays/CooksStatement/PeterStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
-[connection signal="button_up" from="MenuButton" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="MenuButton" to="." method="_on_menu_button_button_up"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]
+[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/ReplayButton" to="." method="_on_replay_button_button_up"]
+[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_button_up"]
