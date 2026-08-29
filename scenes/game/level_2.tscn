@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://d1pgs5pcf8b0d"]
 
 [ext_resource type="Script" uid="uid://bp0dknngb756j" path="res://scripts/game_manager.gd" id="1_3dbay"]
+[ext_resource type="Texture2D" uid="uid://sl7wvyfd8pga" path="res://sprites/UI/labels/success_label.png" id="2_3dbay"]
 [ext_resource type="Texture2D" uid="uid://4380ny5wug66" path="res://sprites/background.png" id="2_dit22"]
+[ext_resource type="Texture2D" uid="uid://2fkfcd8jlqog" path="res://sprites/UI/labels/you_died_label.png" id="3_dit22"]
 [ext_resource type="PackedScene" uid="uid://bv2owiajweq0r" path="res://scenes/components/Dish.tscn" id="3_u0faa"]
 [ext_resource type="Texture2D" uid="uid://c5c6x2x2tbmnj" path="res://sprites/dishes/salmon_atlas.tres" id="4_a2lpy"]
 [ext_resource type="Resource" uid="uid://b61cj1umiow24" path="res://data objects/dishes/level1/glazed_salmon.tres" id="5_th0l7"]
@@ -17,21 +19,57 @@
 [ext_resource type="Texture2D" uid="uid://b4su2hogptwkk" path="res://sprites/cooks/rose_atlas.tres" id="15_nyeqf"]
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="16_o476j"]
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/level1/peter1.tres" id="17_ggxxd"]
-[ext_resource type="Texture2D" uid="uid://cflu6i1ewl361" path="res://sprites/UI/buttons/fancy_button_atlas.tres" id="18_qvta0"]
+[ext_resource type="PackedScene" uid="uid://btaiju14nygip" path="res://scenes/components/side_menu.tscn" id="20_u0faa"]
+[ext_resource type="Texture2D" uid="uid://vb52msgfi0k7" path="res://sprites/UI/buttons/fancy_button.png" id="21_a2lpy"]
+[ext_resource type="Texture2D" uid="uid://cbu8tnp5f13l8" path="res://sprites/UI/buttons/menu_button.png" id="22_th0l7"]
+[ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="23_cbcpk"]
+[ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="24_eprbd"]
+[ext_resource type="Script" uid="uid://bgr2s3ndum2hf" path="res://scripts/cooks/cooks_statement_controller.gd" id="25_ajmqn"]
+[ext_resource type="PackedScene" uid="uid://cupis3jrb8ulo" path="res://scenes/components/statement_container.tscn" id="27_ltbqx"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_mdf58"]
-[ext_resource type="Script" uid="uid://bl7126h1hxp4c" path="res://scripts/ingredients/ingredient_list.gd" id="28_b7xm5"]
-[ext_resource type="PackedScene" uid="uid://62xkmihlpayo" path="res://scenes/components/IngredientButton.tscn" id="29_poth8"]
-[ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="30_1at1u"]
+[ext_resource type="Texture2D" uid="uid://cesc7rnfi7tjh" path="res://sprites/UI/level_finished_overlay.png" id="29_bmpr3"]
+[ext_resource type="Texture2D" uid="uid://riy3mrromdt4" path="res://sprites/UI/buttons/replay_button.png" id="30_xilph"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="31_dihvj"]
+[ext_resource type="Texture2D" uid="uid://dvrtcwqn0vhm2" path="res://sprites/UI/buttons/next_level_button.png" id="31_l3xhh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0nsw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvvb4"]
 resource_local_to_scene = true
 atlas = ExtResource("16_o476j")
 region = Rect2(0, 0, 31, 37)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xw7v"]
+atlas = ExtResource("21_a2lpy")
+region = Rect2(0, 0, 86, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15xv0"]
+atlas = ExtResource("21_a2lpy")
+region = Rect2(0, 38, 86, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0pkn"]
+atlas = ExtResource("21_a2lpy")
+region = Rect2(0, 19, 86, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygoml"]
+atlas = ExtResource("23_cbcpk")
+region = Rect2(0, 0, 11, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcb6a"]
+atlas = ExtResource("23_cbcpk")
+region = Rect2(0, 12, 11, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1pni"]
+atlas = ExtResource("24_eprbd")
+region = Rect2(0, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djq2t"]
+atlas = ExtResource("24_eprbd")
+region = Rect2(0, 0, 12, 12)
+
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_3dbay")
-dishes = [null, null, null, null, null]
+texture_success = ExtResource("2_3dbay")
+texture_died = ExtResource("3_dit22")
+dishes = [NodePath("Dishes/DishButton1"), NodePath("Dishes/DishButton2"), NodePath("Dishes/DishButton3"), NodePath("Dishes/DishButton4"), NodePath("Dishes/DishButton5")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1740705326]
 texture_filter = 1
@@ -105,8 +143,11 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_n0nsw")
+texture_normal = SubResource("AtlasTexture_wvvb4")
 cook_data = ExtResource("17_ggxxd")
+
+[node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("20_u0faa")]
+position = Vector2(640, 0)
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
 texture_filter = 1
@@ -122,265 +163,222 @@ offset_bottom = -50.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(2, 2)
-texture_normal = ExtResource("18_qvta0")
-texture_pressed = ExtResource("18_qvta0")
-texture_hover = ExtResource("18_qvta0")
+texture_normal = SubResource("AtlasTexture_4xw7v")
+texture_pressed = SubResource("AtlasTexture_15xv0")
+texture_hover = SubResource("AtlasTexture_u0pkn")
+
+[node name="MenuButton" type="TextureButton" parent="." unique_id=261728266]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 27.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("22_th0l7")
+
+[node name="FullscreenButton" type="TextureButton" parent="." unique_id=816564902]
+offset_left = 54.0
+offset_top = 2.0
+offset_right = 65.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ygoml")
+texture_pressed = SubResource("AtlasTexture_fcb6a")
+
+[node name="MuteButton" type="TextureButton" parent="." unique_id=892062031]
+offset_left = 78.0
+offset_top = 2.0
+offset_right = 90.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_i1pni")
+texture_pressed = SubResource("AtlasTexture_djq2t")
+
+[node name="TutorialButton" type="TextureButton" parent="." unique_id=617450653]
+offset_left = 104.0
+offset_top = 2.0
+offset_right = 116.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_i1pni")
+texture_pressed = SubResource("AtlasTexture_djq2t")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 
-[node name="IngredientsOverlay" type="CanvasLayer" parent="Overlays" unique_id=2074792183]
+[node name="CooksStatement" type="Node" parent="Overlays" unique_id=1997664094 node_paths=PackedStringArray("cooks")]
+script = ExtResource("25_ajmqn")
+cooks = [NodePath("PeterStatementOverlay"), NodePath("RoseStatementOverlay"), NodePath("SimonStatementOverlay")]
+
+[node name="PeterStatementOverlay" type="CanvasLayer" parent="Overlays/CooksStatement" unique_id=578976360]
 visible = false
 script = ExtResource("27_mdf58")
 
-[node name="ColorRect" type="ColorRect" parent="Overlays/IngredientsOverlay" unique_id=486545134]
-offset_left = 437.0
-offset_top = 33.0
-offset_right = 640.0
-offset_bottom = 355.0
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="CancelButton" type="Button" parent="Overlays/IngredientsOverlay" unique_id=1317162803]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 293.0
-offset_top = -141.0
-offset_right = 312.0
-offset_bottom = -110.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "X"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Overlays/IngredientsOverlay" unique_id=677144390]
-offset_left = 445.0
-offset_top = 75.0
-offset_right = 633.0
-offset_bottom = 345.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Overlays/IngredientsOverlay/ScrollContainer" unique_id=1810388603]
-layout_mode = 2
-script = ExtResource("28_b7xm5")
-ingredient_button = ExtResource("29_poth8")
-
-[node name="TipOffOverlay" type="CanvasLayer" parent="Overlays" unique_id=754780104]
-visible = false
-script = ExtResource("27_mdf58")
-
-[node name="ColorRect" type="ColorRect" parent="Overlays/TipOffOverlay" unique_id=322173053]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -68.0
-offset_right = 271.0
-offset_bottom = 68.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/TipOffOverlay" unique_id=1033028980]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -252.5
-offset_top = -46.0
-offset_right = 252.5
-offset_bottom = 46.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "[b]Informat tip off:[/b]
-- yesterday, one ingredient was poisoned with Blistering Water
-- multiple dishes are contaminated
-- exactly one person is in on it and lying"
-fit_content = true
-
-[node name="CancelButton" type="Button" parent="Overlays/TipOffOverlay" unique_id=111208958]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 244.0
-offset_top = -62.0
-offset_right = 263.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "X"
-
-[node name="BookOverlay" type="CanvasLayer" parent="Overlays" unique_id=167102177]
-visible = false
-script = ExtResource("27_mdf58")
-
-[node name="ColorRect" type="ColorRect" parent="Overlays/BookOverlay" unique_id=1564265029]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -173.0
-offset_top = -98.0
-offset_right = 173.0
-offset_bottom = 98.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/BookOverlay" unique_id=993247710]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.5
-offset_top = -82.75
-offset_right = 162.5
-offset_bottom = 82.75
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "Blistering Water
-	- fast acting
-	- causes painful boils and high fever
-	- severe poisoning results in death
-	- bitter taste
-	- sap of an exotic plant
-	- must be mixed into a liquid"
-fit_content = true
-
-[node name="CancelButton" type="Button" parent="Overlays/BookOverlay" unique_id=294520980]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 147.0
-offset_top = -93.0
-offset_right = 166.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "X"
-
-[node name="RoseStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=892935395]
-visible = false
-script = ExtResource("27_mdf58")
-
-[node name="ColorRect" type="ColorRect" parent="Overlays/RoseStatementOverlay" unique_id=705706584]
-offset_left = 165.0
-offset_top = 57.0
-offset_right = 335.0
-offset_bottom = 174.0
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/RoseStatementOverlay" unique_id=1186643933]
-offset_left = 170.0
-offset_top = 62.0
-offset_right = 330.0
-offset_bottom = 168.0
-script = ExtResource("30_1at1u")
-cook_data = ExtResource("31_dihvj")
-
-[node name="SimonStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=2046572807]
-visible = false
-script = ExtResource("27_mdf58")
-
-[node name="ColorRect" type="ColorRect" parent="Overlays/SimonStatementOverlay" unique_id=1816286435]
-offset_left = 334.0
-offset_top = 97.0
-offset_right = 504.0
-offset_bottom = 214.0
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/SimonStatementOverlay" unique_id=941605190]
-offset_left = 339.0
-offset_top = 102.0
-offset_right = 499.0
-offset_bottom = 207.0
-script = ExtResource("30_1at1u")
-cook_data = ExtResource("14_yrt1q")
-
-[node name="PeterStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=578976360]
-visible = false
-script = ExtResource("27_mdf58")
-
-[node name="ColorRect" type="ColorRect" parent="Overlays/PeterStatementOverlay" unique_id=422168759]
-offset_left = 5.0
-offset_top = 95.0
-offset_right = 175.0
-offset_bottom = 213.0
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/PeterStatementOverlay" unique_id=2135914515]
-offset_left = 11.0
-offset_top = 101.0
-offset_right = 171.0
-offset_bottom = 206.0
-script = ExtResource("30_1at1u")
+[node name="StatementContainer" parent="Overlays/CooksStatement/PeterStatementOverlay" unique_id=1855158422 instance=ExtResource("27_ltbqx")]
 cook_data = ExtResource("17_ggxxd")
 
-[node name="Button" type="Button" parent="." unique_id=1698673446]
-offset_left = 2.0
-offset_top = 334.0
-offset_right = 51.0
-offset_bottom = 358.0
-theme_override_font_sizes/font_size = 10
-text = "Menu"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1903280526]
+[node name="RoseStatementOverlay" type="CanvasLayer" parent="Overlays/CooksStatement" unique_id=892935395]
 visible = false
+script = ExtResource("27_mdf58")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1518122253]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="StatementContainer" parent="Overlays/CooksStatement/RoseStatementOverlay" unique_id=1729069159 instance=ExtResource("27_ltbqx")]
+offset_left = -566.0
+offset_top = -218.0
+offset_right = -429.0
+offset_bottom = -169.0
+cook_data = ExtResource("31_dihvj")
 
-[node name="Page1" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=236565776]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SimonStatementOverlay" type="CanvasLayer" parent="Overlays/CooksStatement" unique_id=2046572807]
+visible = false
+script = ExtResource("27_mdf58")
 
-[node name="Page2" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1206943279]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="StatementContainer" parent="Overlays/CooksStatement/SimonStatementOverlay" unique_id=1412595096 instance=ExtResource("27_ltbqx")]
+offset_left = -518.0
+offset_top = -234.0
+offset_right = -381.0
+offset_bottom = -185.0
+cook_data = ExtResource("14_yrt1q")
 
-[node name="Page3" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1390564020]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="GameOver" type="CanvasLayer" parent="Overlays" unique_id=1882035141]
+visible = false
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 
-[node name="Page4" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=2098252340]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="Overlays/GameOver" unique_id=754140033]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.22352941)
 
-[node name="Page5" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=2049317344]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="Overlays/GameOver" unique_id=1171577309]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -151.0
+offset_right = -62.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_bmpr3")
 
-[node name="Page6" type="RichTextLabel" parent="CanvasLayer/ColorRect" unique_id=1304674766]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlays/GameOver" unique_id=140310985]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -142.0
+offset_right = -74.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[connection signal="refresh_ingredients" from="Dishes/DishButton1" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="refresh_ingredients" from="Dishes/DishButton2" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="refresh_ingredients" from="Dishes/DishButton3" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="refresh_ingredients" from="Dishes/DishButton4" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="refresh_ingredients" from="Dishes/DishButton5" to="Overlays/IngredientsOverlay/ScrollContainer/VBoxContainer" method="_on_dish_button_refresh_ingredients"]
-[connection signal="button_up" from="Cooks/Simon" to="Overlays/SimonStatementOverlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="Cooks/Rose" to="Overlays/RoseStatementOverlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="Cooks/Peter" to="Overlays/PeterStatementOverlay" method="_on_visibility_button_up"]
+[node name="StatusTexture" type="TextureRect" parent="Overlays/GameOver/VBoxContainer" unique_id=1496686919]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_3dbay")
+stretch_mode = 2
+
+[node name="StatusLabel" type="RichTextLabel" parent="Overlays/GameOver/VBoxContainer" unique_id=42478638]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.5882353, 0.15294118, 0.15294118, 1)
+theme_override_font_sizes/normal_font_size = 8
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlays/GameOver/VBoxContainer" unique_id=369729750]
+layout_mode = 2
+
+[node name="MenuButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=2018988515]
+layout_mode = 2
+size_flags_horizontal = 2
+texture_normal = ExtResource("22_th0l7")
+
+[node name="ReplayButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=1091739391]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("30_xilph")
+
+[node name="NextLevelButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=1724029998]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("31_l3xhh")
+
+[node name="Tutorial" type="CanvasLayer" parent="Overlays" unique_id=1513741469]
+visible = false
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Overlays/Tutorial" unique_id=1968730534]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.22352941)
+
+[node name="TextureRect" type="TextureRect" parent="Overlays/Tutorial" unique_id=531024424]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -151.0
+offset_right = -62.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_bmpr3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/Tutorial" unique_id=1023832593]
+offset_left = 77.5
+offset_top = 45.0
+offset_right = 243.5
+offset_bottom = 131.0
+theme_override_colors/default_color = Color(0.5882353, 0.15294118, 0.15294118, 1)
+theme_override_font_sizes/normal_font_size = 8
+
+[node name="CloseButton" type="TextureButton" parent="Overlays/Tutorial" unique_id=1013245425]
+offset_left = 240.5
+offset_top = 20.5
+offset_right = 252.5
+offset_bottom = 32.5
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_i1pni")
+texture_pressed = SubResource("AtlasTexture_djq2t")
+
+[connection signal="refresh_ingredients" from="Dishes/DishButton1" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton1" to="SideMenu" method="_on_show_dish_information"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton2" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton2" to="SideMenu" method="_on_show_dish_information"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton3" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton3" to="SideMenu" method="_on_show_dish_information"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton4" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton4" to="SideMenu" method="_on_show_dish_information"]
+[connection signal="refresh_ingredients" from="Dishes/DishButton5" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton5" to="SideMenu" method="_on_show_dish_information"]
+[connection signal="button_up" from="Cooks/Simon" to="Overlays/CooksStatement/SimonStatementOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Rose" to="Overlays/CooksStatement/RoseStatementOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Peter" to="Overlays/CooksStatement/PeterStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
-[connection signal="button_up" from="Overlays/IngredientsOverlay/CancelButton" to="Overlays/IngredientsOverlay" method="_on_cancel_button_button_up"]
-[connection signal="button_up" from="Overlays/TipOffOverlay/CancelButton" to="Overlays/TipOffOverlay" method="_on_cancel_button_button_up"]
-[connection signal="button_up" from="Overlays/BookOverlay/CancelButton" to="Overlays/BookOverlay" method="_on_cancel_button_button_up"]
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="MenuButton" to="." method="_on_menu_button_button_up"]
+[connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="button_up" from="TutorialButton" to="." method="_on_tutorial_button_button_up"]
+[connection signal="visibility_changed" from="Overlays/CooksStatement/PeterStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
+[connection signal="visibility_changed" from="Overlays/CooksStatement/RoseStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
+[connection signal="visibility_changed" from="Overlays/CooksStatement/SimonStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
+[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]
+[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/ReplayButton" to="." method="_on_replay_button_button_up"]
+[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_button_up"]
+[connection signal="button_up" from="Overlays/Tutorial/CloseButton" to="." method="_on_tutorial_button_button_up"]
