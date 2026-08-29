@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PoisonData" format=3 uid="uid://3ckfcqp76cfw"]
+
+[ext_resource type="Script" uid="uid://b8pei5iqk0bm8" path="res://scripts/data scripts/poison_data.gd" id="1_3v1gb"]
+[ext_resource type="Texture2D" uid="uid://bjpng5mlv6oto" path="res://sprites/poisons/sanguine_mist.png" id="2_vxkfs"]
+
+[resource]
+script = ExtResource("1_3v1gb")
+name = "Sanguine Mist"
+sprite = ExtResource("2_vxkfs")
+lines = Array[String](["Slow acting", "Causes acute anemia and an incurable thirst for blood", "Metallic taste and scent", "Most effective when inhaled", "Extracted from bat saliva"])
+metadata/_custom_type_script = "uid://b8pei5iqk0bm8"

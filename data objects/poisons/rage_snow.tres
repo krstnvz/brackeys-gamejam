@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="PoisonData" format=3 uid="uid://cwovj5433k21k"]
 
 [ext_resource type="Script" uid="uid://b8pei5iqk0bm8" path="res://scripts/data scripts/poison_data.gd" id="1_8m3hq"]
+[ext_resource type="Texture2D" uid="uid://cm0n7egb5fds4" path="res://sprites/poisons/rage_snow.png" id="2_lwl55"]
 
 [resource]
 script = ExtResource("1_8m3hq")
 name = "Rage Snow"
+sprite = ExtResource("2_lwl55")
 lines = Array[String](["Fast acting", "Causes escalating aggression leading up to a heart attack", "Neutralized by heat", "Sweet taste", "White powder"])
 metadata/_custom_type_script = "uid://b8pei5iqk0bm8"
