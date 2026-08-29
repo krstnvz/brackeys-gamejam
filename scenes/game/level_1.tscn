@@ -223,10 +223,15 @@ texture_normal = SubResource("AtlasTexture_i1pni")
 texture_pressed = SubResource("AtlasTexture_djq2t")
 
 [connection signal="refresh_ingredients" from="Dishes/DishButton1" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton1" to="SideMenu" method="_on_show_dish_information"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton2" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton2" to="SideMenu" method="_on_show_dish_information"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton3" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton3" to="SideMenu" method="_on_show_dish_information"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton4" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton4" to="SideMenu" method="_on_show_dish_information"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton5" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
+[connection signal="show_dish_information" from="Dishes/DishButton5" to="SideMenu" method="_on_show_dish_information"]
 [connection signal="button_up" from="Cooks/Simon" to="Overlays/CooksStatement/SimonStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Cooks/Rose" to="Overlays/CooksStatement/RoseStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="Cooks/Peter" to="Overlays/CooksStatement/PeterStatementOverlay" method="_on_visibility_button_up"]

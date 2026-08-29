@@ -3,10 +3,13 @@ extends Node
 signal refresh_ingredients_list
 
 @export var tip_off_data: TipOffData
+@export var dishes: Array[DishData]
 
 @onready var tip_off_container: Node = $TipOffContainer
-@onready var tip_off_rich_text_label: RichTextLabel = $TipOffContainer/TipOffRichTextLabel
 @onready var ingredients_container: ScrollContainer = $IngredientContainer
+@onready var dish_container: Node2D = $DishContainer
+
+@onready var tip_off_rich_text_label: RichTextLabel = $TipOffContainer/TipOffRichTextLabel
 @onready var menu_page: TextureRect = $PageTexture
 
 enum Tab {
@@ -19,6 +22,8 @@ var buttons: Array[TextureButton] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	dish_container.inject_dishes(dishes)
+	
 	buttons = [
 		$PageTexture/TipOffButton,
 		$PageTexture/IngredientButton,
@@ -77,21 +82,31 @@ func _on_tip_off_button_button_up() -> void:
 	trigger_tab(Tab.TIP_OFF)
 	tip_off_container.visible = true
 	ingredients_container.visible = false
+	dish_container.visible = false
 
 func _on_ingredient_button_button_up() -> void:
 	trigger_tab(Tab.INGREDIENT)
 	ingredients_container.visible = true
 	tip_off_container.visible = false
+	dish_container.visible = false
 
 func _on_book_button_button_up() -> void:
 	trigger_tab(Tab.BOOK)
 	ingredients_container.visible = false
 	tip_off_container.visible = false
+	dish_container.visible = false
 
 func _on_dish_button_button_up() -> void:
 	trigger_tab(Tab.DISH)
+	dish_container.visible = true
 	ingredients_container.visible = false
 	tip_off_container.visible = false
 
 func _on_request_dish_refresh_ingredients() -> void:
 	refresh_ingredients_list.emit()
+
+func _on_show_dish_information(dish: DishData) -> void:
+	dish_container.show_dish(dish)
+	if is_menu_open == false:
+		buttons[Tab.DISH].button_pressed = true
+		_on_dish_button_button_up()
