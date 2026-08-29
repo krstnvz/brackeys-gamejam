@@ -1,28 +1,28 @@
 extends Node
 
-var ingredientsData = IngredientsData.new()
-var safeDishes: Array[DishData] = []
+signal on_scene_ingredients_ready
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	ingredientsData.createAllIngredientsModel()
+var scene_ingredients: Array[IngredientsData.Ingredient] = []
+var ingredients_data = IngredientsData.new()
+var safe_dishes: Array[DishData] = []
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func updateIngredients(dishData, value):
-	ingredientsData.crossAllIngredientsOut()
+func updateIngredients(dish_data, value):
+	ingredients_data.crossAllIngredientsOut()
 	
-	var index = safeDishes.find(dishData)
+	var index = safe_dishes.find(dish_data)
 	
 	# dish not in the array
 	if index < 0 && value:
-		safeDishes.append(dishData)
+		safe_dishes.append(dish_data)
 	else:
 		if index >= 0:
-			safeDishes.remove_at(index)
+			safe_dishes.remove_at(index)
 	
-	for dish in safeDishes:
+	for dish in safe_dishes:
 		for ingredient in dish.ingredients:
-			ingredientsData.crossIngredient(ingredient)
+			ingredients_data.crossIngredient(ingredient)
+
+func registerSceneIngredients(ingredients):
+	scene_ingredients = ingredients
+	ingredients_data.createSceneIngredientModel(scene_ingredients)
+	on_scene_ingredients_ready.emit()

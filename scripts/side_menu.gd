@@ -1,8 +1,9 @@
-extends TextureRect
+extends Node
 
 signal refresh_ingredients_list
 
 @onready var ingredients_container: ScrollContainer = $ScrollContainer
+@onready var menu_page: TextureRect = $PageTexture
 
 enum Tab {
 	TIP_OFF, INGREDIENT, BOOK, DISH, NONE
@@ -15,10 +16,10 @@ var buttons: Array[TextureButton] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	buttons = [
-		$TipOffButton,
-		$IngredientButton,
-		$BookButton,
-		$DishButton,
+		$PageTexture/TipOffButton,
+		$PageTexture/IngredientButton,
+		$PageTexture/BookButton,
+		$PageTexture/DishButton,
 	]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,13 +34,13 @@ func toggle_menu():
 
 func open_menu():
 	is_menu_open = true
-	var target_position = self.position.x - (self.size.x * self.scale.x)
+	var target_position = self.position.x - (menu_page.size.x * menu_page.scale.x)
 	run_animation(target_position, 0.25)
 
 func close_menu():
 	selected_tab = Tab.NONE
 	is_menu_open = false
-	var target_position = self.position.x + (self.size.x * self.scale.x)
+	var target_position = self.position.x + (menu_page.size.x * menu_page.scale.x)
 	run_animation(target_position, 0.2)
 	pass
 
@@ -77,18 +78,6 @@ func _on_book_button_button_up() -> void:
 func _on_dish_button_button_up() -> void:
 	trigger_tab(Tab.DISH)
 	ingredients_container.visible = false
-
-func _on_tip_off_button_toggled(toggled_on: bool) -> void:
-	pass
-
-func _on_ingredient_button_toggled(toggled_on: bool) -> void:
-	pass
-	
-func _on_book_button_toggled(toggled_on: bool) -> void:
-	pass
-
-func _on_dish_button_toggled(toggled_on: bool) -> void:
-	pass
 
 func _on_request_dish_refresh_ingredients() -> void:
 	refresh_ingredients_list.emit()

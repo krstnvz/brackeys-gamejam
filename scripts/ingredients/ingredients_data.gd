@@ -103,29 +103,29 @@ class IngredientModel:
 			_:
 				return "NONE"
 
-var allIngredients: Array[IngredientModel] = []
+var sceneIngredients: Array[IngredientModel] = []
 
 func get_sorted_ingredients() -> Array[IngredientModel]:
-	allIngredients.sort_custom(func(a,b): return a.get_name() < b.get_name())
-	return allIngredients
+	sceneIngredients.sort_custom(func(a,b): return a.get_name() < b.get_name())
+	return sceneIngredients
 
-func createAllIngredientsModel():
-	for ingredient in Ingredient.MAX_INGREDIENT:
+func createSceneIngredientModel(ingredents: Array[Ingredient]):
+	for ingredient in ingredents:
 		var model = IngredientModel.new()
 		model.ingredient = ingredient
-		allIngredients.append(model)
+		sceneIngredients.append(model)	
 
 func crossAllIngredientsOut():
-	for ingredient in allIngredients:
+	for ingredient in sceneIngredients:
 		ingredient.is_checked = false
 		
 func is_specific_ingredient(model, expected):
 	return model.ingredient == expected
 
 func crossIngredient(ingredient):
-	var index = allIngredients.find_custom(
+	var index = sceneIngredients.find_custom(
 		is_specific_ingredient.bind(ingredient)
 	)
 	
 	if index >= 0:
-		allIngredients[index].is_checked = true
+		sceneIngredients[index].is_checked = true
