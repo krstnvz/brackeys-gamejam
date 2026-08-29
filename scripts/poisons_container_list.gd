@@ -5,8 +5,8 @@ var poisons: Array[PoisonData]
 @onready var title: Label = $Title
 @onready var texture_rect: TextureRect = $AspectRatioContainer/TextureRect
 @onready var poison_rich_text_label: RichTextLabel = $PoisonRichTextLabel
-@onready var previous: Button = $HBoxContainer/previous
-@onready var next: Button = $HBoxContainer/next
+@onready var previous: TextureButton = $HBoxContainer/previous
+@onready var next: TextureButton = $HBoxContainer/next
 
 var current_poison_index: int = 0
 

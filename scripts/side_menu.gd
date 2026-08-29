@@ -35,7 +35,7 @@ func _ready() -> void:
 	]
 	
 	for line in tip_off_data.lines:
-		var formatted = "- " + line
+		var formatted = "[ul]" + line + "[/ul]"
 		tip_off_rich_text_label.append_text(formatted)
 		tip_off_rich_text_label.newline()
 		tip_off_rich_text_label.newline()

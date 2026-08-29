@@ -4,8 +4,8 @@ var dishes: Array[DishData]
 
 @onready var title: Label = $Title
 @onready var dish_rich_text_label: RichTextLabel = $DishRichTextLabel
-@onready var next: Button = $HBoxContainer/next
-@onready var previous: Button = $HBoxContainer/previous
+@onready var next: TextureButton = $HBoxContainer/next
+@onready var previous: TextureButton = $HBoxContainer/previous
 
 var current_dish_index: int = 0
 

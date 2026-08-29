@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://c8yi68vdu656m" path="res://scripts/dishes/dish_container_list.gd" id="15_g3q56"]
 [ext_resource type="Texture2D" uid="uid://cl6v1j0ewgmfn" path="res://sprites/poisons/blistering_water.png" id="16_khfva"]
 [ext_resource type="Script" uid="uid://cgccgomkfx018" path="res://scripts/poisons_container_list.gd" id="16_wyu7s"]
+[ext_resource type="Texture2D" uid="uid://byxwi0qjgsfsm" path="res://sprites/UI/arrow.png" id="22_dk54r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sfjtl"]
 atlas = ExtResource("2_7smlm")
@@ -61,6 +62,9 @@ margin = Rect2(5, 0, 0, 0)
 atlas = ExtResource("2_7smlm")
 region = Rect2(17, 0, 17, 30)
 margin = Rect2(3, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8322e"]
+load_path = "res://.godot/imported/arrow.png-55880307c4ea61c16a51b27656e71a7e.ctex"
 
 [node name="SideMenu" type="Node2D" unique_id=310717391]
 script = ExtResource("2_tprfx")
@@ -166,14 +170,16 @@ offset_right = 183.0
 offset_bottom = 151.0
 theme_override_colors/default_color = Color(0.5882353, 0.15294118, 0.15294118, 1)
 theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
 fit_content = true
 scroll_active = false
 
 [node name="DishContainer" type="VBoxContainer" parent="." unique_id=12030281]
-offset_left = 15.0
+visible = false
+offset_left = 17.0
 offset_top = 26.0
-offset_right = 186.0
-offset_bottom = 245.0
+offset_right = 182.0
+offset_bottom = 242.0
 script = ExtResource("15_g3q56")
 
 [node name="Title" type="Label" parent="DishContainer" unique_id=1737487679]
@@ -199,23 +205,29 @@ vertical_alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="previous" type="Button" parent="DishContainer/HBoxContainer" unique_id=1988497711]
+[node name="previous" type="TextureButton" parent="DishContainer/HBoxContainer" unique_id=1294623804]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_font_sizes/font_size = 8
-text = "Previous"
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+offset_transform_visual_only = false
+texture_normal = ExtResource("22_dk54r")
+flip_h = true
 
-[node name="next" type="Button" parent="DishContainer/HBoxContainer" unique_id=923373517]
+[node name="next" type="TextureButton" parent="DishContainer/HBoxContainer" unique_id=1864524243]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_font_sizes/font_size = 8
-text = "Next"
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+offset_transform_visual_only = false
+texture_normal = ExtResource("22_dk54r")
 
 [node name="PoisonsContainer" type="VBoxContainer" parent="." unique_id=1805541531]
+visible = false
 offset_left = 17.0
 offset_top = 26.0
 offset_right = 182.0
-offset_bottom = 248.0
+offset_bottom = 242.0
 theme_override_constants/separation = 10
 script = ExtResource("16_wyu7s")
 
@@ -253,19 +265,26 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PoisonsContainer" unique_id=116036792]
 layout_mode = 2
+offset_transform_enabled = true
 alignment = 1
+metadata/_edit_group_ = true
 
-[node name="previous" type="Button" parent="PoisonsContainer/HBoxContainer" unique_id=546549027]
+[node name="previous" type="TextureButton" parent="PoisonsContainer/HBoxContainer" unique_id=2080271649]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_font_sizes/font_size = 8
-text = "Previous"
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+offset_transform_visual_only = false
+texture_normal = SubResource("CompressedTexture2D_8322e")
+flip_h = true
 
-[node name="next" type="Button" parent="PoisonsContainer/HBoxContainer" unique_id=203952976]
+[node name="next" type="TextureButton" parent="PoisonsContainer/HBoxContainer" unique_id=329867509]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_font_sizes/font_size = 8
-text = "Next"
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+offset_transform_visual_only = false
+texture_normal = ExtResource("22_dk54r")
 
 [connection signal="refresh_ingredients_list" from="." to="IngredientContainer/VBoxContainer" method="_on_refresh_ingredients"]
 [connection signal="button_up" from="PageTexture/DishButton" to="." method="_on_dish_button_button_up"]
