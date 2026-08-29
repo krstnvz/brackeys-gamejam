@@ -207,8 +207,9 @@ texture_pressed = SubResource("AtlasTexture_djq2t")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 
-[node name="CooksStatement" type="Node" parent="Overlays" unique_id=1997664094]
+[node name="CooksStatement" type="Node" parent="Overlays" unique_id=1997664094 node_paths=PackedStringArray("cooks")]
 script = ExtResource("21_8i3vp")
+cooks = [NodePath("PeterStatementOverlay"), NodePath("RoseStatementOverlay"), NodePath("SimonStatementOverlay")]
 
 [node name="PeterStatementOverlay" type="CanvasLayer" parent="Overlays/CooksStatement" unique_id=578976360]
 visible = false
@@ -374,6 +375,9 @@ texture_pressed = SubResource("AtlasTexture_djq2t")
 [connection signal="button_up" from="MenuButton" to="." method="_on_menu_button_button_up"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="button_up" from="TutorialButton" to="." method="_on_tutorial_button_button_up"]
+[connection signal="visibility_changed" from="Overlays/CooksStatement/PeterStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
+[connection signal="visibility_changed" from="Overlays/CooksStatement/RoseStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
+[connection signal="visibility_changed" from="Overlays/CooksStatement/SimonStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
 [connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]
 [connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/ReplayButton" to="." method="_on_replay_button_button_up"]
 [connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_button_up"]
