@@ -2,6 +2,8 @@ extends Node
 
 signal on_scene_ingredients_ready
 
+var has_tutorial_displayed = false
+
 var scene_ingredients: Array[IngredientsData.Ingredient] = []
 var ingredients_data = IngredientsData.new()
 var safe_dishes: Array[DishData] = []

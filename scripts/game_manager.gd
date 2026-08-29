@@ -15,6 +15,10 @@ extends Node
 
 func _ready() -> void:
 	GameGlobals.registerSceneIngredients(get_scene_ingredients())
+	
+	if GameGlobals.has_tutorial_displayed == false:
+		tutorial.visible = true
+		GameGlobals.has_tutorial_displayed = true
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
