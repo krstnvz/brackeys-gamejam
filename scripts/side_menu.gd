@@ -44,6 +44,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_ESCAPE and is_menu_open:
+			trigger_tab(selected_tab)
 	
 func toggle_menu():
 	if is_menu_open:
@@ -59,9 +64,13 @@ func open_menu():
 func close_menu():
 	selected_tab = Tab.NONE
 	is_menu_open = false
+	
+	# Reset button pressed state
+	for tab in Tab.NONE:
+		buttons[tab].button_pressed = false
+	
 	var target_position = self.position.x + (menu_page.size.x * menu_page.scale.x)
 	run_animation(target_position, 0.2)
-	pass
 
 func run_animation(target_position: float, duration: float):
 	var tween = create_tween()

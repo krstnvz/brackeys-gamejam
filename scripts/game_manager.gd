@@ -16,6 +16,11 @@ extends Node
 func _ready() -> void:
 	GameGlobals.registerSceneIngredients(get_scene_ingredients())
 
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_ESCAPE and tutorial.visible:
+			_on_tutorial_button_button_up()
+
 func _on_submit_button_button_up() -> void:
 	var did_win = true
 	
