@@ -33,10 +33,11 @@
 [ext_resource type="PackedScene" uid="uid://cupis3jrb8ulo" path="res://scenes/components/statement_container.tscn" id="27_ltbqx"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_mdf58"]
 [ext_resource type="Texture2D" uid="uid://cesc7rnfi7tjh" path="res://sprites/UI/level_finished_overlay.png" id="29_bmpr3"]
+[ext_resource type="Texture2D" uid="uid://bw48vuwu0mxub" path="res://sprites/UI/buttons/help_button.png" id="30_cbcpk"]
 [ext_resource type="Texture2D" uid="uid://riy3mrromdt4" path="res://sprites/UI/buttons/replay_button.png" id="30_xilph"]
 [ext_resource type="Texture2D" uid="uid://dvrtcwqn0vhm2" path="res://sprites/UI/buttons/next_level_button.png" id="31_l3xhh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_th0l7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eprbd"]
 resource_local_to_scene = true
 atlas = ExtResource("16_o476j")
 region = Rect2(0, 0, 31, 37)
@@ -150,7 +151,7 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_th0l7")
+texture_normal = SubResource("AtlasTexture_eprbd")
 cook_data = ExtResource("20_a2lpy")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("20_u0faa")]
@@ -207,12 +208,11 @@ texture_pressed = SubResource("AtlasTexture_djq2t")
 [node name="TutorialButton" type="TextureButton" parent="." unique_id=617450653]
 offset_left = 104.0
 offset_top = 2.0
-offset_right = 116.0
+offset_right = 115.0
 offset_bottom = 14.0
 scale = Vector2(2, 2)
 toggle_mode = true
-texture_normal = SubResource("AtlasTexture_i1pni")
-texture_pressed = SubResource("AtlasTexture_djq2t")
+texture_normal = ExtResource("30_cbcpk")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 

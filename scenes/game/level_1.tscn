@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="24_4xw7v"]
 [ext_resource type="Texture2D" uid="uid://cesc7rnfi7tjh" path="res://sprites/UI/level_finished_overlay.png" id="24_8i3vp"]
 [ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="25_15xv0"]
+[ext_resource type="Texture2D" uid="uid://bw48vuwu0mxub" path="res://sprites/UI/buttons/help_button.png" id="25_wvvb4"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_bjnfs"]
 [ext_resource type="Texture2D" uid="uid://dvrtcwqn0vhm2" path="res://sprites/UI/buttons/next_level_button.png" id="28_djq2t"]
 [ext_resource type="Texture2D" uid="uid://riy3mrromdt4" path="res://sprites/UI/buttons/replay_button.png" id="29_wvvb4"]
@@ -32,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://sl7wvyfd8pga" path="res://sprites/UI/labels/success_label.png" id="31_bhauw"]
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="31_q82fx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvvb4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cwer"]
 resource_local_to_scene = true
 atlas = ExtResource("16_nx801")
 region = Rect2(0, 0, 31, 37)
@@ -143,7 +144,7 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_wvvb4")
+texture_normal = SubResource("AtlasTexture_2cwer")
 cook_data = ExtResource("17_0upy3")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("18_u0pkn")]
@@ -198,12 +199,11 @@ texture_pressed = SubResource("AtlasTexture_djq2t")
 [node name="TutorialButton" type="TextureButton" parent="." unique_id=617450653]
 offset_left = 104.0
 offset_top = 2.0
-offset_right = 116.0
+offset_right = 115.0
 offset_bottom = 14.0
 scale = Vector2(2, 2)
 toggle_mode = true
-texture_normal = SubResource("AtlasTexture_i1pni")
-texture_pressed = SubResource("AtlasTexture_djq2t")
+texture_normal = ExtResource("25_wvvb4")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 
