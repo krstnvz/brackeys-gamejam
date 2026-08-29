@@ -31,7 +31,7 @@ func _on_submit_button_button_up() -> void:
 	# status_label.text = ""
 	
 	var is_last_level = Navigation.current_level == Navigation.Level.LEVEL_2
-	next_level_button.visible = is_last_level == false
+	next_level_button.visible = did_win == true && is_last_level == false
 	
 	game_over.visible = true
 	
