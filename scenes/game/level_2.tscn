@@ -5,17 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://4380ny5wug66" path="res://sprites/background.png" id="2_dit22"]
 [ext_resource type="Texture2D" uid="uid://2fkfcd8jlqog" path="res://sprites/UI/labels/you_died_label.png" id="3_dit22"]
 [ext_resource type="PackedScene" uid="uid://bv2owiajweq0r" path="res://scenes/components/Dish.tscn" id="3_u0faa"]
-[ext_resource type="Texture2D" uid="uid://c5c6x2x2tbmnj" path="res://sprites/dishes/salmon_atlas.tres" id="4_a2lpy"]
-[ext_resource type="Resource" uid="uid://b61cj1umiow24" path="res://data objects/dishes/level1/glazed_salmon.tres" id="5_th0l7"]
 [ext_resource type="Texture2D" uid="uid://bew7r1rtv2lhm" path="res://sprites/dishes/chicken_atlas.tres" id="6_cbcpk"]
-[ext_resource type="Resource" uid="uid://b5j3dxsi5ixmf" path="res://data objects/dishes/level1/roast_chicken.tres" id="7_eprbd"]
+[ext_resource type="Resource" uid="uid://nqm7scpq7dlx" path="res://data objects/dishes/level2/honey_glazed_pears2.tres" id="6_eprbd"]
 [ext_resource type="Texture2D" uid="uid://qgwkx5w6t5hx" path="res://sprites/dishes/pears_atlas.tres" id="8_ajmqn"]
-[ext_resource type="Resource" uid="uid://yhpjs4kca8c2" path="res://data objects/dishes/level1/honey_glazed_pears.tres" id="9_ltbqx"]
-[ext_resource type="Texture2D" uid="uid://y6572cqo4ry1" path="res://sprites/dishes/cheesecake_atlas.tres" id="10_bmpr3"]
-[ext_resource type="Resource" uid="uid://56cna5mxbnma" path="res://data objects/dishes/level1/cheesecake.tres" id="11_xilph"]
+[ext_resource type="Texture2D" uid="uid://dr50enu7hefx6" path="res://sprites/dishes/goat_cheese_salad_atlas.tres" id="8_cbcpk"]
+[ext_resource type="Resource" uid="uid://tm6jt1okhjvc" path="res://data objects/dishes/level2/goat_cheese_salad.tres" id="9_cbcpk"]
+[ext_resource type="Texture2D" uid="uid://ck8n3j0n1q1xb" path="res://sprites/dishes/spinach_soup_atlas.tres" id="10_cbcpk"]
+[ext_resource type="Resource" uid="uid://88rr4r50krtx" path="res://data objects/dishes/level2/spinach_soup.tres" id="11_cbcpk"]
+[ext_resource type="Resource" uid="uid://bchcmvvvfscsf" path="res://data objects/dishes/level2/roast_chicken2.tres" id="12_cbcpk"]
 [ext_resource type="PackedScene" uid="uid://rob1bfdbg0mr" path="res://scenes/components/Cook.tscn" id="12_l3xhh"]
 [ext_resource type="Texture2D" uid="uid://dd30ny51tit0s" path="res://sprites/cooks/simon_atlas.tres" id="13_gs74x"]
+[ext_resource type="Texture2D" uid="uid://bbh2e1akvrk6p" path="res://sprites/dishes/parfait_atlas.tres" id="14_eprbd"]
 [ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://data objects/cooks/level1/simon1.tres" id="14_yrt1q"]
+[ext_resource type="Resource" uid="uid://ya5boiyr0tn7" path="res://data objects/dishes/level2/yogurt_parfait.tres" id="15_eprbd"]
 [ext_resource type="Texture2D" uid="uid://b4su2hogptwkk" path="res://sprites/cooks/rose_atlas.tres" id="15_nyeqf"]
 [ext_resource type="Resource" uid="uid://brh6gayay8ujb" path="res://data objects/cooks/level2/simon2.tres" id="16_a2lpy"]
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="16_o476j"]
@@ -92,38 +94,40 @@ offset_left = 67.0
 offset_top = 258.0
 offset_right = 87.0
 offset_bottom = 275.0
+texture_normal = ExtResource("8_ajmqn")
+dish = ExtResource("6_eprbd")
 
 [node name="DishButton2" parent="Dishes" unique_id=1160370312 instance=ExtResource("3_u0faa")]
-offset_left = 132.0
-offset_top = 260.0
-offset_right = 157.0
-offset_bottom = 276.0
-texture_normal = ExtResource("4_a2lpy")
-dish = ExtResource("5_th0l7")
+offset_left = 142.0
+offset_top = 258.0
+offset_right = 163.0
+offset_bottom = 275.0
+texture_normal = ExtResource("8_cbcpk")
+dish = ExtResource("9_cbcpk")
 
 [node name="DishButton3" parent="Dishes" unique_id=1980203305 instance=ExtResource("3_u0faa")]
-offset_left = 209.0
-offset_top = 260.0
-offset_right = 234.0
-offset_bottom = 276.0
-texture_normal = ExtResource("6_cbcpk")
-dish = ExtResource("7_eprbd")
+offset_left = 216.0
+offset_top = 258.0
+offset_right = 236.0
+offset_bottom = 275.0
+texture_normal = ExtResource("10_cbcpk")
+dish = ExtResource("11_cbcpk")
 
 [node name="DishButton4" parent="Dishes" unique_id=731125659 instance=ExtResource("3_u0faa")]
-offset_left = 285.0
+offset_left = 283.0
 offset_top = 258.0
-offset_right = 307.0
+offset_right = 308.0
 offset_bottom = 275.0
-texture_normal = ExtResource("8_ajmqn")
-dish = ExtResource("9_ltbqx")
+texture_normal = ExtResource("6_cbcpk")
+dish = ExtResource("12_cbcpk")
 
 [node name="DishButton5" parent="Dishes" unique_id=1334535440 instance=ExtResource("3_u0faa")]
-offset_left = 354.0
+offset_left = 362.0
 offset_top = 248.0
-offset_right = 383.0
+offset_right = 381.0
 offset_bottom = 270.0
-texture_normal = ExtResource("10_bmpr3")
-dish = ExtResource("11_xilph")
+texture_normal = ExtResource("14_eprbd")
+dish = ExtResource("15_eprbd")
 
 [node name="Cooks" type="Node" parent="." unique_id=1674559037]
 
