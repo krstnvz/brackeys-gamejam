@@ -18,6 +18,7 @@ enum Tab {
 	TIP_OFF, INGREDIENT, BOOK, DISH, NONE
 }
 
+var is_toggled_by_dish: bool = false
 var is_menu_open: bool = false
 var selected_tab: Tab = Tab.NONE
 var buttons: Array[TextureButton] = []
@@ -74,7 +75,7 @@ func update_buttons_toggle_state(selected_tab: Tab):
 			buttons[tab].button_pressed = false
 
 func trigger_tab(tab: Tab):
-	if selected_tab == Tab.NONE || selected_tab == tab:
+	if selected_tab == Tab.NONE || (is_toggled_by_dish == false && selected_tab == tab):
 		toggle_menu()
 	
 	if is_menu_open == true:
@@ -113,7 +114,9 @@ func _on_request_dish_refresh_ingredients() -> void:
 	refresh_ingredients_list.emit()
 
 func _on_show_dish_information(dish: DishData) -> void:
+	is_toggled_by_dish = true
 	dish_container.show_dish(dish)
-	if is_menu_open == false:
-		buttons[Tab.DISH].button_pressed = true
-		_on_dish_button_button_up()
+	
+	buttons[Tab.DISH].button_pressed = true
+	_on_dish_button_button_up()
+	is_toggled_by_dish = false
