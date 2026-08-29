@@ -17,10 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://dd30ny51tit0s" path="res://sprites/cooks/simon_atlas.tres" id="13_gs74x"]
 [ext_resource type="Resource" uid="uid://dnmrawhs2simj" path="res://data objects/cooks/level1/simon1.tres" id="14_yrt1q"]
 [ext_resource type="Texture2D" uid="uid://b4su2hogptwkk" path="res://sprites/cooks/rose_atlas.tres" id="15_nyeqf"]
+[ext_resource type="Resource" uid="uid://brh6gayay8ujb" path="res://data objects/cooks/level2/simon2.tres" id="16_a2lpy"]
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="16_o476j"]
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/level1/peter1.tres" id="17_ggxxd"]
+[ext_resource type="Resource" uid="uid://c4kbkjxpt2ukq" path="res://data objects/cooks/level2/rose2.tres" id="18_u0faa"]
+[ext_resource type="Resource" uid="uid://btebbeh6kducy" path="res://data objects/cooks/level2/peter2.tres" id="20_a2lpy"]
 [ext_resource type="PackedScene" uid="uid://btaiju14nygip" path="res://scenes/components/side_menu.tscn" id="20_u0faa"]
 [ext_resource type="Texture2D" uid="uid://vb52msgfi0k7" path="res://sprites/UI/buttons/fancy_button.png" id="21_a2lpy"]
+[ext_resource type="Resource" uid="uid://cdpq4lm5fb0mp" path="res://data objects/tip off/tip_off2.tres" id="22_cbcpk"]
 [ext_resource type="Texture2D" uid="uid://cbu8tnp5f13l8" path="res://sprites/UI/buttons/menu_button.png" id="22_th0l7"]
 [ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="23_cbcpk"]
 [ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="24_eprbd"]
@@ -32,7 +36,7 @@
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="31_dihvj"]
 [ext_resource type="Texture2D" uid="uid://dvrtcwqn0vhm2" path="res://sprites/UI/buttons/next_level_button.png" id="31_l3xhh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvvb4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_th0l7"]
 resource_local_to_scene = true
 atlas = ExtResource("16_o476j")
 region = Rect2(0, 0, 31, 37)
@@ -129,7 +133,7 @@ offset_top = 176.0
 offset_right = 271.0
 offset_bottom = 218.0
 texture_normal = ExtResource("13_gs74x")
-cook_data = ExtResource("14_yrt1q")
+cook_data = ExtResource("16_a2lpy")
 
 [node name="Rose" parent="Cooks" unique_id=932202432 instance=ExtResource("12_l3xhh")]
 offset_left = 192.0
@@ -137,17 +141,19 @@ offset_top = 196.0
 offset_right = 211.0
 offset_bottom = 228.0
 texture_normal = ExtResource("15_nyeqf")
+cook_data = ExtResource("18_u0faa")
 
 [node name="Peter" parent="Cooks" unique_id=1838810257 instance=ExtResource("12_l3xhh")]
 offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_wvvb4")
-cook_data = ExtResource("17_ggxxd")
+texture_normal = SubResource("AtlasTexture_th0l7")
+cook_data = ExtResource("20_a2lpy")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("20_u0faa")]
 position = Vector2(640, 0)
+tip_off_data = ExtResource("22_cbcpk")
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
 texture_filter = 1
