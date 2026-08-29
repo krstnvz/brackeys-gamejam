@@ -27,18 +27,18 @@
 [ext_resource type="Resource" uid="uid://cdpq4lm5fb0mp" path="res://data objects/tip off/tip_off2.tres" id="22_cbcpk"]
 [ext_resource type="Texture2D" uid="uid://cbu8tnp5f13l8" path="res://sprites/UI/buttons/menu_button.png" id="22_th0l7"]
 [ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="23_cbcpk"]
-[ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="24_eprbd"]
 [ext_resource type="Script" uid="uid://bgr2s3ndum2hf" path="res://scripts/cooks/cooks_statement_controller.gd" id="25_ajmqn"]
 [ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/data scripts/dish_data.gd" id="25_ltbqx"]
 [ext_resource type="PackedScene" uid="uid://cupis3jrb8ulo" path="res://scenes/components/statement_container.tscn" id="27_ltbqx"]
 [ext_resource type="Script" uid="uid://jhes5jx3ht77" path="res://scripts/overlay_visibility.gd" id="27_mdf58"]
 [ext_resource type="Texture2D" uid="uid://cesc7rnfi7tjh" path="res://sprites/UI/level_finished_overlay.png" id="29_bmpr3"]
+[ext_resource type="PackedScene" uid="uid://q04ratl2widm" path="res://scenes/components/mute_button.tscn" id="29_eprbd"]
 [ext_resource type="Texture2D" uid="uid://bw48vuwu0mxub" path="res://sprites/UI/buttons/help_button.png" id="30_cbcpk"]
 [ext_resource type="Texture2D" uid="uid://riy3mrromdt4" path="res://sprites/UI/buttons/replay_button.png" id="30_xilph"]
 [ext_resource type="Texture2D" uid="uid://dvrtcwqn0vhm2" path="res://sprites/UI/buttons/next_level_button.png" id="31_l3xhh"]
 [ext_resource type="PackedScene" uid="uid://oc65hk33ep5x" path="res://scenes/components/tutorial.tscn" id="37_eprbd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eprbd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajmqn"]
 resource_local_to_scene = true
 atlas = ExtResource("16_o476j")
 region = Rect2(0, 0, 31, 37)
@@ -62,14 +62,6 @@ region = Rect2(0, 0, 11, 12)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcb6a"]
 atlas = ExtResource("23_cbcpk")
 region = Rect2(0, 12, 11, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i1pni"]
-atlas = ExtResource("24_eprbd")
-region = Rect2(0, 12, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_djq2t"]
-atlas = ExtResource("24_eprbd")
-region = Rect2(0, 0, 12, 12)
 
 [node name="Main" type="Node" unique_id=447475477 node_paths=PackedStringArray("dishes")]
 script = ExtResource("1_3dbay")
@@ -152,7 +144,7 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_eprbd")
+texture_normal = SubResource("AtlasTexture_ajmqn")
 cook_data = ExtResource("20_a2lpy")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("20_u0faa")]
@@ -196,15 +188,7 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_ygoml")
 texture_pressed = SubResource("AtlasTexture_fcb6a")
 
-[node name="MuteButton" type="TextureButton" parent="." unique_id=892062031]
-offset_left = 78.0
-offset_top = 2.0
-offset_right = 90.0
-offset_bottom = 14.0
-scale = Vector2(2, 2)
-toggle_mode = true
-texture_normal = SubResource("AtlasTexture_i1pni")
-texture_pressed = SubResource("AtlasTexture_djq2t")
+[node name="MuteButton" parent="." unique_id=212364976 instance=ExtResource("29_eprbd")]
 
 [node name="TutorialButton" type="TextureButton" parent="." unique_id=617450653]
 offset_left = 104.0

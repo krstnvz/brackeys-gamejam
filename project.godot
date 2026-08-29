@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameGlobals="*uid://csodf5to383cu"
 Navigation="*uid://cx6vq3w2ip4e6"
+GlobalAudio="*uid://bmee6u2nedtcx"
 
 [display]
 

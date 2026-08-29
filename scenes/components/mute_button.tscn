@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://q04ratl2widm"]
+
+[ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="1_3rccc"]
+[ext_resource type="Script" uid="uid://bgn0pfbhn71nr" path="res://scripts/mute_button.gd" id="2_3wxwo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1pni"]
+atlas = ExtResource("1_3rccc")
+region = Rect2(0, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djq2t"]
+atlas = ExtResource("1_3rccc")
+region = Rect2(0, 0, 12, 12)
+
+[node name="MuteButton" type="TextureButton" unique_id=212364976]
+offset_left = 78.0
+offset_top = 2.0
+offset_right = 90.0
+offset_bottom = 14.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_i1pni")
+texture_pressed = SubResource("AtlasTexture_djq2t")
+script = ExtResource("2_3wxwo")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

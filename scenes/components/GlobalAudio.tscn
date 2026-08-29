@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bmee6u2nedtcx"]
+
+[ext_resource type="Script" uid="uid://camhfvyjdalf5" path="res://scripts/singletons/global_audio.gd" id="1_52o3f"]
+[ext_resource type="AudioStream" uid="uid://dilu2vpetuem6" path="res://audio/memoria_fragmentada.mp3" id="1_gfhrw"]
+
+[node name="GlobalAudio" type="Node2D" unique_id=1600284403]
+script = ExtResource("1_52o3f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1089550670]
+stream = ExtResource("1_gfhrw")
+autoplay = true
+parameters/looping = true
