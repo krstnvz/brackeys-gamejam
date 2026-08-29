@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://ya5boiyr0tn7"]
 
-[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_g8yqi"]
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/data scripts/dish_data.gd" id="1_g8yqi"]
 [ext_resource type="Texture2D" uid="uid://baeg01basy026" path="res://sprites/dishes/parfait.png" id="1_xiwu3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7rhx"]

@@ -1,11 +1,11 @@
-extends Node2D
+extends VBoxContainer
 
 var dishes: Array[DishData]
 
 @onready var title: Label = $Title
 @onready var dish_rich_text_label: RichTextLabel = $DishRichTextLabel
-@onready var next: Button = $next
-@onready var previous: Button = $previous
+@onready var next: Button = $HBoxContainer/next
+@onready var previous: Button = $HBoxContainer/previous
 
 var current_dish_index: int = 0
 

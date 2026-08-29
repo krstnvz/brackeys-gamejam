@@ -18,9 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="16_nx801"]
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/level1/peter1.tres" id="17_0upy3"]
 [ext_resource type="PackedScene" uid="uid://btaiju14nygip" path="res://scenes/components/side_menu.tscn" id="18_u0pkn"]
+[ext_resource type="Script" uid="uid://b8pei5iqk0bm8" path="res://scripts/data scripts/poison_data.gd" id="19_i1pni"]
 [ext_resource type="Texture2D" uid="uid://vb52msgfi0k7" path="res://sprites/UI/buttons/fancy_button.png" id="20_15xv0"]
+[ext_resource type="Resource" uid="uid://whqvuoij2yf" path="res://data objects/poisons/blistering_water.tres" id="20_djq2t"]
 [ext_resource type="Script" uid="uid://bgr2s3ndum2hf" path="res://scripts/cooks/cooks_statement_controller.gd" id="21_8i3vp"]
 [ext_resource type="PackedScene" uid="uid://cupis3jrb8ulo" path="res://scenes/components/statement_container.tscn" id="21_u0pkn"]
+[ext_resource type="Resource" uid="uid://cwovj5433k21k" path="res://data objects/poisons/rage_snow.tres" id="21_wvvb4"]
+[ext_resource type="Resource" uid="uid://3ckfcqp76cfw" path="res://data objects/poisons/sanguine_mist.tres" id="22_2cwer"]
 [ext_resource type="Texture2D" uid="uid://cbu8tnp5f13l8" path="res://sprites/UI/buttons/menu_button.png" id="23_lgbjo"]
 [ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="24_4xw7v"]
 [ext_resource type="Texture2D" uid="uid://cd2ffu8sbds0a" path="res://sprites/UI/buttons/mute_button.png" id="25_15xv0"]
@@ -141,6 +145,7 @@ cook_data = ExtResource("17_0upy3")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("18_u0pkn")]
 position = Vector2(640, 0)
+poisons = Array[ExtResource("19_i1pni")]([ExtResource("20_djq2t"), ExtResource("21_wvvb4"), ExtResource("22_2cwer")])
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
 texture_filter = 1

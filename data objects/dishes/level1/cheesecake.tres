@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://56cna5mxbnma"]
 
-[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_3goxc"]
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/data scripts/dish_data.gd" id="1_3goxc"]
 [ext_resource type="Texture2D" uid="uid://dqa4vr1l0h4e6" path="res://sprites/dishes/cheesecake.png" id="1_d058o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r4dt"]

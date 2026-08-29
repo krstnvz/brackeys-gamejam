@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CookData" format=3 uid="uid://btebbeh6kducy"]
 
 [ext_resource type="Texture2D" uid="uid://1bqsoa6rtxjv" path="res://sprites/cooks/peter.png" id="1_j7fsm"]
-[ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/cooks/cook_data.gd" id="1_qwbmn"]
+[ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/data scripts/cook_data.gd" id="1_qwbmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7fsm"]
 resource_local_to_scene = true

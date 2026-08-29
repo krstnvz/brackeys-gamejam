@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CookData" format=3 uid="uid://brh6gayay8ujb"]
 
 [ext_resource type="Texture2D" uid="uid://i118rkoynqja" path="res://sprites/cooks/simon.png" id="1_a1koh"]
-[ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/cooks/cook_data.gd" id="1_vbdjo"]
+[ext_resource type="Script" uid="uid://bga07nfiordvr" path="res://scripts/data scripts/cook_data.gd" id="1_vbdjo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1g5iw"]
 atlas = ExtResource("1_a1koh")

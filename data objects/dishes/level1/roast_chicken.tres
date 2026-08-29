@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://b5j3dxsi5ixmf"]
 
 [ext_resource type="Texture2D" uid="uid://b3gosdlvb27pc" path="res://sprites/dishes/chicken.png" id="1_15ubm"]
-[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_twulo"]
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/data scripts/dish_data.gd" id="1_twulo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5pp0"]
 atlas = ExtResource("1_15ubm")

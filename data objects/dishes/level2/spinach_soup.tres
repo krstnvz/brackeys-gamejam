@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DishData" format=3 uid="uid://88rr4r50krtx"]
 
-[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/dishes/dish_data.gd" id="1_gkyd8"]
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/data scripts/dish_data.gd" id="1_gkyd8"]
 [ext_resource type="Texture2D" uid="uid://bbrkh7huriihf" path="res://sprites/dishes/spinach_soup.png" id="1_wt2wr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lygyn"]
