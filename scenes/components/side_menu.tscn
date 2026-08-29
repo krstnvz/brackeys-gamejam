@@ -175,11 +175,11 @@ fit_content = true
 scroll_active = false
 
 [node name="DishContainer" type="VBoxContainer" parent="." unique_id=12030281]
-visible = false
 offset_left = 17.0
 offset_top = 26.0
 offset_right = 182.0
 offset_bottom = 242.0
+theme_override_constants/separation = 12
 script = ExtResource("15_g3q56")
 
 [node name="Title" type="Label" parent="DishContainer" unique_id=1737487679]
@@ -199,7 +199,6 @@ theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
-vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="DishContainer" unique_id=490835091]
 layout_mode = 2

@@ -5,7 +5,10 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	rich_text_label.text = cook_data.statement
+	var name = cook_data.get_cook_name(cook_data.cook)
+	rich_text_label.append_text(name + ":")
+	rich_text_label.newline()
+	rich_text_label.append_text(cook_data.statement)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
