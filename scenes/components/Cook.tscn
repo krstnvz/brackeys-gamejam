@@ -10,5 +10,3 @@ offset_bottom = 28.0
 scale = Vector2(2, 2)
 script = ExtResource("1_n2yfk")
 cook_data = ExtResource("2_jvs2t")
-
-[connection signal="button_up" from="." to="." method="_on_button_up"]

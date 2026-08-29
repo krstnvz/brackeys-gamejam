@@ -2,6 +2,10 @@ extends Node
 
 signal refresh_ingredients_list
 
+@export var tip_off_data: TipOffData
+
+@onready var tip_off_container: Node = $TipOffContainer
+@onready var tip_off_rich_text_label: RichTextLabel = $TipOffContainer/TipOffRichTextLabel
 @onready var ingredients_container: ScrollContainer = $ScrollContainer
 @onready var menu_page: TextureRect = $PageTexture
 
@@ -21,6 +25,12 @@ func _ready() -> void:
 		$PageTexture/BookButton,
 		$PageTexture/DishButton,
 	]
+	
+	for line in tip_off_data.lines:
+		var formatted = "- " + line
+		tip_off_rich_text_label.append_text(formatted)
+		tip_off_rich_text_label.newline()
+		tip_off_rich_text_label.newline()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -65,19 +75,23 @@ func trigger_tab(tab: Tab):
 	
 func _on_tip_off_button_button_up() -> void:
 	trigger_tab(Tab.TIP_OFF)
+	tip_off_container.visible = true
 	ingredients_container.visible = false
 
 func _on_ingredient_button_button_up() -> void:
 	trigger_tab(Tab.INGREDIENT)
 	ingredients_container.visible = true
+	tip_off_container.visible = false
 
 func _on_book_button_button_up() -> void:
 	trigger_tab(Tab.BOOK)
 	ingredients_container.visible = false
+	tip_off_container.visible = false
 
 func _on_dish_button_button_up() -> void:
 	trigger_tab(Tab.DISH)
 	ingredients_container.visible = false
+	tip_off_container.visible = false
 
 func _on_request_dish_refresh_ingredients() -> void:
 	refresh_ingredients_list.emit()

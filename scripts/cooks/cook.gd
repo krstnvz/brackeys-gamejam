@@ -15,6 +15,3 @@ func _ready() -> void:
 	bitmap.create_from_image_alpha(image)
 	# Assign it to the mask
 	texture_click_mask = bitmap
-
-func _on_button_up() -> void:
-	print("\n" + CookData.Cooks.keys()[cook_data.cook] + ": " + cook_data.statement)

@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://cgweu5mb0amv6" path="res://data objects/cooks/level1/peter1.tres" id="17_0upy3"]
 [ext_resource type="PackedScene" uid="uid://btaiju14nygip" path="res://scenes/game/side_menu.tscn" id="18_u0pkn"]
 [ext_resource type="Texture2D" uid="uid://vb52msgfi0k7" path="res://sprites/UI/buttons/fancy_button.png" id="20_15xv0"]
+[ext_resource type="Script" uid="uid://bgr2s3ndum2hf" path="res://scenes/game/cooks_statement_controller.gd" id="21_8i3vp"]
 [ext_resource type="PackedScene" uid="uid://cupis3jrb8ulo" path="res://scenes/game/statement_container.tscn" id="21_u0pkn"]
 [ext_resource type="Texture2D" uid="uid://cbu8tnp5f13l8" path="res://sprites/UI/buttons/menu_button.png" id="23_lgbjo"]
 [ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="24_4xw7v"]
@@ -161,134 +162,32 @@ texture_hover = SubResource("AtlasTexture_u0pkn")
 
 [node name="Overlays" type="Node" parent="." unique_id=1645188447]
 
-[node name="TipOffOverlay" type="CanvasLayer" parent="Overlays" unique_id=754780104]
+[node name="CooksStatement" type="Node" parent="Overlays" unique_id=1997664094]
+script = ExtResource("21_8i3vp")
+
+[node name="PeterStatementOverlay" type="CanvasLayer" parent="Overlays/CooksStatement" unique_id=578976360]
 visible = false
 script = ExtResource("27_bjnfs")
 
-[node name="ColorRect" type="ColorRect" parent="Overlays/TipOffOverlay" unique_id=322173053]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -68.0
-offset_right = 271.0
-offset_bottom = 68.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/TipOffOverlay" unique_id=1033028980]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -252.5
-offset_top = -46.0
-offset_right = 252.5
-offset_bottom = 46.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "[b]Informat tip off:[/b]
-- Yesterday, one ingredient was poisoned with Blistering Water
-- Multiple dishes are contaminated
-- Exactly one cook is in lying to you"
-fit_content = true
-
-[node name="CancelButton" type="Button" parent="Overlays/TipOffOverlay" unique_id=111208958]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 244.0
-offset_top = -62.0
-offset_right = 263.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "X"
-
-[node name="BookOverlay" type="CanvasLayer" parent="Overlays" unique_id=167102177]
-visible = false
-script = ExtResource("27_bjnfs")
-
-[node name="ColorRect" type="ColorRect" parent="Overlays/BookOverlay" unique_id=1564265029]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -173.0
-offset_top = -98.0
-offset_right = 173.0
-offset_bottom = 98.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Overlays/BookOverlay" unique_id=993247710]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.5
-offset_top = -82.75
-offset_right = 162.5
-offset_bottom = 82.75
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "Blistering Water
-	- fast acting
-	- causes painful boils and high fever
-	- severe poisoning results in death
-	- bitter taste
-	- sap of an exotic plant
-	- must be mixed into a liquid"
-fit_content = true
-
-[node name="CancelButton" type="Button" parent="Overlays/BookOverlay" unique_id=294520980]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 147.0
-offset_top = -93.0
-offset_right = 166.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "X"
-
-[node name="PeterStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=578976360]
-visible = false
-script = ExtResource("27_bjnfs")
-
-[node name="StatementContainer" parent="Overlays/PeterStatementOverlay" unique_id=1855158422 instance=ExtResource("21_u0pkn")]
+[node name="StatementContainer" parent="Overlays/CooksStatement/PeterStatementOverlay" unique_id=1855158422 instance=ExtResource("21_u0pkn")]
 cook_data = ExtResource("17_0upy3")
 
-[node name="RoseStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=892935395]
+[node name="RoseStatementOverlay" type="CanvasLayer" parent="Overlays/CooksStatement" unique_id=892935395]
 visible = false
 script = ExtResource("27_bjnfs")
 
-[node name="StatementContainer" parent="Overlays/RoseStatementOverlay" unique_id=1729069159 instance=ExtResource("21_u0pkn")]
+[node name="StatementContainer" parent="Overlays/CooksStatement/RoseStatementOverlay" unique_id=1729069159 instance=ExtResource("21_u0pkn")]
 offset_left = -566.0
 offset_top = -218.0
 offset_right = -429.0
 offset_bottom = -169.0
 cook_data = ExtResource("31_q82fx")
 
-[node name="SimonStatementOverlay" type="CanvasLayer" parent="Overlays" unique_id=2046572807]
+[node name="SimonStatementOverlay" type="CanvasLayer" parent="Overlays/CooksStatement" unique_id=2046572807]
 visible = false
 script = ExtResource("27_bjnfs")
 
-[node name="StatementContainer" parent="Overlays/SimonStatementOverlay" unique_id=1412595096 instance=ExtResource("21_u0pkn")]
+[node name="StatementContainer" parent="Overlays/CooksStatement/SimonStatementOverlay" unique_id=1412595096 instance=ExtResource("21_u0pkn")]
 offset_left = -518.0
 offset_top = -234.0
 offset_right = -381.0
@@ -328,11 +227,9 @@ texture_pressed = SubResource("AtlasTexture_djq2t")
 [connection signal="refresh_ingredients" from="Dishes/DishButton3" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton4" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
 [connection signal="refresh_ingredients" from="Dishes/DishButton5" to="SideMenu" method="_on_request_dish_refresh_ingredients"]
-[connection signal="button_up" from="Cooks/Simon" to="Overlays/SimonStatementOverlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="Cooks/Rose" to="Overlays/RoseStatementOverlay" method="_on_visibility_button_up"]
-[connection signal="button_up" from="Cooks/Peter" to="Overlays/PeterStatementOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Simon" to="Overlays/CooksStatement/SimonStatementOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Rose" to="Overlays/CooksStatement/RoseStatementOverlay" method="_on_visibility_button_up"]
+[connection signal="button_up" from="Cooks/Peter" to="Overlays/CooksStatement/PeterStatementOverlay" method="_on_visibility_button_up"]
 [connection signal="button_up" from="SubmitButton" to="." method="_on_submit_button_button_up"]
-[connection signal="button_up" from="Overlays/TipOffOverlay/CancelButton" to="Overlays/TipOffOverlay" method="_on_cancel_button_button_up"]
-[connection signal="button_up" from="Overlays/BookOverlay/CancelButton" to="Overlays/BookOverlay" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="MenuButton" to="." method="_on_button_button_up"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
