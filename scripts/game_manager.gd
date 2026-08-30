@@ -7,7 +7,6 @@ extends Node
 @export var dishes: Array[Dish] = []
 
 @onready var tutorial: CanvasLayer = $Overlays/Tutorial
-@onready var fade: CanvasLayer = $Overlays/Fade
 
 @onready var game_over: CanvasLayer = $Overlays/GameOver
 @onready var status_texture: TextureRect = $Overlays/GameOver/StatusTexture

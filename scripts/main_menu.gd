@@ -13,9 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_button_button_up() -> void:
-	#await $Fade.fade(1.0).finished
 	Navigation.start_level_1()
-	pass
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
