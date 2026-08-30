@@ -22,4 +22,5 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_help_button_button_up() -> void:
+	GameGlobals.has_tutorial_displayed = true
 	canvas_layer.visible = true
