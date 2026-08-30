@@ -22,6 +22,9 @@ func _ready() -> void:
 		GameGlobals.has_tutorial_displayed = true
 	
 	status_label.bbcode_enabled = true
+	
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		$FullscreenButton.button_pressed = true
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
