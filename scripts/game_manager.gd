@@ -9,9 +9,9 @@ extends Node
 @onready var tutorial: CanvasLayer = $Overlays/Tutorial
 
 @onready var game_over: CanvasLayer = $Overlays/GameOver
-@onready var status_texture: TextureRect = $Overlays/GameOver/VBoxContainer/StatusTexture
-@onready var status_label: RichTextLabel = $Overlays/GameOver/VBoxContainer/StatusLabel
-@onready var next_level_button: TextureButton = $Overlays/GameOver/VBoxContainer/HBoxContainer/NextLevelButton
+@onready var status_texture: TextureRect = $Overlays/GameOver/StatusTexture
+@onready var status_label: RichTextLabel = $Overlays/GameOver/StatusLabel
+@onready var next_level_button: TextureButton = $Overlays/GameOver/HBoxContainer/NextLevelButton
 
 func _ready() -> void:
 	GameGlobals.registerSceneIngredients(get_scene_ingredients())
@@ -19,6 +19,8 @@ func _ready() -> void:
 	if GameGlobals.has_tutorial_displayed == false:
 		tutorial.visible = true
 		GameGlobals.has_tutorial_displayed = true
+	
+	status_label.bbcode_enabled = true
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -35,11 +37,16 @@ func _on_submit_button_button_up() -> void:
 			
 	if did_win:
 		status_texture.texture = texture_success
+		status_label.append_text("[wave]Hooray[/wave], you managed to survive! The King is happy that he doesn't have to hire someone else.")
+		status_label.newline()
+		status_label.newline()
+		status_label.append_text("Keep staying alive!")
 	else:
 		status_texture.texture = texture_died
-	
-	# Add text
-	# status_label.text = ""
+		status_label.append_text("Oh, that's a shame! The King is alive, but you are pretty dead.")
+		status_label.newline()
+		status_label.newline()
+		status_label.append_text("Try staying alive next time ;)")
 	
 	var is_last_level = Navigation.current_level == Navigation.Level.LEVEL_2
 	next_level_button.visible = did_win == true && is_last_level == false
