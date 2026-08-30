@@ -21,10 +21,13 @@ func _ready() -> void:
 		GameGlobals.has_tutorial_displayed = true
 	
 	status_label.bbcode_enabled = true
-	
-	get_tree().get_root().size_changed.connect(_on_window_size_changed)
+
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 		$FullscreenButton.button_pressed = true
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_SIZE_CHANGED:
+		_on_window_size_changed()
 
 func _on_window_size_changed() -> void:
 	print("size changed")
