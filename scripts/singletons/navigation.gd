@@ -1,8 +1,6 @@
 extends Node
 
-enum Level {
-	LEVEL_1, LEVEL_2
-}
+enum Level { LEVEL_1, LEVEL_2 }
 
 var menu_scene: PackedScene = preload("res://scenes/game/main_menu.tscn")
 var level_1_scene: PackedScene = preload("res://scenes/game/level_1.tscn")
