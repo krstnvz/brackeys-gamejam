@@ -22,16 +22,12 @@ func _ready() -> void:
 	
 	status_label.bbcode_enabled = true
 
-	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+	if GameGlobals.fullscreen:
 		$FullscreenButton.button_pressed = true
-
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_WM_SIZE_CHANGED:
-		_on_window_size_changed()
-
-func _on_window_size_changed() -> void:
-	print("size changed")
-	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
+		
+func _process(delta: float) -> void:
+	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN and GameGlobals.fullscreen == true:
+		GameGlobals.fullscreen = false
 		$FullscreenButton.button_pressed = false
 
 func _on_submit_button_button_up() -> void:
@@ -74,11 +70,8 @@ func _on_menu_button_button_up() -> void:
 	Navigation.go_to_menu()
 
 func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		
+	GameGlobals.set_game_fullscreen(toggled_on)
+
 func _on_replay_button_button_up() -> void:
 	game_over.visible = false
 	Navigation.restart_level()

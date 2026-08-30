@@ -2,11 +2,19 @@ extends Node
 
 signal on_scene_ingredients_ready
 
+var fullscreen = false
 var has_tutorial_displayed = false
 
 var scene_ingredients: Array[IngredientsData.Ingredient] = []
 var ingredients_data = IngredientsData.new()
 var safe_dishes: Array[DishData] = []
+
+func set_game_fullscreen(active: bool) -> void:
+	fullscreen = active
+	if fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func updateIngredients(dish_data, value):
 	ingredients_data.crossAllIngredientsOut()
