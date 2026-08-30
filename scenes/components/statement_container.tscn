@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rohhvs6o5y5k" path="res://scripts/cooks/cook_statement.gd" id="1_8yays"]
 [ext_resource type="Texture2D" uid="uid://dikhmtiunkttu" path="res://sprites/UI/dialog_box.png" id="2_t81im"]
+[ext_resource type="Script" uid="uid://dayr7ye73spht" path="res://scenes/components/animated_text.gd" id="3_x08r2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sajip"]
 
@@ -42,3 +43,6 @@ theme_override_colors/default_color = Color(0.5882353, 0.15294118, 0.15294118, 1
 theme_override_font_sizes/normal_font_size = 8
 fit_content = true
 scroll_active = false
+script = ExtResource("3_x08r2")
+
+[connection signal="visibility_changed" from="." to="MarginContainer/RichTextLabel" method="_on_visibility_changed"]
