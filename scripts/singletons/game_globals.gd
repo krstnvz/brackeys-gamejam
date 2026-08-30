@@ -15,7 +15,12 @@ func set_game_fullscreen(active: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-
+		
+func check_game_fullscreen() -> void:
+	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN and GameGlobals.fullscreen == true:
+		GameGlobals.fullscreen = false
+		$FullscreenButton.button_pressed = false
+	
 func updateIngredients(dish_data, value):
 	ingredients_data.crossAllIngredientsOut()
 	

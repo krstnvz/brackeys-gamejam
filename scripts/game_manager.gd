@@ -25,10 +25,8 @@ func _ready() -> void:
 	if GameGlobals.fullscreen:
 		$FullscreenButton.button_pressed = true
 		
-func _physics_process(delta: float) -> void:
-	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN and GameGlobals.fullscreen == true:
-		GameGlobals.fullscreen = false
-		$FullscreenButton.button_pressed = false
+func _process(delta: float) -> void:
+	GameGlobals.check_game_fullscreen.call_deferred()
 
 func _on_submit_button_button_up() -> void:
 	var did_win = true
