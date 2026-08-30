@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dkdvy6kaw8jrs" path="res://scripts/main_menu.gd" id="1_sbiqi"]
 [ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="2_gfgjs"]
-[ext_resource type="PackedScene" uid="uid://cudl6a11aejk4" path="res://scenes/components/fade.tscn" id="2_ngy02"]
 [ext_resource type="Texture2D" uid="uid://cqil6021tjugf" path="res://sprites/UI/buttons/start_button.png" id="3_bto60"]
 [ext_resource type="Texture2D" uid="uid://b7cn5p535h4qm" path="res://sprites/title.png" id="4_3r4tm"]
 [ext_resource type="PackedScene" uid="uid://q04ratl2widm" path="res://scenes/components/mute_button.tscn" id="7_16onh"]
@@ -78,9 +77,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 texture = ExtResource("4_3r4tm")
-
-[node name="Fade" parent="." unique_id=149257461 instance=ExtResource("2_ngy02")]
-visible = false
 
 [node name="HelpButton" type="TextureButton" parent="." unique_id=1788516119]
 offset_left = 54.0

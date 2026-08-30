@@ -34,7 +34,7 @@
 [ext_resource type="Resource" uid="uid://cmd7y583cyq1w" path="res://data objects/cooks/level1/rose1.tres" id="31_q82fx"]
 [ext_resource type="PackedScene" uid="uid://oc65hk33ep5x" path="res://scenes/components/tutorial.tscn" id="33_2cwer"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cwer"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uiq3k"]
 resource_local_to_scene = true
 atlas = ExtResource("16_nx801")
 region = Rect2(0, 0, 31, 37)
@@ -137,7 +137,7 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_2cwer")
+texture_normal = SubResource("AtlasTexture_uiq3k")
 cook_data = ExtResource("17_0upy3")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("18_u0pkn")]

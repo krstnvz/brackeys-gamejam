@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://c7dtq34kyi8t6"]
 
 [ext_resource type="Script" uid="uid://b4xlxmrhgajmd" path="res://scripts/root.gd" id="1_oe3fm"]
+[ext_resource type="PackedScene" uid="uid://cudl6a11aejk4" path="res://scenes/components/fade.tscn" id="2_qvy3j"]
 
 [node name="Root" type="Node" unique_id=1859238472]
 script = ExtResource("1_oe3fm")
+
+[node name="Scene" type="Node" parent="." unique_id=608101376]
+
+[node name="Fade" parent="." unique_id=149257461 instance=ExtResource("2_qvy3j")]
+visible = false

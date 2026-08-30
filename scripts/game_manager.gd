@@ -7,6 +7,7 @@ extends Node
 @export var dishes: Array[Dish] = []
 
 @onready var tutorial: CanvasLayer = $Overlays/Tutorial
+@onready var fade: CanvasLayer = $Overlays/Fade
 
 @onready var game_over: CanvasLayer = $Overlays/GameOver
 @onready var status_texture: TextureRect = $Overlays/GameOver/StatusTexture
@@ -63,6 +64,7 @@ func get_scene_ingredients() -> Array[IngredientsData.Ingredient]:
 	return unique_ingredients
 
 func _on_menu_button_button_up() -> void:
+	game_over.visible = false
 	Navigation.go_to_menu()
 
 func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
@@ -72,9 +74,11 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		
 func _on_replay_button_button_up() -> void:
+	game_over.visible = false
 	Navigation.restart_level()
 
 func _on_next_level_button_button_up() -> void:
+	game_over.visible = false
 	Navigation.start_level_2()
 
 func _on_tutorial_button_button_up() -> void:

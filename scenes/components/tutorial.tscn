@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://oc65hk33ep5x"]
 
 [ext_resource type="Texture2D" uid="uid://cesc7rnfi7tjh" path="res://sprites/UI/level_finished_overlay.png" id="1_5bk5s"]
-[ext_resource type="Script" uid="uid://cwrcsh5tkeyyy" path="res://scenes/components/tutorial.gd" id="1_ohv6c"]
+[ext_resource type="Script" uid="uid://cwrcsh5tkeyyy" path="res://scripts/tutorial.gd" id="1_ohv6c"]
 [ext_resource type="Theme" uid="uid://dpiy3ra2b8o0n" path="res://scroll_bar_theme.tres" id="2_tebew"]
 [ext_resource type="Texture2D" uid="uid://4duveh0gckhq" path="res://sprites/UI/buttons/exit_button.png" id="3_a4phn"]
 
