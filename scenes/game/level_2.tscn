@@ -235,6 +235,7 @@ offset_bottom = -185.0
 cook_data = ExtResource("16_a2lpy")
 
 [node name="GameOver" type="CanvasLayer" parent="Overlays" unique_id=1882035141]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Overlays/GameOver" unique_id=1705023708]
 anchors_preset = 15
