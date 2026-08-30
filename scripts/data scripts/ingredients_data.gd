@@ -110,6 +110,7 @@ func get_sorted_ingredients() -> Array[IngredientModel]:
 	return sceneIngredients
 
 func createSceneIngredientModel(ingredents: Array[Ingredient]):
+	sceneIngredients.clear()
 	for ingredient in ingredents:
 		var model = IngredientModel.new()
 		model.ingredient = ingredient

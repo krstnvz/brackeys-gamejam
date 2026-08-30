@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://vb52msgfi0k7" path="res://sprites/UI/buttons/fancy_button.png" id="20_15xv0"]
 [ext_resource type="Script" uid="uid://bgr2s3ndum2hf" path="res://scripts/cooks/cooks_statement_controller.gd" id="21_8i3vp"]
 [ext_resource type="PackedScene" uid="uid://cupis3jrb8ulo" path="res://scenes/components/statement_container.tscn" id="21_u0pkn"]
+[ext_resource type="Script" uid="uid://xbgs8haytcbq" path="res://scripts/data scripts/dish_data.gd" id="21_uiq3k"]
+[ext_resource type="Resource" uid="uid://uwp5wlphx4uq" path="res://data objects/dishes/level1/sweet_porridge.tres" id="22_ue4pn"]
 [ext_resource type="Texture2D" uid="uid://cbu8tnp5f13l8" path="res://sprites/UI/buttons/menu_button.png" id="23_lgbjo"]
 [ext_resource type="PackedScene" uid="uid://q04ratl2widm" path="res://scenes/components/mute_button.tscn" id="24_2cwer"]
 [ext_resource type="Texture2D" uid="uid://cmvancyjmjfrj" path="res://sprites/UI/buttons/fullscreen_button.png" id="24_4xw7v"]
@@ -142,6 +144,7 @@ cook_data = ExtResource("17_0upy3")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("18_u0pkn")]
 position = Vector2(640, 0)
+dishes = Array[ExtResource("21_uiq3k")]([ExtResource("22_ue4pn"), ExtResource("5_uiq3k"), ExtResource("7_em224"), ExtResource("9_s3j1q"), ExtResource("11_b8x0u")])
 
 [node name="SubmitButton" type="TextureButton" parent="." unique_id=344558434]
 texture_filter = 1
