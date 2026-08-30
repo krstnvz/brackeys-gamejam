@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dvrtcwqn0vhm2" path="res://sprites/UI/buttons/next_level_button.png" id="31_l3xhh"]
 [ext_resource type="PackedScene" uid="uid://oc65hk33ep5x" path="res://scenes/components/tutorial.tscn" id="37_eprbd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ajmqn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eprbd"]
 resource_local_to_scene = true
 atlas = ExtResource("16_o476j")
 region = Rect2(0, 0, 31, 37)
@@ -144,7 +144,7 @@ offset_left = 121.0
 offset_top = 186.0
 offset_right = 152.0
 offset_bottom = 223.0
-texture_normal = SubResource("AtlasTexture_ajmqn")
+texture_normal = SubResource("AtlasTexture_eprbd")
 cook_data = ExtResource("20_a2lpy")
 
 [node name="SideMenu" parent="." unique_id=2017203291 instance=ExtResource("20_u0faa")]
@@ -239,7 +239,7 @@ visible = false
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
-[node name="ColorRect" type="ColorRect" parent="Overlays/GameOver" unique_id=754140033]
+[node name="ColorRect" type="ColorRect" parent="Overlays/GameOver" unique_id=1705023708]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -247,62 +247,62 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.22352941)
 
-[node name="TextureRect" type="TextureRect" parent="Overlays/GameOver" unique_id=1171577309]
+[node name="TextureRect" type="TextureRect" parent="Overlays/GameOver" unique_id=1552623898]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -257.0
-offset_top = -151.0
-offset_right = -62.0
-offset_bottom = -32.0
+offset_left = -196.0
+offset_top = -123.0
+offset_right = -1.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 texture = ExtResource("29_bmpr3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Overlays/GameOver" unique_id=140310985]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -245.0
-offset_top = -142.0
-offset_right = -74.0
-offset_bottom = -49.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StatusTexture" type="TextureRect" parent="Overlays/GameOver/VBoxContainer" unique_id=1496686919]
-layout_mode = 2
+[node name="StatusTexture" type="TextureRect" parent="Overlays/GameOver" unique_id=931200604]
+offset_left = 243.0
+offset_top = 74.0
+offset_right = 318.0
+offset_bottom = 100.0
+scale = Vector2(2, 2)
 size_flags_horizontal = 4
 texture = ExtResource("2_3dbay")
 stretch_mode = 2
 
-[node name="StatusLabel" type="RichTextLabel" parent="Overlays/GameOver/VBoxContainer" unique_id=42478638]
-layout_mode = 2
+[node name="StatusLabel" type="RichTextLabel" parent="Overlays/GameOver" unique_id=888372238]
+offset_left = 151.0
+offset_top = 130.0
+offset_right = 488.0
+offset_bottom = 223.0
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.5882353, 0.15294118, 0.15294118, 1)
 theme_override_font_sizes/normal_font_size = 8
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Overlays/GameOver/VBoxContainer" unique_id=369729750]
-layout_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlays/GameOver" unique_id=1122927555]
+offset_left = 149.0
+offset_top = 234.0
+offset_right = 320.0
+offset_bottom = 246.0
+scale = Vector2(2, 2)
 
-[node name="MenuButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=2018988515]
+[node name="MenuButton" type="TextureButton" parent="Overlays/GameOver/HBoxContainer" unique_id=1868428196]
 layout_mode = 2
 size_flags_horizontal = 2
 texture_normal = ExtResource("22_th0l7")
 
-[node name="ReplayButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=1091739391]
+[node name="ReplayButton" type="TextureButton" parent="Overlays/GameOver/HBoxContainer" unique_id=290282205]
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("30_xilph")
 
-[node name="NextLevelButton" type="TextureButton" parent="Overlays/GameOver/VBoxContainer/HBoxContainer" unique_id=1724029998]
+[node name="NextLevelButton" type="TextureButton" parent="Overlays/GameOver/HBoxContainer" unique_id=1751265363]
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("31_l3xhh")
@@ -332,6 +332,6 @@ visible = false
 [connection signal="visibility_changed" from="Overlays/CooksStatement/PeterStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
 [connection signal="visibility_changed" from="Overlays/CooksStatement/RoseStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
 [connection signal="visibility_changed" from="Overlays/CooksStatement/SimonStatementOverlay" to="Overlays/CooksStatement" method="_on_statement_overlay_visibility_changed"]
-[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]
-[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/ReplayButton" to="." method="_on_replay_button_button_up"]
-[connection signal="button_up" from="Overlays/GameOver/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_button_up"]
+[connection signal="button_up" from="Overlays/GameOver/HBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]
+[connection signal="button_up" from="Overlays/GameOver/HBoxContainer/ReplayButton" to="." method="_on_replay_button_button_up"]
+[connection signal="button_up" from="Overlays/GameOver/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_button_up"]
