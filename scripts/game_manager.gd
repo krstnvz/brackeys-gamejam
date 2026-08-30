@@ -24,6 +24,7 @@ func _ready() -> void:
 	status_label.bbcode_enabled = true
 	
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		print("fullscreened")
 		$FullscreenButton.button_pressed = true
 
 func _input(event):
