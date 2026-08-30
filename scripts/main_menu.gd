@@ -7,7 +7,7 @@ func _ready() -> void:
 	if GameGlobals.fullscreen == true:
 		$FullscreenButton.button_pressed = true
 		
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN and GameGlobals.fullscreen == true:
 		GameGlobals.fullscreen = false
 		$FullscreenButton.button_pressed = false
