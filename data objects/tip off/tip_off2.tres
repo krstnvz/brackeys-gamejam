@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_crsxe")
-lines = Array[String](["This morning, one ingredient was poisoned with a sweet toxin", "Exactly two of the prepared dishes are not safe to eat", " Exactly one cook is in lying to you"])
+lines = Array[String](["This morning, one ingredient was poisoned with a sweet toxin", "Exactly two of the prepared dishes are not safe to eat", " Exactly one cook is lying to you"])
 metadata/_custom_type_script = "uid://c3413jhmlgo3d"
