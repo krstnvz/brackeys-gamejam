@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_window_size_changed() -> void:
+	print("size changed")
 	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
 		$FullscreenButton.button_pressed = false
 	
