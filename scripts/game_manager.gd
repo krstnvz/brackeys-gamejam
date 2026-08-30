@@ -23,13 +23,12 @@ func _ready() -> void:
 	status_label.bbcode_enabled = true
 	
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
-		print("fullscreened")
 		$FullscreenButton.button_pressed = true
 
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_ESCAPE and tutorial.visible:
-			_on_tutorial_button_button_up()
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN and event.is_released() and event.keycode == KEY_ESCAPE:
+			$FullscreenButton.button_pressed = false
 
 func _on_submit_button_button_up() -> void:
 	var did_win = true

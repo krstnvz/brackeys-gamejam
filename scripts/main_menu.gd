@@ -5,12 +5,16 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
-		print("fullscreened")
 		$FullscreenButton.button_pressed = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN and event.is_released() and event.keycode == KEY_ESCAPE:
+			$FullscreenButton.button_pressed = false
 
 func _on_button_button_up() -> void:
 	Navigation.start_level_1()
