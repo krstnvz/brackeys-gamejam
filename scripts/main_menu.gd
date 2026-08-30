@@ -6,9 +6,6 @@ extends Node
 func _ready() -> void:
 	if GameGlobals.fullscreen == true:
 		$FullscreenButton.button_pressed = true
-		
-func _process(delta: float) -> void:
-	GameGlobals.check_game_fullscreen.call_deferred()
 
 func _on_button_button_up() -> void:
 	Navigation.start_level_1()
